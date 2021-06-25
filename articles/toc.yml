@@ -1,0 +1,6 @@
+- name: Using BepInEx
+  href: user_guide/toc.yml
+- name: Plugin development
+  href: dev_guide/toc.yml
+- name: Advanced topics
+  href: advanced/toc.yml

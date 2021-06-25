@@ -1,0 +1,6 @@
+- name: Debugging plugins with dnSpy
+  href: plugins_dnSpy.md
+- name: Debugging plugins with Visual Studio
+  href: plugins_vs.md
+- name: Debugging all game assemblies with dnSpy
+  href: assemblies_dnSpy.md
