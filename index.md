@@ -10,7 +10,7 @@ _centerBody: true
 </div>
 
 > [!NOTE]  
-> Please not that documentation for BepInEx 6 are WIP.  
+> Please note that documentation for BepInEx 6 is WIP.  
 > If you would like to help with writing guides for BepInEx 6, consider 
 > [contributing by writing guides](https://github.com/BepInEx/bepinex_docs#contributing)!
 
@@ -20,16 +20,16 @@ Here you can find guides on how to install, configure and develop plugins for Be
 
 ## About BepInEx
 
-**Bep**is **In**jector **Ex**tensible is a patcher/plug-in framework for Unity games that use Mono as their scripting backend.
+**Bep**is **In**jector **Ex**tensible is a patcher and plug-in framework for Unity and .NET Framework games.
 
 BepInEx provides various features, including
 
 * **drop-in installation**;
 * **built-in configuration and logging systems**; 
-* **runtime method patching with Harmony** -- includes [Harmony](https://github.com/pardeike/Harmony) and [MonoMod](https://github.com/MonoMod/MonoMod) to enable runtime method injection;
+* **runtime method patching with Harmony** -- includes [HarmonyX](https://github.com/bepinex/harmonyx) and [MonoMod](https://github.com/MonoMod/MonoMod) to enable runtime method injection;
 * **in-memory assembly patching** -- allows to patch game's assemblies with [Mono.Cecil](https://github.com/jbevain/cecil) in memory with the help of [UnityDoorstop](https://github.com/NeighTools/UnityDoorstop).
 
-BepInEx is fully open source under the MIT license.
+BepInEx is fully open source under the [LGPL 2.1 license](https://github.com/BepInEx/BepInEx/blob/master/LICENSE).
 
 ## Getting started
 
