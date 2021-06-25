@@ -13,7 +13,7 @@ The main goal of BepInEx is
 
 * to be simple to install and use for end-users;
 * provide necessary tools for modding;
-* be small and easily portable* to as many different Unity games as possible.
+* be small and easily portable to as many different Unity games as possible.
 
 While BepInEx is mainly aimed at PC games running on Windows, BepInEx can be installed on Linux, macOS, and any other operating system that either supports Mono or Windows emulation.
 
