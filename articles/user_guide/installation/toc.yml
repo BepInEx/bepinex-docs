@@ -1,2 +1,6 @@
-- name: Using hardpatcher
-  href: hardpatching.md
+- name: Unity (Mono)
+  href: unity_mono.md
+- name: Unity (Il2Cpp)
+  href: unity_il2cpp.md
+- name: .NET Framework
+  href: net_fw.md
