@@ -5,18 +5,15 @@ title: Configuration
 
 # Configuration
 
-BepInEx 5 contains all configuration files in `BepInEx/config` folder.  
-All configuration files have `.cfg` extension and follow 
-[TOML](https://github.com/toml-lang/toml)-like syntax.
+BepInEx 6 contains all configuration files in `BepInEx/config` folder.  
+All configuration files have `.cfg` extension and follow [TOML](https://github.com/toml-lang/toml)-like syntax.
 
 ## Configuring BepInEx
 
 The main BepInEx configuration is located in `BepInEx/config/BepInEx.cfg`.  
-If you don't have the file, run the game with BepInEx at least once and BepInEx 
-with automatically generate the file.
+If you don't have the file, run the game with BepInEx at least once, and BepInEx automatically generates the file.
 
-Open the file in any text editor of your choice. All configuration options 
-are documented.
+Open the file in any text editor of your choice. All configuration options are documented.
 
 ## Configuring plugins
 

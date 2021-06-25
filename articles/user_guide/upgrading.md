@@ -11,7 +11,7 @@ title: Upgrading
 > [!IMPORTANT]
 > pre-BepInEx 5 plugins are not compatible with BepInEx 5!  
 > This guide only provides a temporary upgrade solution.  
-> It is suggested that you do a clean install of BepInEx instead -- remove all BepInEx files and start over fresh.
+> It is suggested that you do a clean install of BepInEx instead: remove all BepInEx files and start over fresh.
 
 1. Delete `BepInEx/core` folder if it exists.
 2. Download and install BepInEx 5 [according to the installation guide](<xref:installation>).
@@ -23,7 +23,11 @@ title: Upgrading
 To migrate from a previous version of BepInEx, do the following:
 
 1. Delete `UnityEngine.dll`, `0Harmony.dll` and `BepInEx.dll` from the `*_Data\Managed` folder for your game
-  - **IMPORTANT:** Check **all** game folders for their respective `Managed` folders. BepInEx 3 creates the aforementioned files for each valid Unity executable it finds, which means that you may have to repeat this process multiple times.
+  
+  > [!IMPORTANT]
+  > Check **all** game folders for their respective `Managed` folders.
+  > BepInEx 3 creates the files above for each valid Unity executable it finds, which means that you may have to repeat this process multiple times.
+
 2. Rename `UnityEngine.dll.bak` to `UnityEngine.dll`
 3. **Delete `BepInEx.Patcher.exe` from the game's root folder.**
 4. Delete your `config.ini` file in your BepInEx folder
@@ -31,7 +35,7 @@ To migrate from a previous version of BepInEx, do the following:
 
 ## Migrating from Sybaris 2.x
 
-1. Delete **all occurences** of the following DLLs in the game's folder:
+1. Delete **all occurrences** of the following DLLs in the game's folder:
     * `ExIni.dll`
     * `UnityInjector.dll`
     * `Mono.Cecil.dll`
