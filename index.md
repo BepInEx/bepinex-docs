@@ -9,11 +9,6 @@ _centerBody: true
     <img src="https://avatars2.githubusercontent.com/u/39589027?s=256"/>
 </div>
 
-> [!NOTE]  
-> Please not that these docs are still WIP.  
-> If you would like to help with writing guides for BepInEx 5, consider 
-> [contributing by writing guides](https://github.com/BepInEx/bepinex_docs#contributing)!
-
 Welcome to BepInEx documentation!
 
 Here you can find guides on how to install, configure and develop plugins for BepInEx!
