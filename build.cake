@@ -9,6 +9,7 @@
 
 var target = Argument("target", "Build");
 var buildVersion = Argument("build_version", GetVersionString());
+var repoUrl = Argument("repo_url", "https://github.com/BepInEx/bepinex-docs");
 
 Information($"Version to build: {buildVersion}");
 
@@ -116,10 +117,18 @@ Task("GenDocs")
         Information("Generating docs");
         var gitInfo = RunGit("log --pretty=\"%h; %ci\" -1");
 
+        var ghMeta = SerializeJson(new Dictionary<string, string>{
+            ["repo"] = repoUrl,
+            ["branch"] = buildVersion
+        }).Replace("\"", "\\\"");
+
+        Information(ghMeta);
+
         DocFxBuild("./docfx.json", new() {
             GlobalMetadata = {
                 ["_docsVersion"] = buildVersion,
-                ["_buildInfo"] = gitInfo
+                ["_buildInfo"] = gitInfo,
+                ["_a"] = $"\\\", \\\"_gitContribute\\\": {ghMeta}, \\\"_b\\\": \\\"" // A hack to bypass Cake.DocFx restrictuin on globalmetadata type
             }
         });
     });
