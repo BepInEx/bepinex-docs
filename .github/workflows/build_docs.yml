@@ -1,0 +1,37 @@
+name: Build Docs
+
+on: 
+  push:
+    branches-ignore: 
+      - gh-pages
+      - common
+
+concurrency: docs-build
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Dotnet for use with actions
+      uses: actions/setup-dotnet@v1.0.0
+    - name: Extract branch name
+      shell: bash
+      run: |
+        echo Current branch: ${GITHUB_REF##*/}
+        echo "GH_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+    - name: Setup common branch
+      shell: bash
+      run: git worktree add common common
+    - name: Run CakeBuild script
+      run: ./common/build.ps1 --target=PublishGHPages --build_version="${env:GH_BRANCH}"
+    - name: Deploy to GH Pages
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_PAT: ${{ secrets.GH_PAT }}

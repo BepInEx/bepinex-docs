@@ -1,0 +1,10 @@
+- name: "Part I: Setting up the development environment"
+  href: 1_setup.md
+- name: "Part II: Writing a basic plug-in class"
+  href: 2_plugin_start.md
+- name: "Part III: Configuration"
+  href: 3_configuration.md
+- name: "Part IV: Logging"
+  href: 4_logging.md
+# - name: "Part V: Distributing"
+#   href: 5_distributing.md

@@ -1,0 +1,7 @@
+- name: Running games on Steam
+  href: steam_interop.md
+- name: Debugging plugins and game assemblies
+  href: debug/toc.yml
+  topicHref: debug/index.md
+- name: Compatibility with other modding frameworks
+  href: compatibility.md

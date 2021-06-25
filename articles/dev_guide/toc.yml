@@ -1,0 +1,9 @@
+- name: "Walkthrough: writing a basic plugin"
+  href: plugin_tutorial/toc.yml
+  topicHref: plugin_tutorial/index.md
+- name: "How to: writing preloader patchers"
+  href: preloader_patchers.md
+- name: "Patching methods in runtime"
+  href: runtime_patching.md
+- name: "Useful plugins and tools for modding"
+  href: dev_tools.md
