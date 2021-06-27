@@ -10,7 +10,7 @@ This is done by writing *plugins* -- classes that inherit from @BepInEx.BaseUnit
 In addition to being loaded by BepInEx and being able to use Unity's and game's APIs, plugins have access to various BepInEx functionalities, such as logging, dependency management and configuration file management.
 Plugins are compiled into .NET DLL files and put into `BepInEx/plugins` folder for BepInEx to load.
 
-In this guide, we will create a simple BepInEx plugin that uses all of features provided by BepInEx.
+In this guide, we will create a simple BepInEx plugin that uses most important features provided by BepInEx.
 
 > [!NOTE]
 > This guide assumes basic knowledge of programming in C#.
