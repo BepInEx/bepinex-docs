@@ -1,6 +1,6 @@
 # BepInEx Documentation
 
-This is the repo for storing documentation related to BepInEx.  
+This is the repo for storing documentation related to [BepInEx](https://github.com/BepInEx/BepInEx).  
 
 ## [View the docs](https://docs.bepinex.dev/)
 
