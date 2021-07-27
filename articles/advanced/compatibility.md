@@ -1,6 +1,6 @@
 ---
 uid: compatibility
-title: Compatibility
+title: External mod loader support
 ---
 
 BepInEx allows for easy integration of other Unity modding frameworks. That way 
@@ -12,13 +12,15 @@ from other frameworks you get the benefits of
 * Support: BepInEx is actively maintained and supported while being fully open-source
 * High compatibility: BepInEx strives to support as many platforms as it can as stable as it can
 
-As of right now, BepInEx has loaders for the following frameworks and tools:
+As of right now, BepInEx 5 has loaders for the following frameworks and tools:
 
 | **Framework/Loader**               | **BepInEx Loader**                                                            | **Status**                                 |
 | ---------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------ |
+| BSIPA (Beat Saber IPA)             | [BepInEx.BSIPA.Loader](https://github.com/BepInEx/BepInEx.BSIPA.Loader)       | Stable, Supports most features             |
 | IPA (Illusion Plugin Architecture) | [IPALoaderX](https://github.com/BepInEx/IPALoaderX)                           | Stable, Maintained, Full interop           |
-| BSIPA (Beat Saber IPA)             | [BepInEx.BSIPA.Loader](https://github.com/BepInEx/BepInEx.BSIPA.Loader)       | Stable, Maintained, Supports most features |
-| Sybaris 2                          | [SybarisLoader](https://github.com/BepInEx/BepInEx.SybarisLoader.Patcher)     | Stable, Maintained, Full interop           |
-| UnityInjector                      | [UnityInjectorLoader](https://github.com/BepInEx/BepInEx.UnityInjectorLoader) | Stable, Maintained, Full interop           |
 | MonoMod Patches                    | [MonoModLoader](https://github.com/BepInEx/BepInEx.MonoMod.Loader)            | Stable, Maintained, Supports most featues  |
+| MuseDash ModLoader                 | [BepInEx.MDML.Loader](https://github.com/BepInEx/BepInEx.MDML.Loader)         | Stable, Maintained, Full interop           |
+| Sybaris 2                          | [SybarisLoader](https://github.com/BepInEx/BepInEx.SybarisLoader.Patcher)     | Stable, Maintained, Full interop           |
+| UMod Framework                     | [BepInEx.uMod.Loader](https://github.com/BepInEx/BepInEx.uMod.Loader)         | Stable, Maintained, Supports most features |
 | Unity Mod Manger                   | [Yan.UMMLoader](https://github.com/hacknet-bar/Yan.UMMLoader)                 | WIP, Maintaned by community, Full interop  |
+| UnityInjector                      | [UnityInjectorLoader](https://github.com/BepInEx/BepInEx.UnityInjectorLoader) | Stable, Maintained, Full interop           |
