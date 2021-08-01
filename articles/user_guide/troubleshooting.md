@@ -78,6 +78,33 @@ Type = MonoBehaviour
 Method = .cctor
 ```
 
+### Harmony backend
+
+On Unity versions 2017 and newer (especially 2018), Harmony and MonoMod.RuntimeDetour may error when trying to patch anything. Here's an example error message:
+
+```
+[Error  : Unity Log] NotImplementedException: Derived classes must implement it
+Stack trace:
+System.Reflection.Module.get_Assembly () (at <e1319b7195c343e79b385cd3aa43f5dc>:0)
+MonoMod.Utils._DMDEmit.Generate (MonoMod.Utils.DynamicMethodDefinition dmd, System.Reflection.MethodBase _mb, System.Reflection.Emit.ILGenerator il) (at <041d70ff506f4f089a67adab0245e45d>:0)
+MonoMod.Utils.DMDEmitMethodBuilderGenerator.GenerateMethodBuilder (MonoMod.Utils.DynamicMethodDefinition dmd, System.Reflection.Emit.TypeBuilder typeBuilder) (at <041d70ff506f4f089a67adab0245e45d>:0)
+MonoMod.Utils.DMDEmitMethodBuilderGenerator._Generate (MonoMod.Utils.DynamicMethodDefinition dmd, System.Object context) (at <041d70ff506f4f089a67adab0245e45d>:0)
+...
+```
+
+This is due to the System.Runtime.Emit implementation in the version of Mono that is bundled with the game being incomplete. This can be fixed by setting the `Preloader.HarmonyBackend` setting to `cecil`, as such:
+
+```ini
+[Preloader]
+
+## Specifies which MonoMod backend to use for Harmony patches. Auto uses the best available backend.
+## This setting should only be used for development purposes (e.g. debugging in dnSpy). Other code might override this setting.
+# Setting type: MonoModBackend
+# Default value: auto
+# Acceptable values: auto, dynamicmethod, methodbuilder, cecil
+HarmonyBackend = cecil
+```
+
 ## Unity 5 and older
 
 ### Change the entrypoint
