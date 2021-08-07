@@ -121,10 +121,11 @@ In the latter case, the *reference* to the AssemblyDefinition is passed. That me
 In addition, the patchers are allowed to have the following methods:
 
 ```csharp
-// Called before patching occurs
+// Called before any patching occurs
 public static void Initialize();
 
-// Called after current patcher is done
+// Called after preloader has patched all assemblies and loaded them in
+// At this point it is fine to reference patched assemblies
 public static void Finish();
 ```
 
