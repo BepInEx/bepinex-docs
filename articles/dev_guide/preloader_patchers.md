@@ -124,7 +124,8 @@ In addition, the patchers are allowed to have the following methods:
 // Called before patching occurs
 public static void Initialize();
 
-// Called after current patcher is done
+// Called after preloader has patched all assemblies and loaded them in
+// At this point it is fine to reference patched assemblies
 public static void Finish();
 ```
 
