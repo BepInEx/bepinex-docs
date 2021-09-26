@@ -1,26 +1,34 @@
 ---
 uid: plugin_dev_index
-title: "How to: create a BepInEx plugin"
+title: "Writing a basic plugin"
 ---
 
-# How to: create a BepInEx plugin
+# Writing a basic plugin
 
-The main purpose of BepInEx is to load user-made code into Unity.
-This is done by writing *plugins* -- classes that inherit from @BepInEx.BaseUnityPlugin.
-In addition to being loaded by BepInEx and being able to use Unity's and game's APIs, plugins have access to various BepInEx functionalities, such as logging, dependency management and configuration file management.
+The primary purpose of BepInEx is to load user-made code into various games.  
+There are a few ways of doing it, but writing *plugins* is the most commonly used approach.
+Plugins are classes that are annotated with @BepInEx.BepInPlugin annotation.
+BepInEx provides a variety of helpers to facilitate logging, configuration, path management and dependency management.
 Plugins are compiled into .NET DLL files and put into `BepInEx/plugins` folder for BepInEx to load.
 
-In this guide, we will create a simple BepInEx plugin that uses all of features provided by BepInEx.
+BepInEx provides some starter templates to make plugin development easier.
+
+In this guide, we will
+
+* install tools necessary for plugin development,
+* set up a basic C# plugin project,
+* use plugin logger to write messages to the console, and
+* read and write configuration files.
 
 > [!NOTE]
-> This guide assumes basic knowledge of programming in C#.
-> In addition, the APIs provided by Unity will not be covered in this guide.  
-> For more information on how to use Unity's scripting API, refer to [Unity User Manual](https://docs.unity3d.com/Manual/index.html).
+> Although this is an introductory guide, an elementary understanding of C# is required.  
+> If you are not familiar with C#, [.NET Academy](https://dotnetcademy.net/) provides a simple step-by-step tutorial.
+>
+> On the contrary, basic knowledge of using command line prompt on your OS is **strongly encouraged**.
 
-Making a BepInEx plugin consists of the following steps:
+The following topics will be covered:
 
 1. [Setting up the development environment](./1_setup.md)
-2. [Creating plugin base](./2_plugin_start.md)
-3. (Optional) [Reading and writing configuration files](./3_configuration.md)
-4. (Optional) [Using loggers to simplify debugging](./4_logging.md)
-5. WIP: Packaging and distributing the plugin
+2. [Creating a new plugin project](./2_plugin_start.md)
+3. [Using loggers to simplify debugging](./3_logging.md)
+4. [Reading and writing configuration files](./4_configuration.md)

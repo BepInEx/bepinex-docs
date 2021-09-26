@@ -1,6 +1,6 @@
 ---
 uid: runtime_patching
-title: Patching methods during runtime
+title: Patching methods at runtime
 ---
 
 # Patching methods during runtime
@@ -32,8 +32,7 @@ Refer to the following guides on how to use HarmonyX:
 
 ## MonoMod.RuntimeDetour
 
-[MonoMod.RuntimeDetour](https://github.com/MonoMod/MonoMod/blob/master/README-RuntimeDetour.md) 
-is a helper library that allows to apply runtime patches as C# objects.
+[MonoMod.RuntimeDetour](https://github.com/MonoMod/MonoMod/blob/master/README-RuntimeDetour.md) is a helper library that allows to apply runtime patches as C# objects.
 
 Alternatively, RuntimeDetour supports defining patches as events.
 

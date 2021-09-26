@@ -3,6 +3,8 @@ uid: troubleshooting
 title: Troubleshooting
 ---
 
+# Troubleshooting
+
 This page outlines some specifics related to running BepInEx of various 
 platforms and Unity versions.  
 Whenever you have a problem starting up BepInEx, most commonly, it's either because of a missing core file or a wrong entry point. 

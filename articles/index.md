@@ -42,8 +42,8 @@ Next, you might want to [configure it and any of the plugins you install](<xref:
 > Always refer to the [API documentation](~/api/index.md) for up-to-date BepInEx API.
 
 If you are a developer, you can check the [plugin creation walkthrough](<xref:plugin_dev_index>) to get acquainted with most of the API of BepInEx.
-Additionally, you should check out [how to use Harmony to patch game methods](<xref:runtime_patching>) and [how to patch game assemblies with Cecil](<xref:preloader_patches>).
+Additionally, you should check out [how to use Harmony to patch game methods](<xref:runtime_patching>).
 
 For more exact documentation on each of BepInEx's feature, consult the [API documentation](~/api/index.md)
 
-Finally, the [advanced guides](<xref:advanced>) contain information on how to debug plugins with dnSpy and elaborate on technical details of BepInEx and Unity modding.
+Finally, the advanced guides contain information on how to debug plugins with dnSpy and elaborate on technical details of BepInEx and Unity modding.

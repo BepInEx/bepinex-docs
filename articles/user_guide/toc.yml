@@ -3,7 +3,5 @@
   topicHref: installation/index.md
 - name: Configuration
   href: configuration.md
-- name: Upgrading
-  href: upgrading.md
 - name: Troubleshooting
   href: troubleshooting.md
