@@ -1,4 +1,4 @@
-- name: "Walkthrough: writing a basic plugin"
+- name: "Writing a basic plugin"
   href: plugin_tutorial/toc.yml
   topicHref: plugin_tutorial/index.md
 - name: "How to: writing preloader patchers"

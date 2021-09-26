@@ -50,6 +50,6 @@ Additionally, you should check out
 For more exact documentation on each of BepInEx's feature, consult the 
 [API documentation](~/api/index.md)
 
-Finally, the [advanced guides](<xref:advanced>) contain information on how to 
+Finally, the advanced guides contain information on how to 
 debug plugins with dnSpy and elaborate on technical details of BepInEx and 
 Unity modding.
