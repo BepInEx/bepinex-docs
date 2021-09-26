@@ -370,6 +370,11 @@ Game-specific libraries depend on the game. In most cases you want to reference 
 >
 > If you get weird compilation errors related to missing types or missing methods, check first if you are referring any problematic assemblies!
 
+> [!IMPORTANT]
+> If possible, do not reference the assemblies directly from the game folder!  
+> Doing so might cause referencing issues in some versions of C# compilers.  
+> Instead, create a `lib` folder inside your plugin project and copy any game assemblies to there that you want to reference.
+
 ## Compiling and testing the plugin
 
 Finally, let us test the default plugin template. In the template, the default code writes `Plugin PluginInfo.PLUGIN_GUID is loaded!` into BepInEx console.
