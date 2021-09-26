@@ -21,4 +21,3 @@ As of right now, BepInEx has loaders for the following frameworks and tools:
 | Sybaris 2                          | [SybarisLoader](https://github.com/BepInEx/BepInEx.SybarisLoader.Patcher)     | Stable, Maintained, Full interop           |
 | UnityInjector                      | [UnityInjectorLoader](https://github.com/BepInEx/BepInEx.UnityInjectorLoader) | Stable, Maintained, Full interop           |
 | MonoMod Patches                    | [MonoModLoader](https://github.com/BepInEx/BepInEx.MonoMod.Loader)            | Stable, Maintained, Supports most featues  |
-| Unity Mod Manger                   | [Yan.UMMLoader](https://github.com/hacknet-bar/Yan.UMMLoader)                 | WIP, Maintaned by community, Full interop  |
