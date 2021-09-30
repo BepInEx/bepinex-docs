@@ -217,7 +217,7 @@ namespace MyFirstPlugin
 
         public override void Load()
         {
-            this.Log = base.Log;
+            Plugin.Log = base.Log;
         }
     }
 }
@@ -244,6 +244,8 @@ namespace MyFirstPlugin
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BasePlugin
     {
+        internal static new ManualLogSource Log;
+
         public override void Load()
         {
             Plugin.Log = base.Log;
