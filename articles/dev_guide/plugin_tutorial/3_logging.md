@@ -246,7 +246,7 @@ namespace MyFirstPlugin
     {
         public override void Load()
         {
-            this.Log = base.Log;
+            Plugin.Log = base.Log;
         }
     }
 }
