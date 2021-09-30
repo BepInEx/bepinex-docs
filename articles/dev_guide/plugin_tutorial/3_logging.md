@@ -186,7 +186,7 @@ namespace MyFirstPlugin
 
         private void Awake()
         {
-            this.Log = base.Logger;
+            Plugin.Log = base.Logger;
         }
     }
 }
