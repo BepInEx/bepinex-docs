@@ -8,7 +8,7 @@ Once all required tools are installed, it is time to create a new project.
 BepInEx plugins require at least one C# file which is annotated with @BepInEx.BepInPlugin.
 In addition, to make plugins code compile, we need to *reference* BepInEx libraries and game-specific libraries.
 
-To make the process easier, we will use a ready plugin template from [BepInEx.Templates](https://nuget.bepinex.dev/packages/BepInEx.Templates) package.
+To make the process easier, we will use a ready plugin template from BepInEx.Templates package [that we installed in the previous part](1_setup.md#installing-bepinex-plugin-templates).
 The templates already include a premade C# file and BepInEx-specific libraries referenced.
 
 In this section, we will
