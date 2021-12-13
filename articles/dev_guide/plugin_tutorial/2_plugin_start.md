@@ -50,6 +50,7 @@ To create a project in the folder, do the following depending on the game type y
 
    ```bash
    dotnet new bep6plugin_unitymono -n MyFirstPlugin -T <TFM> -U <Unity>
+   dotnet restore MyFirstPlugin
    ```
 
    where 
@@ -63,6 +64,7 @@ In the command line prompt, run
 
 ```bash
 dotnet new bep6plugin_il2cpp -n MyFirstPlugin
+dotnet restore MyFirstPlugin
 ```
 
 # [.NET Framework](#tab/tabid-netfw)
@@ -71,6 +73,7 @@ In the command line prompt, run
 
 ```bash
 dotnet new bep6plugin_netfx -n MyFirstPlugin
+dotnet restore MyFirstPlugin
 ```
 
 ***
