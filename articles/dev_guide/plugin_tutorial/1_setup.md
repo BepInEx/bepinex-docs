@@ -16,7 +16,7 @@ All these parts are next discussed in more detail
 ## .NET SDK
 
 > [!NOTE]
-> If you have .NET SDK already installed, you can skip this part.
+> If you have .NET SDK already installed, you can continue to [picking an IDE](#picking-an-ide).
 
 [.NET SDK](https://dotnet.microsoft.com/) is a software development kit (SDK) that allows compiling code written in C# and using different .NET libraries.
 As you may notice later, plugins use different .NET API versions and variations such as *.NET Framework* or *.NET Standard*.
