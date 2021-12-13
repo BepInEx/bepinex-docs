@@ -31,15 +31,14 @@ To create a project in the folder, do the following depending on the game type y
     
     You can follow this general-purpose choice process:
 
-    * If the game has `netstandard.dll` in `<Game Name>_Data/Managed` folder, your TFM is `netstandard2.0`
-    * If the game's `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net46`
+    * If the has `netstandard.dll` in `<Game Name>_Data/Managed` folder or the `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net48`
     * In any other case, or if you are unsure/unable to verify using the methods above, your TFM is `net35`
 
     > [!NOTE]
     > As a general rule, you can always target `net35`.
     > However, the lower TFM, the less standard libraries and methods are available to you.
 
-2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers).
+2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers. e.g. (`2020.3.24`).
    
    There are a few ways of doing it:
 
