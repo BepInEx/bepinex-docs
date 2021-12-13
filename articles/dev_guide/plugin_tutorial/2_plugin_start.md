@@ -31,15 +31,17 @@ To create a project in the folder, do the following depending on the game type y
     
     You can follow this general-purpose choice process:
 
-    * If the game has `netstandard.dll` in `<Game Name>_Data/Managed` folder, your TFM is `netstandard2.0`
-    * If the game's `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net46`
+    * If the game has `netstandard.dll` in `<Game Name>_Data/Managed` folder, your TFM is `netstandard2.0`. If you run into reference errors, target `net472`.  
+    **OR**  
+    * If the game's `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net46`  
+    **OR**  
     * In any other case, or if you are unsure/unable to verify using the methods above, your TFM is `net35`
 
     > [!NOTE]
     > As a general rule, you can always target `net35`.
     > However, the lower TFM, the less standard libraries and methods are available to you.
 
-2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers).
+2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers. e.g. `2020.3.24`).
    
    There are a few ways of doing it:
 
@@ -51,6 +53,7 @@ To create a project in the folder, do the following depending on the game type y
 
    ```bash
    dotnet new bep6plugin_unitymono -n MyFirstPlugin -T <TFM> -U <Unity>
+   dotnet restore MyFirstPlugin
    ```
 
    where 
@@ -64,6 +67,7 @@ In the command line prompt, run
 
 ```bash
 dotnet new bep6plugin_il2cpp -n MyFirstPlugin
+dotnet restore MyFirstPlugin
 ```
 
 # [.NET Framework](#tab/tabid-netfw)
@@ -72,6 +76,7 @@ In the command line prompt, run
 
 ```bash
 dotnet new bep6plugin_netfx -n MyFirstPlugin
+dotnet restore MyFirstPlugin
 ```
 
 ***
