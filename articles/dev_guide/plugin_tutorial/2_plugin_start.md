@@ -38,7 +38,7 @@ To create a project in the folder, do the following depending on the game type y
     > As a general rule, you can always target `net35`.
     > However, the lower TFM, the less standard libraries and methods are available to you.
 
-2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers. e.g. (`2020.3.24`).
+2. Determine *Unity version* of your game (in format `X.Y.Z` where `X`, `Y` and `Z` are integers. e.g. `2020.3.24`).
    
    There are a few ways of doing it:
 
