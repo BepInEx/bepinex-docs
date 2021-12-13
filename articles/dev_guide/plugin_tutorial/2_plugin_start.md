@@ -31,10 +31,10 @@ To create a project in the folder, do the following depending on the game type y
     
     You can follow this general-purpose choice process:
 
-    * If the game has `netstandard.dll` in `<Game Name>_Data/Managed` folder, your TFM is `netstandard2.0`, or if you run into reference errors target `net472`
-    **OR**
-    * If the game's `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net46`
-    **OR**
+    * If the game has `netstandard.dll` in `<Game Name>_Data/Managed` folder, your TFM is `netstandard2.0`, or if you run into reference errors target `net472`  
+    **OR**  
+    * If the game's `mscorlib.dll` file version (right click the file -> `Properties` -> `Details`) is at least `4.0.0.0` or newer, your TFM is `net46`  
+    **OR**  
     * In any other case, or if you are unsure/unable to verify using the methods above, your TFM is `net35`
 
     > [!NOTE]
