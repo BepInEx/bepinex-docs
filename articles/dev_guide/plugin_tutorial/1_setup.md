@@ -16,7 +16,7 @@ All these parts are next discussed in more detail
 ## .NET SDK
 
 > [!NOTE]
-> If you have .NET SDK already installed, you can continue to [picking an IDE](#picking-an-ide).
+> If you have .NET SDK (version 6 or newer) already installed, you can continue to [picking an IDE](#picking-an-ide).
 
 [.NET SDK](https://dotnet.microsoft.com/) is a software development kit (SDK) that allows compiling code written in C# and using different .NET libraries.
 As you may notice later, plugins use different .NET API versions and variations such as *.NET Framework* or *.NET Standard*.
@@ -44,7 +44,7 @@ If you have installed .NET SDK correctly, the command should return at least one
 An example output is:
 
 ```txt
-5.0.201 [C:\Program Files\dotnet\sdk]
+6.0.1 [C:\Program Files\dotnet\sdk]
 ```
 
 Once you have at least one .NET SDK version installed, you can choose a code editor.
