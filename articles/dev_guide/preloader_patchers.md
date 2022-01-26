@@ -1,5 +1,5 @@
 ---
-uid: preloader_patches
+uid: preloader_patchers
 title: Using preloader patchers
 ---
 
@@ -16,6 +16,8 @@ It is still recommended that *you use Harmony wherever possible* because
 Harmony makes sure all patches are compatible with each other. Use Mono.Cecil 
 only if something cannot be done by Harmony (more info below).
 
+Note: The contract for preloader patchers has changed between BepInEx v5 and v6.
+
 ## Difference from runtime patchers
 
 Because preload-time patchers are run *before* the assemblies are loaded into 
@@ -28,6 +30,7 @@ assemblies.
 | **Used contract**                           | Written in a separate DLL, uses a special contract    | Written in plug-in DLL, uses Harmony's API       |
 | **Application time**                        | Applied on raw assemblies before the game initializes | Applied on assemblies already loaded in memory   |
 | **Can apply hooks**                         | Yes                                                   | Yes, as long as the target is not inlined by JIT |
+| **Can reference game assembly directly**    | No                                                    | Yes                                              |
 | **Can rewrite methods' IL**                 | Yes                                                   | Yes                                              |
 | **Can modify field/method propeties**       | Everything                                            | Partially                                        |
 | **Can add new classes, methods and fields** | Yes                                                   | No                                               |
@@ -46,102 +49,109 @@ the assembly. For hooking methods use Harmony.
 
 Assuming you know how to use an IDE of your choice, you will need to
 
-* Create an assembly (DLL) project targeting .NET 3.5
+* Create an assembly (DLL) project targeting the same .NET version as regular plugins for your game
 * Remove references to all unused imports
-* Add a reference to Mono.Cecil 0.10 (you can get it on NuGet, for instance, 
-  or use the one prepackaged with BepInEx)
+* Add a reference to Mono.Cecil (use 0.10.3 for Unity Mono, otherwise the latest version). You can get it on NuGet, for instance, 
+  or use the one prepackaged with BepInEx
 * Add one or more patcher classes (example below)
 
-### Patcher contract
+### Patcher plugin
 
-BepInEx considers a patcher *any class* that has the following members:
-
-* Property `public static IEnumerable<string> TargetDLLs { get; }` that 
-  contains a list of assembly names (including the extension).
-* Method `public static void Patch(AssemblyDefinition assembly)` that applies 
-  the changes to the assembly itself.
-
-Here is an example of a valid patcher:
+A patcher plugin's skeleton is similar to a regular plugin:
 
 ```csharp
-using System.Collections.Generic;
-using Mono.Cecil;
-
-public static class Patcher
+[PatcherPluginInfo("io.bepis.mytestplugin", "My Test Plugin", "1.0")]
+class EntrypointPatcher : BasePatcher
 {
-    // List of assemblies to patch
-    public static IEnumerable<string> TargetDLLs { get; } = new[] {"Assembly-CSharp.dll"};
+    public override void Initialize() { }
 
-    // Patches the assemblies
-    public static void Patch(AssemblyDefinition assembly)
-    {
-        // Patcher code here
-    }
+    public override void Finalize() { }
+
+    ...
 }
 ```
 
-### Specifying target DLLs
+Notable things:
+* Instead of using `[BepInPlugin]`, you use `[PatcherPluginInfo]` instead.
+* The base class is `BasePatcher`.
+* There are two methods you can override related to the patching engine lifecycle.
+* There is no constructor (or if there is, it has no parameters).
+* Patches are declared as additional methods (see below).
 
-To specify which assemblies are to be patched, create a 
-`public static IEnumerable<string> TargetDLLs` getter property.  
+You have access to the same base properties that regular plugins do; i.e. `Log`, `Config` and and `Info`. You also have access to `Context`, which is an object that contains the current information that the assembly patcher engine within BepInEx is currently using. For example, you can use it to find out which other patcher plugins are loaded, which assemblies can be patched, which patches have already been applied etc.
 
-Note that `TargetDLLs` is enumerated during *patching*, not before. That means 
-the following enumerator is valid:
+**Note that your patcher plugin GUID must be unique, even against regular plugins!** Because patcher plugins have their own configuration files now, they must also have a unique GUID so that there aren't any conflicts when loading / saving configuration settings.
+
+### Lifecycle
+
+This is the lifecycle of the patcher engine within BepInEx:
+
+1. All `.dll` files within `BepInEx/patchers` are examined to see if they contain any patcher plugins. The ones that do are loaded as assemblies.
+2. Every discovered patcher plugin is instantiated once (by calling the constructor).
+3. All patcher plugins have their `Initialize()` function called.
+4. Every patching method within each patcher plugin is executed, against the targeted type / assembly. Any unhandled exceptions are logged.
+5. All patcher plugins have their `Finalize()` function called.
+6. Patcher engine unloads all loaded `AssemblyDefinition` and `TypeDefinition` objects.
+
+Use your `Initialize` method for code that needs to run first exactly once, and your `Finalize` method for code that needs to run last exactly once.
+
+### Patch methods
+
+Patch methods are much more declarative now, very similar to declaring Harmony patches. Here is an example declaration:
 
 ```csharp
-public static IEnumerable<string> TargetDLLs => GetDLLs();
-
-public static IEnumerable<string> GetDLLs()
+[TargetAssembly("Assembly-CSharp.dll")]
+public void PatchAssembly(AssemblyDefinition assembly)
 {
-    // Do something before patching Assembly-CSharp.dll
-
-    yield return "Assembly-CSharp.dll";
-
-    // Do something after Assembly-CSharp has been patched, and before UnityEngine.dll has been patched
-
-    yield return "UnityEngine.dll";
-
-    // Do something after patching is done
+    ...
 }
 ```
 
-### Patch method
+You can target assemblies, or specific types (detailed below).
 
-A valid patcher method has **one** of the following signatures:
+Patch methods must not be static or abstract. They can be any visibility, however.
 
-```csharp
-public static void Patch(AssemblyDefinition assembly);
-public static void Patch(ref AssemblyDefinition assembly);
-```
+They can have `void` or `bool` as a return type. In the case of `bool`, the return value specifies if the targeted assembly or type has been modified by the patcher. This is important, because if you tell BepInEx that the patch method hasn't actually patched anything, then it won't mark the assembly / types you've requested as modified. With a `void` return type, BepInEx will always assume that you have performed modifications.
 
-In the latter case, the *reference* to the AssemblyDefinition is passed. That means it is possible to fully swap an assembly for a different one.
+If you have an `AssemblyDefinition` as the first parameter, then you can also define it as `ref` if you wish to replace it with another definition entirely. This is useful if you want to replace an assembly with another one you have shipped yourself, for example.
 
-### Patcher initialiser and finaliser
+You can also provide a second `string` parameter, which will contain the (relative) filename of the assembly. If you are targeting a type, then it will return the filename of the assembly that the type belongs to.
 
-In addition, the patchers are allowed to have the following methods:
+For patch methods that target assemblies, you can specify multiple assemblies:
 
 ```csharp
-// Called before patching occurs
-public static void Initialize();
-
-// Called after preloader has patched all assemblies and loaded them in
-// At this point it is fine to reference patched assemblies
-public static void Finish();
+[TargetAssembly("Assembly-CSharp.dll")]
+[TargetAssembly("UnityEngine.dll")]
+public void PatchAssembly(AssemblyDefinition assembly, string filename)
+{
+    ...
+}
 ```
 
-### Logging
+Which will then run that patch method twice, once for each assembly. There is also the option of specifying all available assemblies:
 
-BepInEx allows to either use the Standard Output (provided through `Console` 
-class) or -- more fittingly -- the methods provided by [`System.Diagnostics.Trace`](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace(v=vs.110).aspx) 
-class.
+```csharp
+[TargetAssembly(TargetAssemblyAttribute.AllAssemblies)]
+public void PatchAssembly(AssemblyDefinition assembly, string filename)
+{
+    ...
+}
+```
 
-With BepInEx 5 you can also use @BepInEx.Logging.Logger.CreateLogSource(System.String)
-to use BepInEx's own logging system.
+As stated above you also have the option of specifying specific types. For example:
 
-### Deploying and using
+```csharp
+[TargetType("Assembly-CSharp.dll", "GameNamespace.GameClass")]
+public void PatchAssembly(TypeDefinition type)
+{
+    ...
+}
+```
 
-Build the project as a separate DLL from the plug-in. Place the DLL in 
-`BepInEx/patchers` and run the game.
+The first parameter of the attribute is the filename of the assembly where the type belongs, and the second parameter is the full name of the type you wish to patch (including namespaces).
+
+* You're able to specify additional `[TargetType]` attributes to specify more types to run the patcher for, however you **cannot** mix-and-match `[TargetType]` and `[TargetAssembly]`.
+* You're also able to specify an additional `string` parameter for the assembly filename, however you cannot specify the first parameter as `ref`.
 
 ## Notes and tips
 
@@ -150,38 +160,6 @@ Build the project as a separate DLL from the plug-in. Place the DLL in
 * **Do not mix plug-in DLL with patcher DLL!** Plugins often reference 
   assemblies that must be patched, which will cause the assemblies to be 
   loaded prematurely.
-* You cannot patch `mscorlib.dll`. In addition,the following assemblies cannot 
-  be patched or replaced (BepInEx 4.0): `System.dll`, `System.Core.dll`. Either 
-  use Harmony or edit these assemblies permanently.
-* Because `TargetDLLs` is iterated only once, you can do initialization work 
-  there (i.e. reading a configuration file).
-    Note that you don't have to specify the target DLLs on compile time:
-    ```csharp
-    public static IEnumerable<string> TargetDLLs 
-    { 
-        get 
-        {
-            // Do whatever pre-patcher work...
-            
-            string[] assemblies = // Get asseblies dynamically (i.e from configuration file);
-            return assemblies;
-        } 
-    }
-    ```
-* When you specify many target DLLs, you can change patching behaviour by 
-  checking the assembly's name:
-    ```csharp
-    public static void Patch(AssemblyDefinition assembly)
-    {
-        if (assembly.Name.Name == "Assembly-CSharp")
-        {
-            // The assembly is Assembly-CSharp.dll
-        }
-        else if (assembly.Name.Name == "UnityEngine")
-        {
-            // The assembly is UnityEngine.dll
-        }
-    }
-    ```
-* You can use `Config` class provided by BepInEx to read and save configuration 
-  options.
+* You cannot patch some assemblies, as they are required for the assembly patcher to execute.
+  The list of assemblies that cannot be patched are (BepInEx 6.0): `mscorlib.dll`, `System.dll`, `System.Core.dll`.
+  Either use Harmony or edit these assemblies permanently.

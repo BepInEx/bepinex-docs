@@ -3,5 +3,7 @@
   topicHref: plugin_tutorial/index.md
 - name: "Patching methods at runtime"
   href: runtime_patching.md
+- name: "Using preloader patchers"
+  href: preloader_patchers.md
 - name: "Useful plugins and tools for modding"
   href: dev_tools.md
