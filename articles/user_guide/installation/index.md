@@ -23,7 +23,7 @@ Stable builds are released once a new iteration of BepInEx is considered feature
 They may have only minor bugs, but some newest features might not be available.  
 **It is recommended to use stable builds in most cases.**
 
-**Bleeding edge builds** are available on [BepisBuilds](https://builds.bepis.io/projects/bepinex_be).
+**Bleeding edge builds** are available on [BepInBuilds](https://builds.bepinex.dev/projects/bepinex_be).
 Bleeding edge builds are always the latest builds of the source code. Thus they are the opposite of stable builds: they have the newest features and bugfixes available but usually tend to be the most buggy.  
 Therefore you should only use bleeding edge builds if you are asked to or if you want to preview the upcoming version of BepInEx.
 
