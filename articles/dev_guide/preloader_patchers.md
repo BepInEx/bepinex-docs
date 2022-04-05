@@ -65,7 +65,7 @@ class EntrypointPatcher : BasePatcher
 {
     public override void Initialize() { }
 
-    public override void Finalize() { }
+    public override void Finalizer() { }
 
     ...
 }
@@ -90,10 +90,10 @@ This is the lifecycle of the patcher engine within BepInEx:
 2. Every discovered patcher plugin is instantiated once (by calling the constructor).
 3. All patcher plugins have their `Initialize()` function called.
 4. Every patching method within each patcher plugin is executed, against the targeted type / assembly. Any unhandled exceptions are logged.
-5. All patcher plugins have their `Finalize()` function called.
+5. All patcher plugins have their `Finalizer()` function called.
 6. Patcher engine unloads all loaded `AssemblyDefinition` and `TypeDefinition` objects.
 
-Use your `Initialize` method for code that needs to run first exactly once, and your `Finalize` method for code that needs to run last exactly once.
+Use your `Initialize` method for code that needs to run first exactly once, and your `Finalizer` method for code that needs to run last exactly once.
 
 ### Patch methods
 
