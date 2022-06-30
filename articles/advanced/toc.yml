@@ -1,5 +1,7 @@
-- name: Running games on Steam
+- name: Running native Unix games through Steam
   href: steam_interop.md
+- name: Running under Proton/Wine (Linux/Mac/SteamOS/etc.)
+  href: proton_wine.md
 - name: Debugging plugins and game assemblies
   href: debug/toc.yml
   topicHref: debug/index.md

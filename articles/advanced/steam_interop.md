@@ -1,13 +1,19 @@
 ---
 uid: steam_interop
-title: Running games on Steam
+title: Running native Unix games through Steam
 ---
 
-## Unix platforms (native games)
+## Running native Unix games through Steam
 
-On Unix platforms, Steam provides a way to run launch scripts directly 
-before running the original game. The process is similar for both 
-Linux and macOS, but with one key difference.
+To make a native game work with BepInEx you need to run it through a script, 
+which can cause issues with Steam since it will want to run the game executable 
+directly and can restart the game if you try to run it from outside of Steam, 
+preventing BepInEx from being used.
+
+Thankfully, Steam provides a way to run launch scripts directly before running 
+the original game. This guide will use this feature to fix the above issue.
+
+The process is similar for both Linux and macOS, but with one key difference.
 
 ### 1. Download and install BepInEx
 
@@ -82,50 +88,3 @@ Open `BepInEx/config/BepInEx.cfg` in a text editor of your choice.
 All options are documented directly in the configuration file.
 
 Additionally, refer to refer to the [configuration guide](<xref:configuration>) for more information.
-
-## Proton/Wine
-
-> [!NOTE]
-> Instructions on using BepInEx with proton are based on a guide from 
-> [R2Wiki](https://github.com/risk-of-thunder/R2Wiki/wiki/Getting-BepInEx-Console-Working-on-Linux)
-
-Setting up BepInEx with Wine requires primarily configuring the DLL forwarding 
-to work correctly. **We strongly recommend to use Proton**, but it is not an 
-absolute requirement.
-
-### Open winecfg for the target game
-
-With proton the easiest way to do so is via 
-[`protontricks`](https://github.com/Matoking/protontricks) 
-(or similarly with `winetricks` which is not covered here). 
-Open the terminal and type
-
-```sh
-protontricks --gui
-```
-
-Next, select the game you want to configure
-
-![Select the game from library in protontricks](images/protontricks_select.png)
-
-Next, in winetricks menu select `Select default wineprefix` option and press OK:
-
-![Select "Select default wineprefix" option](images/protontricks_wineprefix.png)
-
-Finally, select `Run winecfg` and click OK:
-
-![Select "Run winecfg" and click OK](images/protontricks_winecfg.png)
-
-This will open winecfg.
-
-### Configure proxy to run
-
-BepInEx relies on `winhttp.dll` proxy DLL to inject itself into Unity games. 
-On wine the proxy should be configured manually.
-
-In winecfg, select `Libraries` tab. Under `New override for library` dropbox, 
-select `winhttp` and `Click` add:
-
-![Add "winhttp" library override in winecfg Libraries tab](images/winecfg_add_lib.png)
-
-Finally click `Apply` and you're done. Running the game should now run BepInEx.
