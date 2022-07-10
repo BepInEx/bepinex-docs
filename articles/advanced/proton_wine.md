@@ -29,8 +29,8 @@ Open the terminal and type
 protontricks --gui
 ```
 
-> [!Note for Steam Deck users]
-> The command protontricks --gui most likely won't work. Instead, you need to install protontricks via discovery store, and then launch it via the Steam search bar. Launching it via discovery store won't work.
+> [!NOTE]
+> If you have a Steam Deck, the `protontricks --gui` command most likely won't work. Instead, you need to install protontricks via discovery store, and then launch it via the Steam search bar. Launching it via discovery store won't work.
 > 
 > If you managed to make this guide work on Steam Deck please let us know of any differences, or consider submitting an edit!
 
