@@ -1,0 +1,1051 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class ConfigEntryBase
+ | BepInEx Docs </title>
+    <meta name="title" content="Class ConfigEntryBase
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Class ConfigEntryBase
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                <span>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+        </span>
+            <span>
+                <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+            </span>
+        </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Configuration.html" class="active">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html" class="active">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_Configuration_ConfigEntryBase" data-uid="BepInEx.Configuration.ConfigEntryBase">Class ConfigEntryBase
+  </h1>
+  <div class="class-summary"><p>Container for a single setting of a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.
+Each config entry is linked to one config file.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  <div class="inheritance class-metadata">
+    <h5>Inheritance</h5>
+    <span class="level0" style="--inheritance-level: 0;"><span class="xref">System.Object</span></span>
+    <span class="level1" style="--inheritance-level: 1;"><span class="xref">ConfigEntryBase</span></span>
+      <span class="level2" style="--inheritance-level: 2;"><a class="xref" href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a></span>
+  </div>
+  
+  
+  
+  
+  <div class="inheritedMembers class-metadata">
+    <h5>Inherited Members</h5>
+  
+    <span>
+      <span class="xref">System.Object.ToString()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetType()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </span>
+  
+  </div>
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.Configuration.html">BepInEx.Configuration</a></div>
+  <div><strong>Assembly</strong>: BepInEx.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_Configuration_ConfigEntryBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ConfigEntryBase</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_BoxedValue" data-uid="BepInEx.Configuration.ConfigEntryBase.BoxedValue">BoxedValue</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_BoxedValue.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.BoxedValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L107">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_BoxedValue_" data-uid="BepInEx.Configuration.ConfigEntryBase.BoxedValue*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Get or set the value of the setting.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract object BoxedValue { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Object</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_ConfigFile" data-uid="BepInEx.Configuration.ConfigEntryBase.ConfigFile">ConfigFile</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_ConfigFile.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.ConfigFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L82">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_ConfigFile_" data-uid="BepInEx.Configuration.ConfigEntryBase.ConfigFile*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Config file this entry is a part of.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfigFile ConfigFile { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_DefaultValue" data-uid="BepInEx.Configuration.ConfigEntryBase.DefaultValue">DefaultValue</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_DefaultValue.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.DefaultValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L102">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_DefaultValue_" data-uid="BepInEx.Configuration.ConfigEntryBase.DefaultValue*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Default value of this setting (set only if the setting was not changed before).</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object DefaultValue { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Object</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_Definition" data-uid="BepInEx.Configuration.ConfigEntryBase.Definition">Definition</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_Definition.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.Definition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L87">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_Definition_" data-uid="BepInEx.Configuration.ConfigEntryBase.Definition*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Category and name of this setting. Used as a unique key for identification within a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfigDefinition Definition { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_Description" data-uid="BepInEx.Configuration.ConfigEntryBase.Description">Description</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_Description.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L92">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_Description_" data-uid="BepInEx.Configuration.ConfigEntryBase.Description*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Description / metadata of this setting.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfigDescription Description { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_SettingType" data-uid="BepInEx.Configuration.ConfigEntryBase.SettingType">SettingType</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_SettingType.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.SettingType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L97">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_SettingType_" data-uid="BepInEx.Configuration.ConfigEntryBase.SettingType*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Type of the <a class="xref" href="BepInEx.Configuration.ConfigEntryBase.html#BepInEx_Configuration_ConfigEntryBase_BoxedValue">BoxedValue</a> that this setting holds.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type SettingType { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Type</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_ClampValue__1___0_" data-uid="BepInEx.Configuration.ConfigEntryBase.ClampValue``1(``0)">ClampValue&lt;T&gt;(T)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_ClampValue__1___0_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.ClampValue%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L136">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_ClampValue_" data-uid="BepInEx.Configuration.ConfigEntryBase.ClampValue*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>If necessary, clamp the value to acceptable value range. T has to be equal to settingType.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected T ClampValue&lt;T&gt;(T value)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">T</span></code></td>
+        <td><span class="parametername"><code>value</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">T</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><span class="parametername"><code>T</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_GetSerializedValue" data-uid="BepInEx.Configuration.ConfigEntryBase.GetSerializedValue">GetSerializedValue()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_GetSerializedValue.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.GetSerializedValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L112">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_GetSerializedValue_" data-uid="BepInEx.Configuration.ConfigEntryBase.GetSerializedValue*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Get the serialized representation of the value.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSerializedValue()</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_OnSettingChanged_System_Object_" data-uid="BepInEx.Configuration.ConfigEntryBase.OnSettingChanged(System.Object)">OnSettingChanged(Object)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_OnSettingChanged_System_Object_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.OnSettingChanged(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L146">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_OnSettingChanged_" data-uid="BepInEx.Configuration.ConfigEntryBase.OnSettingChanged*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Trigger setting changed event.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnSettingChanged(object sender)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.Object</span></code></td>
+        <td><span class="parametername"><code>sender</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_SetSerializedValue_System_String_" data-uid="BepInEx.Configuration.ConfigEntryBase.SetSerializedValue(System.String)">SetSerializedValue(String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_SetSerializedValue_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.SetSerializedValue(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L120">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_SetSerializedValue_" data-uid="BepInEx.Configuration.ConfigEntryBase.SetSerializedValue*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Set the value by using its serialized form.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSerializedValue(string value)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>value</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigEntryBase_WriteDescription_System_IO_StreamWriter_" data-uid="BepInEx.Configuration.ConfigEntryBase.WriteDescription(System.IO.StreamWriter)">WriteDescription(StreamWriter)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase_WriteDescription_System_IO_StreamWriter_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase.WriteDescription(System.IO.StreamWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ea425e697bec87a6ac0c4c9be800dfa9f8ba43a0/BepInEx/Configuration/ConfigEntryBase.cs/#L154">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigEntryBase_WriteDescription_" data-uid="BepInEx.Configuration.ConfigEntryBase.WriteDescription*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Write a description of this setting using all available metadata.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteDescription(StreamWriter writer)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.IO.StreamWriter</span></code></td>
+        <td><span class="parametername"><code>writer</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.16/apiSpec/new?filename=BepInEx_Configuration_ConfigEntryBase.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigEntryBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

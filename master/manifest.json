@@ -1,0 +1,2082 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/bepinex-docs/bepinex-docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "pTSR0Vn43Oot9nTO1uTGdtgnjGZjBizP05WxX2jlCOw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BaseUnityPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BaseUnityPlugin.html",
+          "hash": "7BdNeFSN1E5I+fSf1dhCPanWYPhFxupRSNj9PrCGxw4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BepInDependency.DependencyFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BepInDependency.DependencyFlags.html",
+          "hash": "hJOF3ACDH4Joe0IMXFq30KeXXmiV2V5/u3tppQT8ezs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BepInDependency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BepInDependency.html",
+          "hash": "4ZTEkLKKvRpYdTowQUAEPsn9sbRs4uEMuC2ATdyQ21M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BepInIncompatibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BepInIncompatibility.html",
+          "hash": "5kyfomR+8aW8gSeHKkxDXPJQvH5N/mVOpzTC4NsFMV4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BepInPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BepInPlugin.html",
+          "hash": "LinN5AFn+EhgCarRHW42v9GTrkm88X2G/os2SyCKW00="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.BepInProcess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.BepInProcess.html",
+          "hash": "pqbiWx1Dd0LuQ/hImMQ7xUYq/Tb0ON5oB6cPvF4ppUg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Bootstrap.BaseChainloader-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Bootstrap.BaseChainloader-1.html",
+          "hash": "CD6vuCun3cH2deE/r1up/bqgFjK71uFjFxPUsItuykM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Bootstrap.CachedAssembly-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Bootstrap.CachedAssembly-1.html",
+          "hash": "+XJ8U4UrcVX3YKdJOfqKf9F9rF/0KCo9cjZ4UwdyQPQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Bootstrap.ICacheable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Bootstrap.ICacheable.html",
+          "hash": "Oojyz6Jq0j6kJOCxUwnDGESE6ynHpX8yDPc7quxWYt8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Bootstrap.TypeLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Bootstrap.TypeLoader.html",
+          "hash": "89UeTozwXUjMw4rPznQOzgbV/UfInhuslBJqerHCjwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Bootstrap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Bootstrap.html",
+          "hash": "HS+nq8goKPyi1sfuiXuuiJ8dfJPfW2nGdthOXO3ooVk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.AcceptableValueBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.AcceptableValueBase.html",
+          "hash": "lHkQMnxlX6dSjH+vZNUZ73EF/XAo3snS92zMEimPEig="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.AcceptableValueList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.AcceptableValueList-1.html",
+          "hash": "Hjot/NIGaTpEwUHO18CeEz1UWqfSy0ox3sgadG9C1pY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.AcceptableValueRange-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.AcceptableValueRange-1.html",
+          "hash": "klAV4Po7qfvIt1CgL7asLof16CCzkOR88QAGysw4y+4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigDefinition.html",
+          "hash": "k5wBXnKDvXdDvtr1V3d5hQytBOBnA3VRhIehU1i/uLU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigDescription.html",
+          "hash": "GlrShPhGSV0KT7Z96DV5j8sIrj1nvq5BEILJ5weBBMA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigEntry-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigEntry-1.html",
+          "hash": "/dp+xj0def8u6mQtsmI6fWUe6KpCS76tDuoziOgI9cM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigEntryBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigEntryBase.html",
+          "hash": "T/FvFolsxvPFm2FOG40yJ+yg5lszW/YmyXD/8OvDLYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigFile.html",
+          "hash": "BzgeKSjr/U/XUo3ToUe9wHtMWh9FeWiUknUYf3SQO/k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.ConfigWrapper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.ConfigWrapper-1.html",
+          "hash": "AqjKfcDXu5V6tkNfjds2rnsuMWn1jabZxJPb4NOfQs8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.KeyboardShortcut.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.KeyboardShortcut.html",
+          "hash": "kouc7axHNQUl15tS6/5OFjK5tKi5FUB1xigjn/IhOg8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.SettingChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.SettingChangedEventArgs.html",
+          "hash": "uyqxU9M76kKGl7d2lgeHvO+HHwvBSq4xvM2P/YeZjPc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.TomlTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.TomlTypeConverter.html",
+          "hash": "NKdIU8WPkR1FB5zhBtIp4EEFrrMI8qKkgbpNKfwj2uU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.TypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.TypeConverter.html",
+          "hash": "/is6DSjkPLfVvJTXkHfP3127wyX7s+hD8yULtJSYDVg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Configuration.html",
+          "hash": "8xu7QPYwdgrUXMHKLpjWqUYG6SsCwX6ecHqc1JL0e/g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.ConsoleManager.ConsoleOutRedirectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.ConsoleManager.ConsoleOutRedirectType.html",
+          "hash": "XJnApYeutDox2A5Bz5Yg0wAxmSdfAMmK3JNcTd07GgQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.ConsoleManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.ConsoleManager.html",
+          "hash": "RiDI6XisE/QlQ8JSakT+uIgqqE8Hx3fFHo5FED8KyWY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExDebugLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExDebugLogInterpolatedStringHandler.html",
+          "hash": "yNCSYArBy2EAY6Gc9+vpvH3bmm8/JpSS5YeUDnmALn0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExErrorLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExErrorLogInterpolatedStringHandler.html",
+          "hash": "AHYLz1Or88aGiw7RkwpoDo1DxIqlJk6RzPbkqLriQ2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExFatalLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExFatalLogInterpolatedStringHandler.html",
+          "hash": "52hvoHpV6lsozS1t5TyNOyl1zobQzz+tQ+nuzDmr3z4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExInfoLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExInfoLogInterpolatedStringHandler.html",
+          "hash": "Z66saF51giNqTzg3HNcIDhn2/M7M4ayjH3TeUgpFjRY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExLogInterpolatedStringHandler.html",
+          "hash": "juT7WTI5mS5+n3s2CTtwfdxNySUWrSOX5c1O9l9IRoc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExMessageLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExMessageLogInterpolatedStringHandler.html",
+          "hash": "FZgibOA+WdOSSssjZPkwLLOGlHxeLGrLoRvdv1wft8I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExWarningLogInterpolatedStringHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.BepInExWarningLogInterpolatedStringHandler.html",
+          "hash": "bQUkBqnjNusk2FGG8rV1M0SO+51MVzikO7LLZ64ex5E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Core.Logging.Interpolation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Core.Logging.Interpolation.html",
+          "hash": "x0GF/z2E/+EZtHOiJAMCeFjZ3jNAxDeVk/XO3IBA4GA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.BasePlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.BasePlugin.html",
+          "hash": "YdnFgWkRsgFCfKP2cnJx54hiMSj1sN3XnA1oFjb8oYs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.DetourGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.DetourGenerator.html",
+          "hash": "g4FPJn7OzhPv5q2+T8vbo+ksNnz1+UsmhTFTgPLImDU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Hook.FastNativeDetour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Hook.FastNativeDetour.html",
+          "hash": "zObKj79Z1klf40B9Kygmai5EHG+kyMWtu/72mNz926w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Hook.IL2CPPDetourMethodPatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Hook.IL2CPPDetourMethodPatcher.html",
+          "hash": "fHKfmzpceU2j2TTrnaRUXsKiBHW0SspMxWS/jcZ6thY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Hook.UnhollowerDetourHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Hook.UnhollowerDetourHandler.html",
+          "hash": "Jbo4xZ77rSFANs2llcojxVKoUc+hHz+eT51vN0jue68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Hook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Hook.html",
+          "hash": "OKJN8Za1uNeHLmOGH+e2nyjwSFDU0W8vAJJVSxzEcRY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.IL2CPPChainloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.IL2CPPChainloader.html",
+          "hash": "lEQ68IB459OB2eFUVuKXQitha6zl3yVHYvv3I8ZRjPk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Logging.IL2CPPLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Logging.IL2CPPLogSource.html",
+          "hash": "qFEIHY4lxCuJfZeUv5Bc/jYQpMHhDUjzsM4S3GuVUYg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Logging.IL2CPPUnityLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Logging.IL2CPPUnityLogSource.html",
+          "hash": "vVj09BXyv0dQ11Ldb4jMzOukfvCbrKZaZ3i+35Z2sWk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Logging.html",
+          "hash": "TDGYTkgrxG/1vCKgm/tNEEpVNbk3yG0vTXk7lVViIWs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Preloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Preloader.html",
+          "hash": "bh2IQRU94lCPe7YlkoyWGQ2FsOykFgebInfVa7uXAqw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.UnityEngine.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.UnityEngine.Input.html",
+          "hash": "wxgWrz5hiTgd2gQLxaC5xpTipd61AKOuvmOaw/vD5nA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.UnityEngine.KeyCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.UnityEngine.KeyCode.html",
+          "hash": "WXIme24nCpzyDcQGFPjFrHPGZ+QDrQMVopAe/ppkS1I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.UnityEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.UnityEngine.html",
+          "hash": "MzuuKyXQllgy6VHYgSBBPJS0PP5plPhrtrYoAqTjTPg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.CollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.CollectionExtensions.html",
+          "hash": "/PE0l5fv1vyAcbr7RzHUQVt7vbYxvQkBjXdN0yCIOiE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerable.html",
+          "hash": "1gq9Bp5SPa8IIldmL9MuuLE/ZiwFVt4WU8fwc3B03pE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerator.html",
+          "hash": "WmPKTj376J3AuxPdkQKgB/LRnaAC4nFd42x+WufTddA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerable.html",
+          "hash": "pefcWkkVvPvUqUIgsEqxEEHBZhwc61gCmBXPCU5ELVM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerator.html",
+          "hash": "3t2Ga+8TDz1I6aKFGrKorQ9wpyxN41F3Fr9RchFuqBM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.Collections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.Collections.html",
+          "hash": "eAlI3X4YE6Vv5Bv9UC/obooWkF2/hxJScRXkkvd0zV8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.MonoBehaviourExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.MonoBehaviourExtensions.html",
+          "hash": "L9fwpHAf/JLj713b59ENIvLO0Pj1MQlnDt+aSWuR8IM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.Utils.html",
+          "hash": "/4g/nFgv6E7BOg89ulm9M+xAdM7wh4cLir3Pbj5u53Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.IL2CPP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.IL2CPP.html",
+          "hash": "H8mQaFDnrzdYCm+WQbEvw1x2dQFWg4Vvf7vgMLTggIk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.ConsoleLogListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.ConsoleLogListener.html",
+          "hash": "ykWPuJLTn1DWulOBPzlS4V+b1zTYlVN425Xg3YbnXW8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.DiskLogListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.DiskLogListener.html",
+          "hash": "y39SclII39sXLDttSi+sj4i3uTUhEwgFG1Eyih+EIRI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.HarmonyLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.HarmonyLogSource.html",
+          "hash": "4dnAW3DijYeK1x27HZeKUtjBNCNzP6jiStbm/CBdFTw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.ILogListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.ILogListener.html",
+          "hash": "KZecpbOK9Za/BEKdAb/bI3hexeO+hxJ40OScQwn89LU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.ILogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.ILogSource.html",
+          "hash": "e0jrWL5y+stjb4UlsoS7BpbdoQhxNtr1gBn+uBPeFMY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.LogEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.LogEventArgs.html",
+          "hash": "nthYPFqvtOACoAacil8Vp16JZb3AgiOaqAmNnFVe/1E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.LogLevel.html",
+          "hash": "cvTwWnDICp4lcEDJ3OH2t6tIJkqAmIckeXu74xxAQVE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.LogLevelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.LogLevelExtensions.html",
+          "hash": "Y3lCyeCH1HCSYUzLaudjxIOQ2utzF0oRRe+fi4jXprg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.Logger.html",
+          "hash": "/7TH2zrkzhYE11X8RcMecd1oasAV1aXlECobUkMQaAE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.ManualLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.ManualLogSource.html",
+          "hash": "KL/Sptv80dduxDVnIPlSAYoknOebyQGehBro0nB1npo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.TraceLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.TraceLogSource.html",
+          "hash": "wYqJsIcvHsnEqDUZNEXV2oEhGvWXKMus3if0Gb/7Wnw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Logging.html",
+          "hash": "5I8X+q/28AAII7CGCo5vtyrO/XgK5dzJ6GTUBv2Lz1I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.MetadataHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.MetadataHelper.html",
+          "hash": "IDVSujJimmpL9oWt1JbaWk+D+vw4SCJ+jI9Nhhyn23k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.MonoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.MonoExtensions.html",
+          "hash": "acO4OOZUoBXreqi3wM2UFTlMtfKP6v/yqR+2CuJNfAQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.NetLauncher.Common.BasePlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.NetLauncher.Common.BasePlugin.html",
+          "hash": "X8CZ+AqPwLx72fAb3eODZb+T06P3yEzAA5IY6BWk3ws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.NetLauncher.Common.NetChainloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.NetLauncher.Common.NetChainloader.html",
+          "hash": "RYDTwJ//SHJCrrxDVyRy42hRzUFGp0/N96gdAYrs16M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.NetLauncher.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.NetLauncher.Common.html",
+          "hash": "iNMA1/6h2zzccS/DlgjhzhSRSyTc4Oc388BopLMq7+A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.NetLauncher.NetPreloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.NetLauncher.NetPreloader.html",
+          "hash": "pCZcK/t+vT0+2QZDkT+TkhEfD7BaFhxFbKKZNE7IzHU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.NetLauncher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.NetLauncher.html",
+          "hash": "Rc9Nx+2VtdushSWyuZZhPywLarKazXO/ftjFdMeelfE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Paths.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Paths.html",
+          "hash": "ANwRMORofcZLxXL+J6EynF7dG3rDmqY01yoXXuVB2p8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.PluginInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.PluginInfo.html",
+          "hash": "Glp17asM1W7ITdRusMmiYLBJWJy70lXvnbjO2zFUpqI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.AssemblyBuildInfo.FrameworkType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.AssemblyBuildInfo.FrameworkType.html",
+          "hash": "X6YqGlQNBTTNqJU/PdZKoLYk31nZUXBau2Mwp6VPEfM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.AssemblyBuildInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.AssemblyBuildInfo.html",
+          "hash": "ITAu6Xr9OpB+Sx+k5W953bv/7CCJzCaNneIhgpwPVRY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.EnvVars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.EnvVars.html",
+          "hash": "sj25AcTMZCJaPwamPXNL+mUnsFUcdUT4Phv0NNUZegI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Logging.ChainloaderLogHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Logging.ChainloaderLogHelper.html",
+          "hash": "XLuO0UfHixlHCFFhnHfZucwuEgrhlRY6vHk8P3u6UzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Logging.PreloaderConsoleListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Logging.PreloaderConsoleListener.html",
+          "hash": "NCxOOb7PcncDJKH+G+q7PDeZ3ib06IHOkTdllRuM+pI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Logging.html",
+          "hash": "lvxcpeNcR1XnKEOaAvR+ZobaprAcirZq+vCSHHMBQo8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.AssemblyPatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.AssemblyPatcher.html",
+          "hash": "iY9BOJDRYCPmgTYcqBaxeGcko73HOKmbI/4gLFEczm4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.BasePatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.BasePatcher.html",
+          "hash": "zK7zNYEQ0aUUgLiysEGZEqHNrZVMfl1UheH91gqMgGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.PatchDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.PatchDefinition.html",
+          "hash": "hUnYyTTrAK+PhoEaRYLM6P2c2hNLQyCiUPTR4smP6Pg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.PatcherContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.PatcherContext.html",
+          "hash": "ykaahsrI48PURMORe5l/MRlpknrmunrnEVvf3ygiQJc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.PatcherPluginInfoAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.PatcherPluginInfoAttribute.html",
+          "hash": "nap9+Xm6TtpQ0ieK1293ef2SM3O7pYt+gqpeImC3zfo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.TargetAssemblyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.TargetAssemblyAttribute.html",
+          "hash": "ck+YNGEPcB+s5ukom8sP2HRXlPqFr2vD26KwS98uBqM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.TargetTypeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.TargetTypeAttribute.html",
+          "hash": "uTLTC032WL+gP53nXdqr0TWYFxgifcYblc6lczcOYLw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.Patching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.Patching.html",
+          "hash": "Agf3GbqdpauxnC3suy0pmxrRL5Waccee9xsEz3ojjhU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.PreloaderLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.PreloaderLogger.html",
+          "hash": "rjDYST8y2+smoxvcBlDU/TT2OVVdeNRtYLlF3SzTwW0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.Core.html",
+          "hash": "3CD/D31xcLXkb+SnBcSdaKsClPBe+qN9sAeEfXdORbM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.RuntimeFixes.ConsoleSetOutFix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.RuntimeFixes.ConsoleSetOutFix.html",
+          "hash": "oeZ7ztjvFSLbJi9R+VYjjUUeTmospA12lkpCxq1K82o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.RuntimeFixes.HarmonyBackendFix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.RuntimeFixes.HarmonyBackendFix.html",
+          "hash": "pzJ7qKofzTmgt4XyUmFYPTAhsTGDVm7KOHfp1rmvW/I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Preloader.RuntimeFixes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Preloader.RuntimeFixes.html",
+          "hash": "egjbBp08x0ZiiMANlY0yIlVK3W7Nw/c+h2VO/QyHBUs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Shared.BuildInfoAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Shared.BuildInfoAttribute.html",
+          "hash": "Kmrx8x6alCozsBCXiqT8b/OTWRoPQ1tdzxf3wCaWJa4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Shared.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Shared.html",
+          "hash": "8wHGjzq2x7QERlhC9PjRpjFPia4e8T++VnbCYO+UrqQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.ThreadingExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.ThreadingExtensions.html",
+          "hash": "NtjLyNhy0nwYvWkUCKw+8NKzfg1zoMPUDX/NQLCIV54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.ThreadingHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.ThreadingHelper.html",
+          "hash": "aCnxCNppmfm14AzSiT273HypOsHqsu7un0s6xA2us2o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.BepInExInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.BepInExInstance.html",
+          "hash": "LYFKeddE45/NKo/BhA19icKVMTcJIm08OGWuUsojROg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.Bootstrap.UnityChainloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.Bootstrap.UnityChainloader.html",
+          "hash": "GMP83VyuC6fyer0HQ/N7JBI9n3zg5f5vuKOqLaGb4XM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.Bootstrap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.Bootstrap.html",
+          "hash": "qoGI6o6whNHLjOhSwlHX/91nq/LIeiKjJP/M7ssd56s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.Logging.UnityLogListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.Logging.UnityLogListener.html",
+          "hash": "+gdxRTp2yskfYZlDwc9vCfwvkkOUHjqPB2OzlfsSbXk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.Logging.UnityLogSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.Logging.UnityLogSource.html",
+          "hash": "HDlJH/NFLscK9oKb3lecmwSToY9jQi3Dr0UklwnMXKg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.Logging.html",
+          "hash": "DF0cEa84lJdregERXa598Un1CXnhxHrcIv5Y/XShgAM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Unity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Unity.html",
+          "hash": "o9+lCjfELCc77Zs6yHSxJWTe8F7u2hk4qBo6k+Yz9R0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.Utility.html",
+          "hash": "anhEETIIMmnEzY9fF99t1c3LeqKxS7wFw3/us3XVBog="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInEx.html",
+          "hash": "D54lwtVPEEsVwIoyu7FBWbX4+7+sFyZtNVEZaC06k2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "9oMkjfDfWSReC03WFIvvi3xRAVL6C1OPsjTcRzsZREg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "efJQNBjR4QGmf+mWmK5XIS6ZATfylkuGneN5uRAn75E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/compatibility.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/compatibility.html",
+          "hash": "iXttCcFAxoNuFeDAwrhD5KH7uA815WgDW51EeHfe+Q0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/debug/assemblies_dnSpy.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/debug/assemblies_dnSpy.html",
+          "hash": "TDp6ZLUH2cin3uKk3gUsQ+1hT0PmdolvrP8Im+HGpGY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/bepin_breakpoint_hit.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/bepin_breakpoint_hit.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_asscsharp_beakpoint_hit.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_asscsharp_beakpoint_hit.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_breakpoint_hit.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_breakpoint_hit.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_debug.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_debug.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_dragndrop.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_dragndrop.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_module_breakpoints.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_module_breakpoints.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_modules.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_modules.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_modules_view.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_modules_view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_set_breakpoint.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_set_breakpoint.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/dnSpy_start_debug.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/dnSpy_start_debug.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_debugger_select.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_debugger_select.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_pdb2mdb.gif",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_pdb2mdb.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_plugin_install.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_plugin_install.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_select.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_select.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_select_process.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_select_process.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/debug/images/vstu_works.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/debug/images/vstu_works.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/debug/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/debug/index.html",
+          "hash": "54jK4N40EXRzrhnn7BQMO8Brwms/XfYiwjLIQky5nVE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/debug/plugins_dnSpy.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/debug/plugins_dnSpy.html",
+          "hash": "k5ngcgfagGCQKdfqQw88SLUmiwuGLcim8CRCpKqrtO8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/debug/plugins_vs.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/debug/plugins_vs.html",
+          "hash": "b4qTGWwI9JLOX971xnOo0b0AfcgF9Nh/lxjhiME+2F4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/protontricks_select.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/protontricks_select.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/protontricks_winecfg.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/protontricks_winecfg.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/protontricks_wineprefix.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/protontricks_wineprefix.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/steam_launch_opts.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/steam_launch_opts.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/steam_local_files.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/steam_local_files.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/steam_props.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/steam_props.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/advanced/images/winecfg_add_lib.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/advanced/images/winecfg_add_lib.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/advanced/steam_interop.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/advanced/steam_interop.html",
+          "hash": "cDLbGKiPcV/dLlU4emSxo40gTYvHxeLojEIpHr4jPz4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/dev_tools.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/dev_tools.html",
+          "hash": "hgDFqAZBtuhA+8s2YvceepF9Gh6dCT2B81FUepC5Q9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/1_setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/1_setup.html",
+          "hash": "c9IMatuO1qa6tztWnhoWtKXhTRlUcOZk1sazm6Qz0yQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/2_plugin_start.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/2_plugin_start.html",
+          "hash": "KmP+6KCldWrTZNCy8Pl/N9M8OqW+bmwMOWUjnUVKK4c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/3_logging.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/3_logging.html",
+          "hash": "4K8FPKoc5ZgGewCQGMQyQkItZG290OqLAwIeqdclolQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/4_configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/4_configuration.html",
+          "hash": "LuyAimrVXOp5bNtjEkuFwrN8RLmHamTCoQCJTc4NamE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/images/bepin_nuget_listing.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/images/bepin_nuget_listing.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/images/bepin_plugin_folder.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/images/bepin_plugin_folder.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/images/dotnet_download.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/images/dotnet_download.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/images/plugin_works_example.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/images/plugin_works_example.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/plugin_tutorial/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/plugin_tutorial/index.html",
+          "hash": "TEFSI0uLytv/tRv3dfLIhjp7nR5S+tETu1Vadwcc2K0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/preloader_patchers.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/preloader_patchers.html",
+          "hash": "ygqBUe+RLsQ7unyjPFQjgAKi1qSq4HtapLh31RVROqc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/dev_guide/runtime_patching.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/dev_guide/runtime_patching.html",
+          "hash": "vzCHMYllNIRuqQGOTVti0BGg2bpRl/yKN7UEJUuCluk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/index.html",
+          "hash": "hJgtq41MpALh0nY6xC7WytBYJ49ST/lyXIEgzMc+g+E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "F59cusQd21Qdo/NwRXMgwZb5TdtJqukqtV7+ljaycwo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/configuration.html",
+          "hash": "DC4AAxxA5dpGv6TgkyzG25rL004WHkmgeICyWbOm2BI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/installer_1.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/installer_1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/installer_2.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/installer_2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/installer_3.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/installer_3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/manual_install_1.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/manual_install_1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/x64process_example.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/x64process_example.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/user_guide/images/x86process_example.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/user_guide/images/x86process_example.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/installation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/installation/index.html",
+          "hash": "wRNOfB6X4HByVeBqi0xnk6IRlLfAfFrh55TCdOZYffQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/installation/net_fw.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/installation/net_fw.html",
+          "hash": "NrQ/Oni+3TKKnhU/pSW13fErXfLvbvrPCXIs03/gGvg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/installation/unity_il2cpp.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/installation/unity_il2cpp.html",
+          "hash": "LMLsIkWg5236cNgQouzD8gAbAn5Z8iEfFIiTsvndM9A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/installation/unity_mono.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/installation/unity_mono.html",
+          "hash": "DIRcm0HSv8gMewKmQkeaKFe1KUv4FM5lL9UHerKLm7c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/user_guide/troubleshooting.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/user_guide/troubleshooting.html",
+          "hash": "gUVqPIpvHyexABZrIcbTWIw8avF1p5fn0YzM5HF7QdI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "pfN8KEu9LSQNIMD7uuMyG29fIGqJ4hZ3qjDf+imkshA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "TaBeOHTbN59L/fPi2esrW+lUIrU3IanzBPpfjlLU7d4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 24,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 111,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
