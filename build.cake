@@ -157,7 +157,8 @@ Task("PublishGHPages")
         var allVersions = GetDirectories("gh-pages/*")
                 .Where(IsVersionDir)
                 .Select(d => (d.GetDirectoryName(), ParseSemVer(d.GetDirectoryName()[1..])));
-        var (latestTag, latestVersion) = allVersions.OrderByDescending((v) => v.Item2).FirstOrDefault();
+        var stableVersions = allVersions.Where(v => string.IsNullOrEmpty(v.Item2.Prerelease));
+        var (latestTag, latestVersion) = stableVersions.OrderByDescending((v) => v.Item2).FirstOrDefault();
 
         // Version target
         if (buildVersion.StartsWith("v"))
@@ -166,7 +167,7 @@ Task("PublishGHPages")
 
             Information($"Current version: {curVersion}; Latest built version: {latestVersion}");
 
-            if (curVersion >= latestVersion)
+            if (string.IsNullOrEmpty(curVersion.Prerelease) && curVersion >= latestVersion)
             {
                 Information("Updating index version");
 
