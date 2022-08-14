@@ -1,10 +1,6 @@
 # Installing BepInEx on Il2Cpp Unity
 
 > [!IMPORTANT]
-> Currently Il2Cpp builds are only available via [Bleeding Edge](https://builds.bepis.io/projects/bepinex_be) builds!  
-> Do not try using stable builds for Il2Cpp games.
-
-> [!IMPORTANT]
 > At the moment, Il2Cpp builds are available only for Windows and Wine.
 
 1. Download the correct version of BepInEx.
