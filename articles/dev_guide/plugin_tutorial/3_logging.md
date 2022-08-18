@@ -26,67 +26,84 @@ All plugin instances have a logger property:
 
 ```cs
 using BepInEx;
+using BepInEx.Unity.Mono;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BaseUnityPlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    private void Awake()
     {
-        private void Awake()
-        {
-            Logger.LogInfo("This is information");
-            Logger.LogWarning("This is a warning");
-            Logger.LogError("This is an error");
-        }
+        Logger.LogInfo("This is information");
+        Logger.LogWarning("This is a warning");
+        Logger.LogError("This is an error");
     }
 }
-
 ```
 
 # [Unity (Il2Cpp)](#tab/tabid-unityil2cpp)
 
 ```cs
 using BepInEx;
-using BepInEx.IL2CPP;
+using BepInEx.Unity.IL2CPP;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    public override void Load()
     {
-        public override void Load()
-        {
-            Log.LogInfo("This is information");
-            Log.LogWarning("This is a warning");
-            Log.LogError("This is an error");
-        }
+        Log.LogInfo("This is information");
+        Log.LogWarning("This is a warning");
+        Log.LogError("This is an error");
     }
 }
-
 ```
 
 # [.NET Framework](#tab/tabid-netfw)
 
 ```cs
 using BepInEx;
-using BepInEx.NetLauncher;
+using BepInEx.NET.Common;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    public override void Load()
     {
-        public override void Load()
-        {
-            Log.LogInfo("This is information");
-            Log.LogWarning("This is a warning");
-            Log.LogError("This is an error");
-        }
+        Log.LogInfo("This is information");
+        Log.LogWarning("This is a warning");
+        Log.LogError("This is an error");
+    }
+}
+```
+
+# [.NET Core](#tab/tabid-coreclr)
+
+```cs
+using BepInEx;
+using BepInEx.NET.Common;
+
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
+{
+    public override void Load()
+    {
+        Log.LogInfo("This is information");
+        Log.LogWarning("This is a warning");
+        Log.LogError("This is an error");
     }
 }
 ```
 
 ***
+
 
 This will print the following messages to BepInEx console:
 
@@ -151,9 +168,9 @@ By default, BepInEx itself registers the following listeners:
   console
 * @BepInEx.Logging.DiskLogListener - writes all log messages to 
   `BepInEx/LogOutput.log`
-* @BepInEx.Unity.Logging.UnityLogListener - writes all log messages to Unity's 
+* @BepInEx.Unity.Mono.Logging.UnityLogListener - writes all log messages to Unity's 
   `output_log.txt` (only in Unity Mono)
-* @BepInEx.IL2CPP.Logging.IL2CPPUnityLogSource - writes all log messages to Unity's 
+* @BepInEx.Unity.IL2CPP.Logging.IL2CPPUnityLogSource - writes all log messages to Unity's 
   `output_log.txt` (only in Unity Il2Cpp)
 
 If you need to write a custom log listener, consider using the above ones as 
@@ -175,19 +192,18 @@ Example:
 
 ```cs
 using BepInEx;
-using BepInEx.Logging;
+using BepInEx.Unity.Mono;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BaseUnityPlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
-    {
-        internal static new ManualLogSource Log;
+    internal static new ManualLogSource Log;
 
-        private void Awake()
-        {
-            Plugin.Log = base.Logger;
-        }
+    private void Awake()
+    {
+        Plugin.Log = base.Logger;
     }
 }
 
@@ -205,20 +221,18 @@ class SomeOtherAssembly
 
 ```cs
 using BepInEx;
-using BepInEx.IL2CPP;
-using BepInEx.Logging;
+using BepInEx.Unity.IL2CPP;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
-    {
-        internal static new ManualLogSource Log;
+    internal static new ManualLogSource Log;
 
-        public override void Load()
-        {
-            Plugin.Log = base.Log;
-        }
+    public override void Load()
+    {
+        Plugin.Log = base.Log;
     }
 }
 
@@ -236,20 +250,47 @@ class SomeOtherAssembly
 
 ```cs
 using BepInEx;
-using BepInEx.NetLauncher;
-using BepInEx.Logging;
+using BepInEx.NET.Common;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
-    {
-        internal static new ManualLogSource Log;
+    internal static new ManualLogSource Log;
 
-        public override void Load()
-        {
-            Plugin.Log = base.Log;
-        }
+    public override void Load()
+    {
+        Plugin.Log = base.Log;
+    }
+}
+
+// Some other class in the plugin assembly
+class SomeOtherAssembly
+{
+    public void SomeMethod()
+    {
+        Plugin.Log.LogInfo("Plugin message!");
+    }
+}
+```
+
+# [.NET Core](#tab/tabid-coreclr)
+
+```cs
+using BepInEx;
+using BepInEx.NET.Common;
+
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
+{
+    internal static new ManualLogSource Log;
+
+    public override void Load()
+    {
+        Plugin.Log = base.Log;
     }
 }
 

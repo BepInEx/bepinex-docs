@@ -34,30 +34,29 @@ Example:
 
 ```cs
 using BepInEx;
-using BepInEx.Configuration;
+using BepInEx.Unity.Mono;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BaseUnityPlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    private ConfigEntry<string> configGreeting;
+    private ConfigEntry<bool> configDisplayGreeting;
+
+    private void Awake()
     {
-        private ConfigEntry<string> configGreeting;
-        private ConfigEntry<bool> configDisplayGreeting;
+        configGreeting = Config.Bind("General",      // The section under which the option is shown
+                                        "GreetingText",  // The key of the configuration option in the configuration file
+                                        "Hello, world!", // The default value
+                                        "A greeting text to show when the game is launched"); // Description of the option to show in the config file
 
-        private void Awake()
-        {
-            configGreeting = Config.Bind("General",      // The section under which the option is shown
-                                         "GreetingText",  // The key of the configuration option in the configuration file
-                                         "Hello, world!", // The default value
-                                         "A greeting text to show when the game is launched"); // Description of the option to show in the config file
-
-            configDisplayGreeting = Config.Bind("General.Toggles", 
-                                                "DisplayGreeting",
-                                                true,
-                                                "Whether or not to show the greeting text");
-            // Test code
-            Logger.LogInfo("Hello, world!");
-        }
+        configDisplayGreeting = Config.Bind("General.Toggles", 
+                                            "DisplayGreeting",
+                                            true,
+                                            "Whether or not to show the greeting text");
+        // Test code
+        Logger.LogInfo("Hello, world!");
     }
 }
 ```
@@ -66,31 +65,29 @@ namespace MyFirstPlugin
 
 ```cs
 using BepInEx;
-using BepInEx.IL2CPP;
-using BepInEx.Configuration;
+using BepInEx.Unity.IL2CPP;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    private ConfigEntry<string> configGreeting;
+    private ConfigEntry<bool> configDisplayGreeting;
+
+    public override void Load()
     {
-        private ConfigEntry<string> configGreeting;
-        private ConfigEntry<bool> configDisplayGreeting;
+        configGreeting = Config.Bind("General",      // The section under which the option is shown
+                                        "GreetingText",  // The key of the configuration option in the configuration file
+                                        "Hello, world!", // The default value
+                                        "A greeting text to show when the game is launched"); // Description of the option to show in the config file
 
-        public override void Load()
-        {
-            configGreeting = Config.Bind("General",      // The section under which the option is shown
-                                         "GreetingText",  // The key of the configuration option in the configuration file
-                                         "Hello, world!", // The default value
-                                         "A greeting text to show when the game is launched"); // Description of the option to show in the config file
-
-            configDisplayGreeting = Config.Bind("General.Toggles", 
-                                                "DisplayGreeting",
-                                                true,
-                                                "Whether or not to show the greeting text");
-            // Test code
-            Log.LogInfo("Hello, world!");
-        }
+        configDisplayGreeting = Config.Bind("General.Toggles", 
+                                            "DisplayGreeting",
+                                            true,
+                                            "Whether or not to show the greeting text");
+        // Test code
+        Log.LogInfo("Hello, world!");
     }
 }
 ```
@@ -99,30 +96,60 @@ namespace MyFirstPlugin
 
 ```cs
 using BepInEx;
-using BepInEx.NetLauncher;
+using BepInEx.NET.Common;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    private ConfigEntry<string> configGreeting;
+    private ConfigEntry<bool> configDisplayGreeting;
+
+    public override void Load()
     {
-        private ConfigEntry<string> configGreeting;
-        private ConfigEntry<bool> configDisplayGreeting;
+        configGreeting = Config.Bind("General",      // The section under which the option is shown
+                                        "GreetingText",  // The key of the configuration option in the configuration file
+                                        "Hello, world!", // The default value
+                                        "A greeting text to show when the game is launched"); // Description of the option to show in the config file
 
-        public override void Load()
-        {
-            configGreeting = Config.Bind("General",      // The section under which the option is shown
-                                         "GreetingText",  // The key of the configuration option in the configuration file
-                                         "Hello, world!", // The default value
-                                         "A greeting text to show when the game is launched"); // Description of the option to show in the config file
+        configDisplayGreeting = Config.Bind("General.Toggles", 
+                                            "DisplayGreeting",
+                                            true,
+                                            "Whether or not to show the greeting text");
+        // Test code
+        Log.LogInfo("Hello, world!");
+    }
+}
+```
 
-            configDisplayGreeting = Config.Bind("General.Toggles", 
-                                                "DisplayGreeting",
-                                                true,
-                                                "Whether or not to show the greeting text");
-            // Test code
-            Log.LogInfo("Hello, world!");
-        }
+# [.NET Core](#tab/tabid-coreclr)
+
+```cs
+using BepInEx;
+using BepInEx.NET.Common;
+
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
+{
+    private ConfigEntry<string> configGreeting;
+    private ConfigEntry<bool> configDisplayGreeting;
+
+    public override void Load()
+    {
+        configGreeting = Config.Bind("General",      // The section under which the option is shown
+                                        "GreetingText",  // The key of the configuration option in the configuration file
+                                        "Hello, world!", // The default value
+                                        "A greeting text to show when the game is launched"); // Description of the option to show in the config file
+
+        configDisplayGreeting = Config.Bind("General.Toggles", 
+                                            "DisplayGreeting",
+                                            true,
+                                            "Whether or not to show the greeting text");
+        // Test code
+        Log.LogInfo("Hello, world!");
     }
 }
 ```
@@ -152,6 +179,13 @@ if(configDisplayGreeting.Value)
 ```
 
 # [.NET Framework](#tab/tabid-netfw)
+
+```cs
+if(configDisplayGreeting.Value)
+    Log.LogInfo(configGreeting.Value);
+```
+
+# [.NET Core](#tab/tabid-coreclr)
 
 ```cs
 if(configDisplayGreeting.Value)

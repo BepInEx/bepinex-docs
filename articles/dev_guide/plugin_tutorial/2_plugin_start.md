@@ -52,7 +52,7 @@ To create a project in the folder, do the following depending on the game type y
 3. In the command line prompt, run
 
    ```bash
-   dotnet new bep6plugin_unitymono -n MyFirstPlugin -T <TFM> -U <Unity>
+   dotnet new bep6plugin_unity_mono -n MyFirstPlugin -T <TFM> -U <Unity>
    dotnet restore MyFirstPlugin
    ```
 
@@ -66,7 +66,7 @@ To create a project in the folder, do the following depending on the game type y
 In the command line prompt, run
 
 ```bash
-dotnet new bep6plugin_il2cpp -n MyFirstPlugin
+dotnet new bep6plugin_unity_il2cpp -n MyFirstPlugin
 dotnet restore MyFirstPlugin
 ```
 
@@ -79,13 +79,21 @@ dotnet new bep6plugin_netfx -n MyFirstPlugin
 dotnet restore MyFirstPlugin
 ```
 
+# [.NET Core](#tab/tabid-coreclr)
+
+In the command line prompt, run
+
+```bash
+dotnet new bep6plugin_coreclr -n MyFirstPlugin
+dotnet restore MyFirstPlugin
+```
+
 ***
 
 This will create a new folder named `MyFirstPlugin` that contains three files:
 
 * `Plugin.cs`: Main plugin file. You can add more C# source files (`.cs`) as needed.
 * `MyFirstPlugin.csproj`: Plugin project configuration
-* `NuGet.Config`: Configuration file for NuGet package manager
 
 If you use an IDE, you can proceed to open `MyFirstPlugin.csproj` or the entire folder in it.  
 If the IDE has .NET development support, it should automatically pick up the project settings.
@@ -104,59 +112,74 @@ Plugin's structure depends slightly on the game type you chose to target, but th
 
 ```cs
 using BepInEx;
+using BepInEx.Unity.Mono;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BaseUnityPlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    private void Awake()
     {
-        private void Awake()
-        {
-            // Plugin startup logic
-            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
-        }
+        // Plugin startup logic
+        Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }
 }
-
 ```
 
 # [Unity (Il2Cpp)](#tab/tabid-unityil2cpp)
 
 ```cs
 using BepInEx;
-using BepInEx.IL2CPP;
+using BepInEx.Unity.IL2CPP;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    public override void Load()
     {
-        public override void Load()
-        {
-            // Plugin startup logic
-            Log.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
-        }
+        // Plugin startup logic
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }
 }
-
 ```
 
 # [.NET Framework](#tab/tabid-netfw)
 
 ```cs
 using BepInEx;
-using BepInEx.NetLauncher;
+using BepInEx.NET.Common;
 
-namespace MyFirstPlugin
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BasePlugin
+    public override void Load()
     {
-        public override void Load()
-        {
-            // Plugin startup logic
-            Log.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
-        }
+        // Plugin startup logic
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+    }
+}
+```
+
+# [.NET Core](#tab/tabid-coreclr)
+
+```cs
+using BepInEx;
+using BepInEx.NET.Common;
+
+namespace MyFirstPlugin;
+
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
+{
+    public override void Load()
+    {
+        // Plugin startup logic
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }
 }
 ```
@@ -165,14 +188,14 @@ namespace MyFirstPlugin
 
 As we can see, a BepInEx plugin contains three main parts:
 
-* A class that inhertis one of BepInEx plugin classes (@BepInEx.BaseUnityPlugin, @BepInEx.IL2CPP.BasePlugin or @BepInEx.NetLauncher.BasePlugin );
+* A class that inhertis one of BepInEx plugin classes (@BepInEx.Unity.Mono.BaseUnityPlugin, @BepInEx.Unity.IL2CPP.BasePlugin or @BepInEx.NET.Common.BasePlugin );
 * @BepInEx.BepInPlugin attribute and other metadata;
 * Plugin startup code or other code.
 
 You are free to change main plugin code.
 
 > [!TIP]
-> In Mono Unity, @BepInEx.BaseUnityPlugin inherits [UnityEngine.MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html).  
+> In Mono Unity, @BepInEx.Unity.Mono.BaseUnityPlugin inherits [UnityEngine.MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html).  
 > As such, you can use the same event methods like `Awake`, `Update` and so on.
 
 Next, let us discuss a bit the metadata that can be specified in BepInEx.
@@ -216,7 +239,7 @@ The attribute consists of three string parameters that are:
 > [!NOTE]
 > You might have noticed that our template has the attribute defined as follows:
 > ```csharp
-> [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+> [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 > ```
 > The plugin template from [BepInEx.Templates](https://nuget.bepinex.dev/packages/BepInEx.Templates) contains a helper tool that automatically generates `PluginInfo` from information located in the `.csproj` file.
 > For example, the plugin's version is automatically set from `<Version>` component in the project configuration.  
@@ -360,6 +383,10 @@ Depending on your OS, the `Managed` folder might be located in some other subfol
 Game-specific libraries are located in `BepInEx/unhollowed`.
 
 # [.NET Framework](#tab/tabid-netfw)
+
+Game-specific libraries depend on the game. In most cases you want to reference the game executable itself as it often has the actual game code.
+
+# [.NET Core](#tab/tabid-coreclr)
 
 Game-specific libraries depend on the game. In most cases you want to reference the game executable itself as it often has the actual game code.
 

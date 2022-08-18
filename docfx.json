@@ -4,14 +4,7 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
-          ],
-          "exclude": [
-            "src/**/submodules/**",
-            "src/**/BepInEx.Preloader/**",
-            "src/**/BepInEx.Bootstrap/**",
-            "src/**/BepInEx.Harmony.Tests/**",
-            "src/**/BepInExTests/**"
+            "src/**/*.csproj"
           ]
         }
       ],
