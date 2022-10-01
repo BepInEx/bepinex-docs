@@ -1,5 +1,5 @@
 #addin nuget:?package=Cake.DocFx&version=1.0.0
-#tool nuget:?package=docfx.console&version=2.58.0
+#tool nuget:?package=docfx.console&version=2.59.4
 #addin nuget:?package=Cake.DoInDirectory&version=4.0.2
 #addin nuget:?package=Cake.Json&version=6.0.1
 #addin nuget:?package=Newtonsoft.Json&version=13.0.1
