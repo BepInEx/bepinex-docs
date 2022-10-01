@@ -380,7 +380,7 @@ Depending on your OS, the `Managed` folder might be located in some other subfol
 
 # [Unity (Il2Cpp)](#tab/tabid-unityil2cpp)
 
-Game-specific libraries are located in `BepInEx/unhollowed`.
+Game-specific libraries are located in `BepInEx/interop`.
 
 # [.NET Framework](#tab/tabid-netfw)
 
