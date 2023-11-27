@@ -19,6 +19,7 @@ necessary to configure this DLL forwarding to work correctly.
 > [R2Wiki](https://github.com/risk-of-thunder/R2Wiki/wiki/Getting-BepInEx-Console-Working-on-Linux)
 
 ### 1. Open winecfg for the target game
+### 1.1 Using protontricks
 
 With proton the easiest way to do so is via 
 [`protontricks`](https://github.com/Matoking/protontricks) 
@@ -47,6 +48,15 @@ Finally, select `Run winecfg` and click OK:
 ![Select "Run winecfg" and click OK](images/protontricks_winecfg.png)
 
 This will open winecfg.
+
+### 1.2 Using the command line
+To open winecfg from the command line for your games prefix, use the following command:
+
+```env WINEPREFIX="<steamapps folder>/compatdata/<appid>/pfx" WINEPATH="<steamapps folder>/common/<proton folder>/files/bin/wine64" winecfg```
+
+Replace \<steamapps folder\> with the path to your steamapps folder, \<appid\> with the appid of the game and \<proton folder\> with the folder name of the proton version to use.
+
+This will set your WINEPREFIX and WINEPATH environment variables and open the configuration settings for the prefix you just specified.
 
 ### 2. Configure proxy to run
 
