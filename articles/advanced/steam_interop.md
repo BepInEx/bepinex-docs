@@ -93,7 +93,15 @@ Setting up BepInEx with Wine requires primarily configuring the DLL forwarding
 to work correctly. **We strongly recommend to use Proton**, but it is not an 
 absolute requirement.
 
-### Open winecfg for the target game
+### Adding the DLL override
+#### Using the Steam launch options
+
+If you are using proton with steam, you can specify the DLL override in the launch options:
+```WINEDLLOVERRIDES="winhttp.dll=n,b" %command%```
+
+With this method you can ignore the last steps since you are not using winecfg. (Thanks to the comments on [ProtonDB](https://www.protondb.com/app/1966720) for this method!)
+
+#### Using protontricks to open winecfg
 
 With proton the easiest way to do so is via 
 [`protontricks`](https://github.com/Matoking/protontricks) 
@@ -116,7 +124,15 @@ Finally, select `Run winecfg` and click OK:
 
 ![Select "Run winecfg" and click OK](images/protontricks_winecfg.png)
 
-This will open winecfg.
+This will open winecfg. Proceed to the last step to configure the proxy to run.
+
+#### Using the command line to open winecfg
+
+To open winecfg from the command line for your games prefix use the following command:
+
+```env WINEPREFIX="<steamapps folder>/compatdata/<appid>/pfx" WINEPATH="<steamapps folder>/common/<proton folder>/files/bin/wine64" winecfg```
+
+Replace \<steamapps folder\> with the path to your steamapps folder, \<appid\> with the appid of the game and \<proton folder\> with the folder name of the proton version to use.
 
 ### Configure proxy to run
 
