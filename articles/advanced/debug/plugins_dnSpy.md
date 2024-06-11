@@ -9,7 +9,7 @@ title: Debugging with dnSpy
 
 > [!NOTE]
 > This guide's step is mainly a basic overview of what to do.
-> For a full guide on turning your game into a debug build, check out [the offical dnSpy's guide on this topic.](https://github.com/0xd4d/dnSpy/wiki/Debugging-Unity-Games#debugging-release-builds).
+> For a full guide on turning your game into a debug build, check out [the offical dnSpy's guide on this topic.](https://github.com/dnSpyEx/dnSpy/wiki/Debugging-Unity-Games#debugging-release-builds).
 
 First, the game's mono runtime has to be swapped to one that supports debugging with dnSpy.  
 For that, you need to know the Unity version your game has been built against.  
@@ -23,7 +23,7 @@ which will log the Unity version of the game in the console (or into `BepInEx/Lo
 ...
 ```
 
-Next, head to [dnSpy releases](https://github.com/0xd4d/dnSpy/releases) and download one of the debug Mono packages
+Next, head to [dnSpy releases](https://github.com/dnSpyEx/dnSpy/releases) and download one of the debug Mono packages
 that **corresponds to the Unity version of your game**:
 ![Download one of the debug packages that corresponds to the Unity version of your game.](images/dnSpy_debug.png)
 For example, in the log above Unity version is `5.4.0`, in which case one has to download `Unity-debugging-5.x.zip`.
@@ -33,7 +33,8 @@ executable target (32 bit or 64 bit). Finally, locate the same DLL in your game 
 
 ## Setting up dnSpy and setting breakpoints
 
-Download the [latest version of dnSpy](https://github.com/0xd4d/dnSpy/releases). You can pick any of the available versions.
+Download the [latest version of dnSpy](https://github.com/dnSpyEx/dnSpy/releases). You can pick any of the available versions.
+At the moment, the latest and greatest version of dnSpy is available on the dnSpyEx fork.
 
 Extract the downloaded archive and run dnSpy.
 
