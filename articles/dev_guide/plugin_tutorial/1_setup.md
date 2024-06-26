@@ -91,7 +91,7 @@ We will be using them to make our plugins.
 To install the template, run the following command:
 
 ```bash
-dotnet new install BepInEx.Templates::2.0.0-be.3 --nuget-source https://nuget.bepinex.dev/v3/index.json
+dotnet new install BepInEx.Templates::2.0.0-be.4 --nuget-source https://nuget.bepinex.dev/v3/index.json
 ```
 
 If the install is successful, you should see a listing of all .NET project templates.
