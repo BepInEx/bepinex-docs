@@ -192,6 +192,7 @@ Example:
 
 ```cs
 using BepInEx;
+using BepInEx.Logging;
 using BepInEx.Unity.Mono;
 
 namespace MyFirstPlugin;
@@ -203,7 +204,7 @@ public class Plugin : BaseUnityPlugin
 
     private void Awake()
     {
-        Plugin.Log = base.Logger;
+        Log = base.Logger;
     }
 }
 
@@ -221,6 +222,7 @@ class SomeOtherAssembly
 
 ```cs
 using BepInEx;
+using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 
 namespace MyFirstPlugin;
@@ -232,7 +234,7 @@ public class Plugin : BasePlugin
 
     public override void Load()
     {
-        Plugin.Log = base.Log;
+        Log = base.Log;
     }
 }
 
@@ -250,6 +252,7 @@ class SomeOtherAssembly
 
 ```cs
 using BepInEx;
+using BepInEx.Logging;
 using BepInEx.NET.Common;
 
 namespace MyFirstPlugin;
@@ -261,7 +264,7 @@ public class Plugin : BasePlugin
 
     public override void Load()
     {
-        Plugin.Log = base.Log;
+        Log = base.Log;
     }
 }
 
@@ -279,6 +282,7 @@ class SomeOtherAssembly
 
 ```cs
 using BepInEx;
+using BepInEx.Logging;
 using BepInEx.NET.Common;
 
 namespace MyFirstPlugin;
@@ -290,7 +294,7 @@ public class Plugin : BasePlugin
 
     public override void Load()
     {
-        Plugin.Log = base.Log;
+        Log = base.Log;
     }
 }
 
