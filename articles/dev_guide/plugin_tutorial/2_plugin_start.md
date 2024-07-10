@@ -56,11 +56,10 @@ To create a project in the folder, do the following
    * `<TFM>` is the TFM determined in step 1
    * `<Unity>` is the Unity version determined in step 2
 
-This will create a new folder named `MyFirstPlugin` that contains three files:
+This will create a new folder named `MyFirstPlugin` that contains two files:
 
 * `Plugin.cs`: Main plugin file. You can add more C# source files (`.cs`) as needed.
 * `MyFirstPlugin.csproj`: Plugin project configuration
-* `NuGet.Config`: Configuration file for NuGet package manager
 
 If you use an IDE, you can proceed to open `MyFirstPlugin.csproj` or the entire folder in it.  
 If the IDE has .NET development support, it should automatically pick up the project settings.
