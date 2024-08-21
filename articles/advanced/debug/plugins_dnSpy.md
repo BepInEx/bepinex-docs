@@ -23,7 +23,7 @@ which will log the Unity version of the game in the console (or into `BepInEx/Lo
 ...
 ```
 
-Next, head to [dnSpy releases](https://github.com/dnSpyEx/dnSpy/releases) and download one of the debug Mono packages
+Next, head to [dnSpy mono builds](https://github.com/dnSpyEx/dnSpy-Unity-mono) and download one of the debug Mono packages
 that **corresponds to the Unity version of your game**:
 ![Download one of the debug packages that corresponds to the Unity version of your game.](images/dnSpy_debug.png)
 For example, in the log above Unity version is `5.4.0`, in which case one has to download `Unity-debugging-5.x.zip`.
