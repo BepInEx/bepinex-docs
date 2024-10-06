@@ -70,7 +70,7 @@ Currently, BepInEx can be installed manually.
 
     # [Windows](#tab/tabid-win)
     Simply run the game executable. This should generate BepInEx configuration 
-    file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`.
+    file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.log`.
 
     # [Linux/macOS](#tab/tabid-nix)
     > [!NOTE]
@@ -97,7 +97,7 @@ Currently, BepInEx can be installed manually.
     ./run_bepinex.sh
     ```
     This should generate BepInEx configuration 
-    file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`.
+    file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.log`.
     ***
     
 4. Configure BepInEx to suit your needs. 
