@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enum LogLevel
+ | BepInEx Docs </title>
+    <meta name="title" content="Enum LogLevel
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Enum LogLevel
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                    <span>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+        </span>
+            <span>
+                <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+            </span>
+    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Logging.html" class="active">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html" class="active">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_Logging_LogLevel" data-uid="BepInEx.Logging.LogLevel">Enum LogLevel
+  </h1>
+  <div class="class-summary"><p>The level, or severity of a log entry.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.Logging.html">BepInEx.Logging</a></div>
+  <div><strong>Assembly</strong>: BepInEx.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_Logging_LogLevel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum LogLevel</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div><h3 id="fields">Fields
+  </h3>
+  
+  <div class="member-desc">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_All"><code>All</code></td>
+        <td><p>All log levels.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Debug"><code>Debug</code></td>
+        <td><p>A message that would likely only interest a developer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Error"><code>Error</code></td>
+        <td><p>An error has occured, but can be recovered from.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Fatal"><code>Fatal</code></td>
+        <td><p>A fatal error has occurred, which cannot be recovered from.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Info"><code>Info</code></td>
+        <td><p>A message of low importance.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Message"><code>Message</code></td>
+        <td><p>An important message that should be displayed to the user.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_None"><code>None</code></td>
+        <td><p>No level selected.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="BepInEx_Logging_LogLevel_Warning"><code>Warning</code></td>
+        <td><p>A warning has been produced, but does not necessarily mean that something wrong has happened.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="BepInEx.Logging.LogLevelExtensions.html#BepInEx_Logging_LogLevelExtensions_GetHighestLevel_BepInEx_Logging_LogLevel_">LogLevelExtensions.GetHighestLevel()</a>
+  </div>
+  <div>
+      <a class="xref" href="BepInEx.Logging.LogLevelExtensions.html#BepInEx_Logging_LogLevelExtensions_GetConsoleColor_BepInEx_Logging_LogLevel_">LogLevelExtensions.GetConsoleColor()</a>
+  </div>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_LogLevel.md&amp;value=---%0Auid%3A%20BepInEx.Logging.LogLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

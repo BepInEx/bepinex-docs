@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patching methods at runtime | BepInEx Docs </title>
+    <meta name="title" content="Patching methods at runtime | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Patching methods at runtime | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../static/styles/template.css">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+                <span>
+                <a href="../dev_guide/runtime_patching.html">Patching methods at runtime</a>
+            </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../user_guide/installation/unity_mono.html">Unity (Mono)</a>
+                        </li>
+                        <li>
+                            <a href="../user_guide/installation/unity_il2cpp.html">Unity (Il2Cpp)</a>
+                        </li>
+                        <li>
+                            <a href="../user_guide/installation/net_fw.html">.NET Framework</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../dev_guide/runtime_patching.html" class="active">Patching methods at runtime</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/preloader_patchers.html">Using preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="patching-methods-during-runtime">Patching methods during runtime</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This guide is still WIP.</p>
+</div>
+<p>Runtime patching is the process of modifying methods without permanently
+patching them. Runtime patching happens while the game is running and on .NET
+can be done very extensively.</p>
+<p>BepInEx ships with HarmonyX and MonoMod.RuntimeDetour to perform runtime patching.
+You can use either or both libraries -- both of them have different API but it
+does not matter which one you use.</p>
+<h2 id="harmonyx">HarmonyX</h2>
+<p>BepInEx uses <a href="https://github.com/BepInEx/HarmonyX">HarmonyX</a> to perform runtime
+patching. HarmonyX is a fork of <a href="https://github.com/pardeike/Harmony">Harmony</a>
+with changes to specifically allow interop with MonoMod.RuntimeDetour.</p>
+<p>HarmonyX is attribute-based, which means you define patches by applying attributes
+to a method.</p>
+<p>Refer to the following guides on how to use HarmonyX:</p>
+<ul>
+<li><a href="https://github.com/BepInEx/HarmonyX/wiki">HarmonyX wiki</a> - gives basic examples and outlines differences from normal Harmony. Still WIP at the moment</li>
+<li><a href="https://harmony.pardeike.net/articles/intro.html">Original Harmony wiki</a> - HarmonyX API is similar to that of Harmony, so you can use the official wiki without much issue</li>
+</ul>
+<h2 id="monomodruntimedetour">MonoMod.RuntimeDetour</h2>
+<p><a href="https://github.com/MonoMod/MonoMod/blob/master/README-RuntimeDetour.md">MonoMod.RuntimeDetour</a> is a helper library that allows to apply runtime patches as C# objects.</p>
+<p>Alternatively, RuntimeDetour supports defining patches as events.</p>
+<p>Some useful guides</p>
+<ul>
+<li><a href="https://github.com/MonoMod/MonoMod/blob/master/README-RuntimeDetour.md">Brief introduction into using RuntimeDetour</a></li>
+<li><a href="https://github.com/risk-of-thunder/R2Wiki/wiki/Working-with-IL">Introduction to IL hooks</a></li>
+</ul>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v6.0.0-pre.1/articles/dev_guide/runtime_patching.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../static/scripts/main.js"></script>
+</body>
+</html>

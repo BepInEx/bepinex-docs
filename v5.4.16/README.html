@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BepInEx Documentation | BepInEx Docs </title>
+    <meta name="title" content="BepInEx Documentation | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BepInEx Documentation | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="static/styles/template.css">
+    <link rel="stylesheet" href="static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+        <main class="from-toc  ">
+<h1 id="bepinex-documentation">BepInEx Documentation</h1>
+
+<p>This is the repo for storing documentation related to BepInEx.</p>
+<h2 id="view-the-docs"><a href="https://docs.bepinex.dev/">View the docs</a></h2>
+<h2 id="contributing">Contributing</h2>
+<p>All contributions either via PRs or issues are welcome!</p>
+<p>This project uses <a href="https://dotnet.github.io/docfx/">DocFX</a> to render the API documentation and the articles.<br>
+Please refer to DocFX documentation for information on using <a href="https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-1%2Ctabid-a">DocFX-flavoured markdown</a>.</p>
+<p>In general, you should be able to update pages with a simple markdown editor.</p>
+<h3 id="testing-docs-locally">Testing docs locally</h3>
+<p>If you want to preview the docs locally, you need .NET 5 or newer installed.<br>
+After that, do the following:</p>
+<ol>
+<li>Clone this repo with <code>git clone</code></li>
+<li>In the cloned directory, run
+<pre><code>git worktree add --checkout common common
+</code></pre>
+A folder named <code>common</code> should appear.</li>
+<li>Write documentation into <code>api</code> or <code>articles</code> folder. Refer to <a href="https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html">docfx guide</a> and <a href="https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html">DFM syntax guide</a> for info on writing the guides using DocFX</li>
+<li>Run <code>common/build.bat --target=Build</code> to build the docs. The generated docs will appear in <code>_site</code> folder</li>
+</ol>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.16/README.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="static/scripts/template.js"></script>
+<script type="text/javascript" src="static/scripts/main.js"></script>
+</body>
+</html>

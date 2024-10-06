@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using preloader patchers | BepInEx Docs </title>
+    <meta name="title" content="Using preloader patchers | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using preloader patchers | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../static/styles/template.css">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+                <span>
+                <a href="../dev_guide/preloader_patchers.html">Using preloader patchers</a>
+            </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../user_guide/installation/unity_mono.html">Unity (Mono)</a>
+                        </li>
+                        <li>
+                            <a href="../user_guide/installation/unity_il2cpp.html">Unity (Il2Cpp)</a>
+                        </li>
+                        <li>
+                            <a href="../user_guide/installation/net_fw.html">.NET Framework</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../dev_guide/runtime_patching.html">Patching methods at runtime</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/preloader_patchers.html" class="active">Using preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="using-preloader-patchers">Using preloader patchers</h1>
+
+<h2 id="preface">Preface</h2>
+<p>As of version 4.0, BepInEx allows to write <em>preload-time patchers</em> that modify
+assemblies before the game loads them.<br>
+While most plug-ins can use Harmony to do runtime patching, using preload-time
+patchers provides more fine control over how the assembly is patched.</p>
+<p>It is still recommended that <em>you use Harmony wherever possible</em> because
+Harmony makes sure all patches are compatible with each other. Use Mono.Cecil
+only if something cannot be done by Harmony (more info below).</p>
+<p>Note: The contract for preloader patchers has changed between BepInEx v5 and v6.</p>
+<h2 id="difference-from-runtime-patchers">Difference from runtime patchers</h2>
+<p>Because preload-time patchers are run <em>before</em> the assemblies are loaded into
+memory, the patchers have more fine-grained control over how to modify the
+assemblies.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Preload-time patcher</th>
+<th>Runtime patcher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Used library</strong></td>
+<td>Mono.Cecil</td>
+<td>Harmony</td>
+</tr>
+<tr>
+<td><strong>Used contract</strong></td>
+<td>Written in a separate DLL, uses a special contract</td>
+<td>Written in plug-in DLL, uses Harmony's API</td>
+</tr>
+<tr>
+<td><strong>Application time</strong></td>
+<td>Applied on raw assemblies before the game initializes</td>
+<td>Applied on assemblies already loaded in memory</td>
+</tr>
+<tr>
+<td><strong>Can apply hooks</strong></td>
+<td>Yes</td>
+<td>Yes, as long as the target is not inlined by JIT</td>
+</tr>
+<tr>
+<td><strong>Can reference game assembly directly</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Can rewrite methods' IL</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Can modify field/method propeties</strong></td>
+<td>Everything</td>
+<td>Partially</td>
+</tr>
+<tr>
+<td><strong>Can add new classes, methods and fields</strong></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Can replace assemblies</strong></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Thus, use preload-time patchers only if you must modify the structure of
+the assembly. For hooking methods use Harmony.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Preloader-time patching comes with its own caveats!
+Refer to the <a href="#notes-and-tips">notes below for more information</a>.</p>
+</div>
+<h2 id="writing-a-patcher">Writing a patcher</h2>
+<h3 id="requirements">Requirements</h3>
+<p>Assuming you know how to use an IDE of your choice, you will need to</p>
+<ul>
+<li>Create an assembly (DLL) project targeting the same .NET version as regular plugins for your game</li>
+<li>Remove references to all unused imports</li>
+<li>Add a reference to Mono.Cecil (use 0.10.3 for Unity Mono, otherwise the latest version). You can get it on NuGet, for instance,
+or use the one prepackaged with BepInEx</li>
+<li>Add one or more patcher classes (example below)</li>
+</ul>
+<h3 id="patcher-plugin">Patcher plugin</h3>
+<p>A patcher plugin's skeleton is similar to a regular plugin:</p>
+<pre><code class="lang-csharp">[PatcherPluginInfo(&quot;io.bepis.mytestplugin&quot;, &quot;My Test Plugin&quot;, &quot;1.0&quot;)]
+class EntrypointPatcher : BasePatcher
+{
+    public override void Initialize() { }
+
+    public override void Finalizer() { }
+
+    ...
+}
+</code></pre>
+<p>Notable things:</p>
+<ul>
+<li>Instead of using <code>[BepInPlugin]</code>, you use <code>[PatcherPluginInfo]</code> instead.</li>
+<li>The base class is <code>BasePatcher</code>.</li>
+<li>There are two methods you can override related to the patching engine lifecycle.</li>
+<li>There is no constructor (or if there is, it has no parameters).</li>
+<li>Patches are declared as additional methods (see below).</li>
+</ul>
+<p>You have access to the same base properties that regular plugins do; i.e. <code>Log</code>, <code>Config</code> and and <code>Info</code>. You also have access to <code>Context</code>, which is an object that contains the current information that the assembly patcher engine within BepInEx is currently using. For example, you can use it to find out which other patcher plugins are loaded, which assemblies can be patched, which patches have already been applied etc.</p>
+<p><strong>Note that your patcher plugin GUID must be unique, even against regular plugins!</strong> Because patcher plugins have their own configuration files now, they must also have a unique GUID so that there aren't any conflicts when loading / saving configuration settings.</p>
+<h3 id="lifecycle">Lifecycle</h3>
+<p>This is the lifecycle of the patcher engine within BepInEx:</p>
+<ol>
+<li>All <code>.dll</code> files within <code>BepInEx/patchers</code> are examined to see if they contain any patcher plugins. The ones that do are loaded as assemblies.</li>
+<li>Every discovered patcher plugin is instantiated once (by calling the constructor).</li>
+<li>All patcher plugins have their <code>Initialize()</code> function called.</li>
+<li>Every patching method within each patcher plugin is executed, against the targeted type / assembly. Any unhandled exceptions are logged.</li>
+<li>All patcher plugins have their <code>Finalizer()</code> function called.</li>
+<li>Patcher engine unloads all loaded <code>AssemblyDefinition</code> and <code>TypeDefinition</code> objects.</li>
+</ol>
+<p>Use your <code>Initialize</code> method for code that needs to run first exactly once, and your <code>Finalizer</code> method for code that needs to run last exactly once.</p>
+<h3 id="patch-methods">Patch methods</h3>
+<p>Patch methods are much more declarative now, very similar to declaring Harmony patches. Here is an example declaration:</p>
+<pre><code class="lang-csharp">[TargetAssembly(&quot;Assembly-CSharp.dll&quot;)]
+public void PatchAssembly(AssemblyDefinition assembly)
+{
+    ...
+}
+</code></pre>
+<p>You can target assemblies, or specific types (detailed below).</p>
+<p>Patch methods must not be static or abstract. They can be any visibility, however.</p>
+<p>They can have <code>void</code> or <code>bool</code> as a return type. In the case of <code>bool</code>, the return value specifies if the targeted assembly or type has been modified by the patcher. This is important, because if you tell BepInEx that the patch method hasn't actually patched anything, then it won't mark the assembly / types you've requested as modified. With a <code>void</code> return type, BepInEx will always assume that you have performed modifications.</p>
+<p>If you have an <code>AssemblyDefinition</code> as the first parameter, then you can also define it as <code>ref</code> if you wish to replace it with another definition entirely. This is useful if you want to replace an assembly with another one you have shipped yourself, for example.</p>
+<p>You can also provide a second <code>string</code> parameter, which will contain the (relative) filename of the assembly. If you are targeting a type, then it will return the filename of the assembly that the type belongs to.</p>
+<p>For patch methods that target assemblies, you can specify multiple assemblies:</p>
+<pre><code class="lang-csharp">[TargetAssembly(&quot;Assembly-CSharp.dll&quot;)]
+[TargetAssembly(&quot;UnityEngine.dll&quot;)]
+public void PatchAssembly(AssemblyDefinition assembly, string filename)
+{
+    ...
+}
+</code></pre>
+<p>Which will then run that patch method twice, once for each assembly. There is also the option of specifying all available assemblies:</p>
+<pre><code class="lang-csharp">[TargetAssembly(TargetAssemblyAttribute.AllAssemblies)]
+public void PatchAssembly(AssemblyDefinition assembly, string filename)
+{
+    ...
+}
+</code></pre>
+<p>As stated above you also have the option of specifying specific types. For example:</p>
+<pre><code class="lang-csharp">[TargetType(&quot;Assembly-CSharp.dll&quot;, &quot;GameNamespace.GameClass&quot;)]
+public void PatchAssembly(TypeDefinition type)
+{
+    ...
+}
+</code></pre>
+<p>The first parameter of the attribute is the filename of the assembly where the type belongs, and the second parameter is the full name of the type you wish to patch (including namespaces).</p>
+<ul>
+<li>You're able to specify additional <code>[TargetType]</code> attributes to specify more types to run the patcher for, however you <strong>cannot</strong> mix-and-match <code>[TargetType]</code> and <code>[TargetAssembly]</code>.</li>
+<li>You're also able to specify an additional <code>string</code> parameter for the assembly filename, however you cannot specify the first parameter as <code>ref</code>.</li>
+</ul>
+<h2 id="notes-and-tips">Notes and tips</h2>
+<ul>
+<li><strong>Do not reference any DLLs that you will want to patch!</strong> Doing so will
+load them into memory prematurely, which will make patching impossible!</li>
+<li><strong>Do not mix plug-in DLL with patcher DLL!</strong> Plugins often reference
+assemblies that must be patched, which will cause the assemblies to be
+loaded prematurely.</li>
+<li>You cannot patch some assemblies, as they are required for the assembly patcher to execute.
+The list of assemblies that cannot be patched are (BepInEx 6.0): <code>mscorlib.dll</code>, <code>System.dll</code>, <code>System.Core.dll</code>.
+Either use Harmony or edit these assemblies permanently.</li>
+</ul>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v6.0.0-pre.1/articles/dev_guide/preloader_patchers.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../static/scripts/main.js"></script>
+</body>
+</html>

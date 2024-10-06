@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin walkthrough: Using configuration files | BepInEx Docs </title>
+    <meta name="title" content="Plugin walkthrough: Using configuration files | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Plugin walkthrough: Using configuration files | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+            <span>
+                <a href="../../dev_guide/plugin_tutorial/index.html">Walkthrough: writing a basic plugin</a>
+            </span>
+                <span>
+                    <a href="../../dev_guide/plugin_tutorial/3_configuration.html">Part III: Configuration</a>
+                </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html" class="active">Walkthrough: writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">Part I: Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">Part II: Writing a basic plug-in class</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_configuration.html" class="active">Part III: Configuration</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_logging.html">Part IV: Logging</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="using-configuration-files">Using configuration files</h1>
+
+<p>Usually you may want to allow the user of the plug-in to change the specifics
+of its behaviour.
+Moreover, your plug-in might need to have a permanent data store for some of
+its internal data.</p>
+<p>Whatever the reason, BepInEx provides a built-in <a class="xref" href="../../../api/BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+class for simple configuration files.
+The format is based on INI with some syntax from TOML, which allows you to save
+most of the basic data types.</p>
+<p>This chapter provides information on how to add and use the configuration
+files. We use the example plug-in as in the previous chapters.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Using BepInEx's configuration API is optional. You can always provide a
+custom way to serialise and deserialise data for your plug-in.</p>
+</div>
+<h2 id="using-configuration-files-in-plug-ins">Using configuration files in plug-ins</h2>
+<p>Inside the plug-in you get access to <a class="xref" href="../../../api/BepInEx.BaseUnityPlugin.html#BepInEx_BaseUnityPlugin_Config">Config</a> property
+that is preconfigured to be saved in <code>BepInEx\config\&lt;GUID&gt;.cfg</code> where <code>&lt;GUID&gt;</code>
+is the GUID of your plug-in.</p>
+<p>In order to use the configuration file, you have to define the values you want
+to save programmatically with <a class="xref" href="../../../api/BepInEx.Configuration.ConfigFile.html#BepInEx_Configuration_ConfigFile_Bind__1_System_String_System_String___0_System_String_">Bind&lt;T&gt;(String, String, T, String)</a>:</p>
+<pre><code class="lang-csharp">[BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+public class ExamplePlugin : BaseUnityPlugin
+{
+    private ConfigEntry&lt;string&gt; configGreeting;
+    private ConfigEntry&lt;bool&gt; configDisplayGreeting;
+
+    void Awake()
+    {
+        configGreeting = Config.Bind(&quot;General&quot;,   // The section under which the option is shown
+                                     &quot;GreetingText&quot;,  // The key of the configuration option in the configuration file
+                                     &quot;Hello, world!&quot;, // The default value
+                                     &quot;A greeting text to show when the game is launched&quot;); // Description of the option to show in the config file
+
+        configDisplayGreeting = Config.Bind(&quot;General.Toggles&quot;, 
+                                            &quot;DisplayGreeting&quot;,
+                                            true,
+                                            &quot;Whether or not to show the greeting text&quot;);
+        Logger.LogInfo(&quot;Hello, world!&quot;);
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Instead of <code>Awake()</code>, you can also define wrappers inside the constructor.
+Moreover, you don't need to define all options at once and instead have them
+created on demand!</p>
+</div>
+<p>After you have defined the values, you can use them right away with
+<a class="xref" href="../../../api/BepInEx.Configuration.ConfigEntry-1.html#BepInEx_Configuration_ConfigEntry_1_Value">Value</a>:</p>
+<pre><code class="lang-csharp">// Instead of just Debug.Log(&quot;Hello, world!&quot;)
+if(configDisplayGreeting.Value)
+    Logger.LogInfo(configGreeting.Value);
+</code></pre>
+<p>When you compile your plug-in and run the game with it for the first time, the
+configuration file will be automatically generated.<br>
+In the case of this example, the following configuration file is created in
+<code>BepInEx\config\org.bepinex.plugins.exampleplugin.cfg</code>:</p>
+<pre><code class="lang-ini">[General]
+
+## A greeting text to show when the game is launched
+# Setting type: String
+# Default value: Hello, world!
+GreetingTest = Hello, world!
+
+[General.Toggles]
+
+## Whether or not to show the greeting text
+# Setting type: Boolean
+# Default value: True
+DisplayGreeting = true
+</code></pre>
+<p>Notice the similarities between the calls to
+<a class="xref" href="../../../api/BepInEx.Configuration.ConfigFile.html#BepInEx_Configuration_ConfigFile_Bind__1_System_String_System_String___0_System_String_">Bind&lt;T&gt;(String, String, T, String)</a>
+and the generated configuration file.</p>
+<h2 id="creating-configuration-files-manually">Creating configuration files manually</h2>
+<p>In some cases (e.g. <a class="xref" href="../preloader_patchers.html">preloader patchers</a>, non-plugin
+DLLs) you may want to create a configuration file manually.</p>
+<p>This can be done easily be creating a new instance of
+<a class="xref" href="../../../api/BepInEx.Configuration.ConfigFile.html">ConfigFile</a>:</p>
+<pre><code class="lang-csharp">// Create a new configuration file.
+// First argument is the path to where the configuration is saved
+// Second arguments specifes whether to create the file right away or whether to wait until any values are accessed/written
+var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, &quot;custom_config.cfg&quot;), true);
+
+// You can now create configuration wrappers for it
+var userName = customFile.Bind(&quot;General&quot;,
+    &quot;UserName&quot;,
+    &quot;Deuce&quot;,
+    &quot;Name of the user&quot;);
+
+// In plug-ins, you can still access the default configuration file
+var configGreeting = Config.Bind(&quot;General&quot;, 
+    &quot;GreetingTest&quot;,
+    &quot;Hello, world!&quot;, 
+    &quot;A greeting text to show when the game is launched&quot;);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Notice that we use <a class="xref" href="../../../api/BepInEx.Paths.html">Paths</a> class to get the path to <code>BepInEx\config</code>.
+In general, it is <strong>recommended</strong> to use the paths provided in <a class="xref" href="../../../api/BepInEx.Paths.html">Paths</a>
+instead of manually trying to locate the directories.</p>
+</div>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, you should get better accustomed with additional API provided in
+<a class="xref" href="../../../api/BepInEx.Configuration.ConfigFile.html">ConfigFile</a> and <a class="xref" href="../../../api/BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a> if
+you want to use configuration files provided by BepInEx.<br>
+The additional API allows you to manually save and reload configuration as well
+as listen for configuration change events.</p>
+<p>In the next chapter we will look at the logging API provided by BepInEx.</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.11/articles/dev_guide/plugin_tutorial/3_configuration.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

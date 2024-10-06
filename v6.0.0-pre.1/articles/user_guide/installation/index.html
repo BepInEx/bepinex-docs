@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing BepInEx | BepInEx Docs </title>
+    <meta name="title" content="Installing BepInEx | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installing BepInEx | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+        <span>
+        Using BepInEx
+        </span>
+            <span>
+                <a href="../../user_guide/installation/index.html">Installation</a>
+            </span>
+                            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../user_guide/installation/index.html" class="active">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/unity_mono.html">Unity (Mono)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/unity_il2cpp.html">Unity (Il2Cpp)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/net_fw.html">.NET Framework</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods at runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">Using preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="installing-bepinex">Installing BepInEx</h1>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li><em>Supported Operating Systems</em>
+<ul>
+<li>Windows 7, 8, 8.1, and 10 (both x86 and x64 are supported)</li>
+<li>Linux distros with GCC 10 or newer, preferably GNU/Linux distro (x86_64 and x86 archs are supported)</li>
+<li>macOS 10.13 High Sierra or newer</li>
+</ul>
+</li>
+<li><em>Supported game engines</em>
+<ul>
+<li>Unity 3 or newer</li>
+<li>XNA, FNA, MonoGame, and other engines running on .NET Framework</li>
+</ul>
+</li>
+</ul>
+<h2 id="where-to-download-bepinex">Where to download BepInEx</h2>
+<p>Official BepInEx binaries are distributed in two variations: <em>stable builds</em> and <em>bleeding edge (BE) builds</em>.</p>
+<p><strong>Stable builds</strong> are available on <a href="https://github.com/BepInEx/BepInEx/releases">GitHub</a>.<br>
+Stable builds are released once a new iteration of BepInEx is considered feature-complete.<br>
+They may have only minor bugs, but some newest features might not be available.<br>
+<strong>It is recommended to use stable builds in most cases.</strong></p>
+<p><strong>Bleeding edge builds</strong> are available on <a href="https://builds.bepinex.dev/projects/bepinex_be">BepInBuilds</a>.
+Bleeding edge builds are always the latest builds of the source code. Thus they are the opposite of stable builds: they have the newest features and bugfixes available but usually tend to be the most buggy.<br>
+Therefore you should only use bleeding edge builds if you are asked to or if you want to preview the upcoming version of BepInEx.</p>
+<p>There also exist <em>unofficial 3rd party</em> distributions often preconfigured and set up to work with specific games.</p>
+<h2 id="installing-bepinex-1">Installing BepInEx</h2>
+<p>Currently, BepInEx can be installed manually.</p>
+<p>BepInEx has separate binaries for different game engines. Refer to separate installation guides for the specific engine your game is using:</p>
+<ul>
+<li>Unity games using <em>mono</em> runtime: these games usually have a folder named <code>Managed</code> somewhere in their install
+<ul>
+<li><a href="unity_mono.html">Install guide for Mono Unity</a></li>
+</ul>
+</li>
+<li>Unity games using <em>Il2Cpp</em> runtime: these games usually have a folder named <code>il2cpp_data</code> somewhere in their install
+<ul>
+<li><a href="unity_il2cpp.html">Install guide for Il2Cpp Unity</a></li>
+</ul>
+</li>
+<li>.NET Framework games
+<ul>
+<li><a href="net_fw.html">Install guide for .NET Framework games</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="further-steps-and-troubleshooting">Further steps and troubleshooting</h2>
+<p>Some games require some additional changes to work around specific limitations of different Unity versions.</p>
+<p>Please refer to the <a class="xref" href="../troubleshooting.html">troubleshooting</a> section for more information about additional installation steps.</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v6.0.0-pre.1/articles/user_guide/installation/index.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>
