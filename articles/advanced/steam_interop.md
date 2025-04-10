@@ -91,7 +91,7 @@ Additionally, refer to refer to the [configuration guide](<xref:configuration>) 
 
 Setting up BepInEx with Wine requires primarily configuring the DLL forwarding 
 to work correctly. **We strongly recommend to use Proton**, but it is not an 
-absolute requirement.
+absolute requirement. Please note that when using BepInEx under proton, the windows version of BepInEx must be downloaded.
 
 ### Adding the DLL override
 #### Using the Steam launch options
