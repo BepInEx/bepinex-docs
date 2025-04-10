@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namespace BepInEx
+ | BepInEx Docs </title>
+    <meta name="title" content="Namespace BepInEx
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Namespace BepInEx
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+        <span>
+            <a href="BepInEx.html">BepInEx</a>
+        </span>
+                    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.html" class="active">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  <h1 id="BepInEx" data-uid="BepInEx" class="text-break">Namespace BepInEx
+  </h1>
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <div class="remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a></h4>
+      <section><p>The base plugin type that is used by the BepInEx plugin loader.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.BepInDependency.html">BepInDependency</a></h4>
+      <section><p>This attribute specifies any dependencies that this plugin has on other plugins.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a></h4>
+      <section><p>This attribute specifies other plugins that are incompatible with this plugin.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.BepInPlugin.html">BepInPlugin</a></h4>
+      <section><p>This attribute denotes that a class is a plugin, and specifies the required metadata.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.BepInProcess.html">BepInProcess</a></h4>
+      <section><p>This attribute specifies which processes this plugin should be run for. Not specifying this attribute will load the plugin under every process.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.MetadataHelper.html">MetadataHelper</a></h4>
+      <section><p>Helper class to use for retrieving metadata about a plugin, defined as attributes.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Paths.html">Paths</a></h4>
+      <section><p>Paths used by BepInEx</p>
+</section>
+      <h4><a class="xref" href="BepInEx.PluginInfo.html">PluginInfo</a></h4>
+      <section><p>Data class that represents information about a loadable BepInEx plugin.
+Contains all metadata and additional info required for plugin loading by <a class="xref" href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a></h4>
+      <section><p>Convenience extensions for utilizing multiple threads and using the <a class="xref" href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.ThreadingHelper.html">ThreadingHelper</a></h4>
+      <section><p>Provides methods for running code on other threads and synchronizing with the main thread.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Utility.html">Utility</a></h4>
+      <section><p>Generic helper properties and methods.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a></h4>
+      <section><p>Flags that are applied to a dependency</p>
+</section>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

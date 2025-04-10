@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic plugin: Setting up the development environment | BepInEx Docs </title>
+    <meta name="title" content="Basic plugin: Setting up the development environment | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Basic plugin: Setting up the development environment | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+            <span>
+                <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+            </span>
+                <span>
+                    <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html" class="active">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html" class="active">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running native Unix games through Steam</a>
+                </li>
+                <li>
+                    <a href="../../advanced/proton_wine.html">Running under Proton/Wine (Linux/Mac/SteamOS/etc.)</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="setting-up-the-development-environment">Setting up the development environment</h1>
+
+<p>To start developing BepInEx, we need three components:</p>
+<ul>
+<li>Latest .NET SDK</li>
+<li>A code editor or an integrated development environment (IDE)</li>
+<li>BepInEx installed and configured in the game</li>
+<li>BepInEx plugin templates</li>
+</ul>
+<p>All these parts are next discussed in more detail</p>
+<h2 id="net-sdk">.NET SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have .NET SDK (version 6 or newer) already installed, you can continue to <a href="#picking-an-ide">picking an IDE</a>.</p>
+</div>
+<p><a href="https://dotnet.microsoft.com/">.NET SDK</a> is a software development kit (SDK) that allows compiling code written in C# and using different .NET libraries.
+As you may notice later, plugins use different .NET API versions and variations such as <em>.NET Framework</em> or <em>.NET Standard</em>.
+When it comes to plugin development, all those can be handled by the modern .NET SDK.</p>
+<p>To install .NET SDK, do the following:</p>
+<ol>
+<li><p>Head to <a href="https://dotnet.microsoft.com/download">.NET downloads page</a></p>
+</li>
+<li><p>Select the latest recommended .NET SDK for your OS:</p>
+<p><img src="images/dotnet_download.png" alt="Example of &quot;Download .NET SDK&quot; from .NET downloads page"></p>
+</li>
+<li><p>Download and run the installer according to your OS's instructions</p>
+<p>You may need to restart your PC for the install to finalise.</p>
+</li>
+</ol>
+<p>Once you have installed .NET SDK, verify that it works by opening a command line prompt and running</p>
+<pre><code class="lang-bash">dotnet --list-sdks
+</code></pre>
+<p>If you have installed .NET SDK correctly, the command should return at least one .NET SDK version and its location.<br>
+An example output is:</p>
+<pre><code class="lang-txt">6.0.1 [C:\Program Files\dotnet\sdk]
+</code></pre>
+<p>Once you have at least one .NET SDK version installed, you can choose a code editor.</p>
+<h2 id="picking-an-ide">Picking an IDE</h2>
+<p>While plugins can be made with a simple text editor, it is recommended to use a proper editor for programming.<br>
+Different editors exist with varying level of integration with .NET building tools.
+Proper IDEs provide more extensive features like code style suggestions, automatic completions and even debugging.</p>
+<p>A list of some editors that are known to be usable for BepInEx plugin development:</p>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/">Visual Studio Community</a> -- free, code completions, project management, debugging support</li>
+<li><a href="https://www.jetbrains.com/rider/">JetBrains Rider</a> -- paid, great code completion, code style suggestions, C# decompiler, crossplatform (Windows, macOS, Linux)</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> -- free and lightweight, crossplatform (Windows, macOS, Linux), supports .NET and C# via plugins</li>
+</ul>
+<p>Pick one of the code editors and ensure they work with C#.</p>
+<h2 id="installing-and-configuring-bepinex">Installing and configuring BepInEx</h2>
+<p>Next, make sure you have BepInEx installed in your game.<br>
+If you don't have yet, follow the <a class="xref" href="../../user_guide/installation/index.html">installation guide</a>.</p>
+<p>Run the game with BepInEx at least once in order to generate configuration files and any additional libraries.</p>
+<p>To make debugging easier, it is useful to enable the BepInEx console.
+To do so, go to <code>BepInEx/config</code> folder and open <code>BepInEx.cfg</code>.<br>
+Find the following configuration section/value and edit it as follows:</p>
+<pre><code class="lang-ini">[Logging.Console]
+
+## Enables showing a console for log output.
+# Setting type: Boolean
+# Default value: false
+Enabled = true
+</code></pre>
+<h2 id="installing-bepinex-plugin-templates">Installing BepInEx plugin templates</h2>
+<p>BepInEx provides helper templates to start off with plugin development.<br>
+We will be using them to make our plugins.</p>
+<p>To install the template, run the following command:</p>
+<pre><code class="lang-bash">dotnet new -i BepInEx.Templates --nuget-source https://nuget.bepinex.dev/v3/index.json
+</code></pre>
+<p>If the install is successful, you should see a listing of all .NET project templates.
+Among them should be the following BepInEx templates:</p>
+<pre><code class="lang-txt">Templates                                     Short Name            Language    Tags
+--------------------------------------------  --------------------  ----------  --------------------------------------
+BepInEx 5 Plugin Template                     bepinex5plugin        [C#]        BepInEx/BepInEx 5/Plugin
+BepInEx 6 .NET Launcher Plugin Template       bep6plugin_netfx      [C#]        BepInEx/BepInEx 6/Plugin/.NET Launcher
+BepInEx 6 Il2Cpp Plugin Template              bep6plugin_il2cpp     [C#]        BepInEx/BepInEx 6/Plugin/Il2Cpp
+BepInEx 6 Unity Mono Plugin Template          bep6plugin_unitymono  [C#]        BepInEx/BepInEx 6/Plugin/Unity Mono
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>In this part, we installed .NET SDK, a code editor, BepInEx and BepInEx plugin templates.
+With all components set up, creating a new plugin is a fairly simple process.</p>
+<p>Next: <a href="2_plugin_start.html">Writing a basic plugin</a></p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.16/articles/dev_guide/plugin_tutorial/1_setup.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing BepInEx | BepInEx Docs </title>
+    <meta name="title" content="Installing BepInEx | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installing BepInEx | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+        <span>
+        Using BepInEx
+        </span>
+            <span>
+                <a href="../../user_guide/installation/index.html">Installation</a>
+            </span>
+                            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../user_guide/installation/index.html" class="active">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running native Unix games through Steam</a>
+                </li>
+                <li>
+                    <a href="../../advanced/proton_wine.html">Running under Proton/Wine (Linux/Mac/SteamOS/etc.)</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="installing-bepinex">Installing BepInEx</h1>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li><em>Supported Operating Systems</em>
+<ul>
+<li>Windows 7, 8, 8.1 and 10 (both x86 and x64 are supported)</li>
+<li>Linux distros with GCC 10 or newer, preferably GNU/Linux distro (x86_64 and x86 archs are supported)</li>
+<li>macOS 10.13 High Sierra or newer</li>
+<li>Other OSes for which usage via <a href="hardpatching.html">hardpatching</a> is possible
+<ul>
+<li>Any OS that has support for <a href="https://www.winehq.org/">Wine</a> (Linux, macOS, FreeBSD, ...)</li>
+<li>Any OS that has support for <a href="https://www.mono-project.com/">Mono</a> (Windows, Linux, macOS)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Supported Unity games</em>
+<ul>
+<li>Unity 3 or newer</li>
+</ul>
+</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Games built with IL2CPP are not supported at the moment.
+However, support for it is planned as the tooling has gotten better thanks to projects like <a href="https://github.com/knah/Il2CppAssemblyUnhollower">Il2CppAssemblyUnhollower</a>.</p>
+</div>
+<h2 id="where-to-download-bepinex">Where to download BepInEx</h2>
+<p>BepInEx is distributed in two builds: <em>stable</em> and <em>bleeding edge</em>.</p>
+<p><strong>Stable builds</strong> are available on <a href="https://github.com/BepInEx/BepInEx/releases">GitHub</a>.<br>
+Stable builds are released once a new iteration of BepInEx is considered feature-complete.<br>
+They have the least bugs, but some newest features might not be available.<br>
+<strong>It is recommended to use stable builds in most cases.</strong></p>
+<p><strong>Bleeding edge builds</strong> are available on <a href="https://builds.bepis.io/projects/bepinex_be">BepisBuilds</a>.
+Bleeding edge builds are always the latest builds of the source code. Thus they are the opposite to stable builds: they have the newest features and bugfixes available, but usually tend to be the most buggy.<br>
+Therefore you should use bleeding edge builds only if you are asked to or if you want to preview the upcoming version of BepInEx.</p>
+<h2 id="installing-bepinex-1">Installing BepInEx</h2>
+<p>Currently, BepInEx can be installed manually.</p>
+<ol>
+<li><p>Download the correct version of BepInEx.</p>
+<p><a href="#where-to-download-bepinex">Download BepInEx from one of the available sources.</a><br>
+Pick a version depending on your OS:</p>
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S_tabid-win" role="tab" aria-controls="tabpanel_bHGHmlrG6S_tabid-win" data-tab="tabid-win" tabindex="0" aria-selected="true">Windows</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S_tabid-nix" role="tab" aria-controls="tabpanel_bHGHmlrG6S_tabid-nix" data-tab="tabid-nix" tabindex="-1">Linux/macOS</a>
+</li>
+</ul>
+<section id="tabpanel_bHGHmlrG6S_tabid-win" role="tabpanel" data-tab="tabid-win">
+
+<p>Download one of the following versions:</p>
+<ul>
+<li><code>x86</code> for games with <strong>32-bit executables</strong></li>
+<li><code>x64</code> for games with <strong>64-bit executables</strong></li>
+</ul>
+</section>
+<section id="tabpanel_bHGHmlrG6S_tabid-nix" role="tabpanel" data-tab="tabid-nix" aria-hidden="true" hidden="hidden">
+
+<p>Download archive with designation <code>nix</code>. The archive contains everything needed
+to run BepInEx on both 32- and 64-bit executables.</p>
+</section>
+</div>
+</li>
+<li><p>Extract the contents into the game root.</p>
+<p>After you have downloaded the correct game version, extact the contents of
+the archive into the game folder.</p>
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S-1_tabid-win" role="tab" aria-controls="tabpanel_bHGHmlrG6S-1_tabid-win" data-tab="tabid-win" tabindex="0" aria-selected="true">Windows</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S-1_tabid-nix" role="tab" aria-controls="tabpanel_bHGHmlrG6S-1_tabid-nix" data-tab="tabid-nix" tabindex="-1">Linux/macOS</a>
+</li>
+</ul>
+<section id="tabpanel_bHGHmlrG6S-1_tabid-win" role="tabpanel" data-tab="tabid-win">
+
+<p>The game root folder is where the game executable is located.</p>
+</section>
+<section id="tabpanel_bHGHmlrG6S-1_tabid-nix" role="tabpanel" data-tab="tabid-nix" aria-hidden="true" hidden="hidden">
+
+<p>On Linux, the game root folder is where the executable <code>&lt;Game&gt;.x86</code> or
+<code>&lt;Game&gt;.x86_64</code> is located.</p>
+<p>On macOS, the root folder is where the game <code>&lt;Game&gt;.app</code> is located.</p>
+</section>
+</div>
+</li>
+<li><p>Do a first run to generate configuration files</p>
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S-2_tabid-win" role="tab" aria-controls="tabpanel_bHGHmlrG6S-2_tabid-win" data-tab="tabid-win" tabindex="0" aria-selected="true">Windows</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S-2_tabid-nix" role="tab" aria-controls="tabpanel_bHGHmlrG6S-2_tabid-nix" data-tab="tabid-nix" tabindex="-1">Linux/macOS</a>
+</li>
+</ul>
+<section id="tabpanel_bHGHmlrG6S-2_tabid-win" role="tabpanel" data-tab="tabid-win">
+
+<p>Simply run the game executable. This should generate BepInEx configuration
+file into <code>BepInEx/config</code> folder and an initial log file <code>BepInEx/LogOutput.txt</code>.</p>
+</section>
+<section id="tabpanel_bHGHmlrG6S-2_tabid-nix" role="tabpanel" data-tab="tabid-nix" aria-hidden="true" hidden="hidden">
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are modding a Steam game, you need to <a class="xref" href="../../advanced/steam_interop.html">configure Steam to run BepInEx</a></p>
+</div>
+<p>First, open the included run script <code>run_bepinex.sh</code> in a text editor of
+your choice. Edit the line</p>
+<pre><code class="lang-sh">executable_name=&quot;&quot;;
+</code></pre>
+<p>to be <strong>the name of the game executable</strong>:</p>
+<ul>
+<li>On Linux, this is simply the name of the game executable</li>
+<li>On macOS, this is the name of the game app <strong>with</strong> <code>.app</code> extension, for example <code>HuniePop.app</code></li>
+</ul>
+<p>Finally, open the terminal in the game folder and make <code>run_bepinex.sh</code> script
+executable:</p>
+<pre><code class="lang-bash">chmod u+x run_bepinex.sh
+</code></pre>
+<p>You can now run BepInEx by executing the run script:</p>
+<pre><code class="lang-bash">./run_bepinex.sh
+</code></pre>
+<p>This should generate BepInEx configuration
+file into <code>BepInEx/config</code> folder and an initial log file <code>BepInEx/LogOutput.txt</code>.</p>
+</section>
+</div>
+</li>
+<li><p>Configure BepInEx to suit your needs.</p>
+<p>Open <code>BepInEx/config/BepInEx.cfg</code> in a text editor of your choice.
+All options are documented directly in the configuration file.</p>
+<p>Additionally, refer to refer to the <a class="xref" href="../configuration.html">configuration guide</a> for more information.</p>
+</li>
+</ol>
+<h2 id="further-steps-and-troubleshooting">Further steps and troubleshooting</h2>
+<p>Some games require some additional changes in order to work around specific
+limitations of different Unity versions.</p>
+<p>Please refer to the
+<a class="xref" href="../troubleshooting.html">troubleshooting</a> section for more information about
+additional installation steps.</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.16/articles/user_guide/installation/index.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

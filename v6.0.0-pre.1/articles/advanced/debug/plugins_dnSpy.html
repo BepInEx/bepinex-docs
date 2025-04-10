@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging with dnSpy | BepInEx Docs </title>
+    <meta name="title" content="Debugging with dnSpy | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Debugging with dnSpy | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                        <span>
+        Advanced topics
+        </span>
+            <span>
+                <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+            </span>
+                <span>
+                    <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                </span>
+    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/unity_mono.html">Unity (Mono)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/unity_il2cpp.html">Unity (Il2Cpp)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/net_fw.html">.NET Framework</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods at runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">Using preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../advanced/debug/index.html" class="active">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html" class="active">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="debugging-with-dnspy">Debugging with dnSpy</h1>
+
+<h2 id="turning-the-game-into-a-debug-build">Turning the game into a debug build</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This guide's step is mainly a basic overview of what to do.
+For a full guide on turning your game into a debug build, check out <a href="https://github.com/0xd4d/dnSpy/wiki/Debugging-Unity-Games#debugging-release-builds">the offical dnSpy's guide on this topic.</a>.</p>
+</div>
+<p>First, the game's mono runtime has to be swapped to one that supports debugging with dnSpy.<br>
+For that, you need to know the Unity version your game has been built against.<br>
+You can do that by checking file properties of the game EXE or by running BepInEx,
+which will log the Unity version of the game in the console (or into <code>BepInEx/LogOutput.txt</code>):</p>
+<pre><code>[Message:   BepInEx] BepInEx 5.0.1.0 - &lt;Game Name&gt;
+[Info   :   BepInEx] Running under Unity v5.4.0.6710170
+[Info   :   BepInEx] CLR runtime version: 2.0.50727.1433
+...
+</code></pre>
+<p>Next, head to <a href="https://github.com/0xd4d/dnSpy/releases">dnSpy releases</a> and download one of the debug Mono packages
+that <strong>corresponds to the Unity version of your game</strong>:
+<img src="images/dnSpy_debug.png" alt="Download one of the debug packages that corresponds to the Unity version of your game.">
+For example, in the log above Unity version is <code>5.4.0</code>, in which case one has to download <code>Unity-debugging-5.x.zip</code>.</p>
+<p>Open the downloaded archive and locate <code>mono.dll</code> that corresponds to your Unity game <strong>version</strong> and
+executable target (32 bit or 64 bit). Finally, locate the same DLL in your game folder and replace it with the one from dnSpy.</p>
+<h2 id="setting-up-dnspy-and-setting-breakpoints">Setting up dnSpy and setting breakpoints</h2>
+<p>Download the <a href="https://github.com/0xd4d/dnSpy/releases">latest version of dnSpy</a>. You can pick any of the available versions.</p>
+<p>Extract the downloaded archive and run dnSpy.</p>
+<p>Next, drag the plugins DLLs you want to debug into dnSpy.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must select the DLL that is in your <code>BepInEx</code> folder, and not the one in your Visual Studio solution!</p>
+</div>
+<p><img src="images/dnSpy_dragndrop.png" alt="Drag and drop the DLL you want to debug on dnSpy's assembly list."></p>
+<p>You can change the settings of dnSpy via <code>View &gt; Options</code>.</p>
+<p>To set a breakpoint, navigate the assembly you want to debug and right click on the piece of code you want to debug.<br>
+Next, select <code>Add breakpoint</code> to set the breakpoint:</p>
+<p><img src="images/dnSpy_set_breakpoint.png" alt="Right-click on the piece of code as select &quot;Add breakpoint&quot; to add a breakpoint."></p>
+<p>Note that some code might not be selectable. In that case you can change dnSpy to show the precise IL code from the dropdown in the top bar.</p>
+<h2 id="running-the-game-via-dnspy">Running the game via dnSpy</h2>
+<p>After you have set the breakpoints, you can start debugging the game.</p>
+<p>Select <code>Debug &gt; Start Debugging</code> to open up the <em>Debug Program</em> dialog.</p>
+<p>Change the settings as follows:</p>
+<ul>
+<li><em>Debug Engine</em>: Select <strong>one</strong> of the following:
+<ul>
+<li><code>Unity</code> if you want dnSpy to start the game for you</li>
+<li><code>Unity (Connect)</code> if you want to start debugging when the game is on</li>
+</ul>
+</li>
+<li><em>Executable</em> (only in <code>Unity</code> engine): Locate and select the game's executable from the game's installation directory.</li>
+<li><em>Timeout (s)</em> (only in <code>Unity</code> engine): 30. You can optionally set it to higher values if the game loads too slow.</li>
+<li><em>IP Address</em> (only in <code>Unity (Connect)</code> engine): Leave it blank</li>
+<li><em>Port</em> (only in <code>Unity (Connect)</code> engine): 55555</li>
+</ul>
+<p><img src="images/dnSpy_start_debug.png" alt="dnSpy's Debug Program dialog."></p>
+<p>Finally, press <code>OK</code> to start the game (or to attach dnSpy to an already running game).</p>
+<p>Wait until the game loads your assembly. If everything worked correctly, the execution will stop on the breakpoint:</p>
+<p><img src="images/dnSpy_breakpoint_hit.png" alt="dnSpy window when the game hits a breakpoint."></p>
+<p>From there, you can do same things like in the normal debugger:</p>
+<ul>
+<li>Inspect locals and type members</li>
+<li>Step into, step over, set more breakpoints (via the top bar)</li>
+<li>Modify values (in some cases)</li>
+</ul>
+<p>Note that when you step in dnSpy, it steps one IL instruction at a time (in which case one single expression can take multiple steps to move over).</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v6.0.0-pre.1/articles/advanced/debug/plugins_dnSpy.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

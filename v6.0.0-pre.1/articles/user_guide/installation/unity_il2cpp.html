@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing BepInEx on Il2Cpp Unity | BepInEx Docs </title>
+    <meta name="title" content="Installing BepInEx on Il2Cpp Unity | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installing BepInEx on Il2Cpp Unity | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+        <span>
+        Using BepInEx
+        </span>
+            <span>
+                <a href="../../user_guide/installation/index.html">Installation</a>
+            </span>
+                <span>
+                    <a href="../../user_guide/installation/unity_il2cpp.html">Unity (Il2Cpp)</a>
+                </span>
+                    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../user_guide/installation/index.html" class="active">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/unity_mono.html">Unity (Mono)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/unity_il2cpp.html" class="active">Unity (Il2Cpp)</a>
+                        </li>
+                        <li>
+                            <a href="../../user_guide/installation/net_fw.html">.NET Framework</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods at runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">Using preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="installing-bepinex-on-il2cpp-unity">Installing BepInEx on Il2Cpp Unity</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>At the moment, Il2Cpp builds are available only for Windows and Wine.</p>
+</div>
+<ol>
+<li><p>Download the correct version of BepInEx.</p>
+<p><a href="index.html#where-to-download-bepinex">Download BepInEx from one of the available sources.</a></p>
+<p>Download one of the following versions:</p>
+<ul>
+<li><code>UnityIL2CPP_x86</code> for games with <strong>32-bit executables</strong></li>
+<li><code>UnityIL2CPP_x64</code> for games with <strong>64-bit executables</strong></li>
+</ul>
+</li>
+<li><p>Extract the contents into the game root.</p>
+<p>After you have downloaded the correct game version, extract the archive contents into the game folder.</p>
+<p>The game root folder is where the game executable is located.</p>
+</li>
+<li><p>Do the first-time run to generate configuration files</p>
+<p>Run the game executable. This step should generate the BepInEx configuration file into the <code>BepInEx/config</code> folder and an initial log file <code>BepInEx/LogOutput.txt</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>First run in Il2Cpp games may take some time as it requires generating files necessary for modding.</p>
+</div>
+</li>
+<li><p>Configure BepInEx to suit your needs.</p>
+<p>Open <code>BepInEx/config/BepInEx.cfg</code> in a text editor of your choice.
+All options are documented directly in the configuration file.</p>
+<p>Additionally, refer to refer to the <a class="xref" href="../configuration.html">configuration guide</a> for more information.</p>
+</li>
+</ol>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v6.0.0-pre.1/articles/user_guide/installation/unity_il2cpp.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

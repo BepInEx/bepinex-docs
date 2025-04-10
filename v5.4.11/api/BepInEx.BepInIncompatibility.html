@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class BepInIncompatibility
+ | BepInEx Docs </title>
+    <meta name="title" content="Class BepInIncompatibility
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Class BepInIncompatibility
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+        <span>
+            <a href="BepInEx.html">BepInEx</a>
+        </span>
+            <span>
+                <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+            </span>
+                </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.html" class="active">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html" class="active">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_BepInIncompatibility" data-uid="BepInEx.BepInIncompatibility">Class BepInIncompatibility
+  </h1>
+  <div class="class-summary"><p>This attribute specifies other plugins that are incompatible with this plugin.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  <div class="inheritance class-metadata">
+    <h5>Inheritance</h5>
+    <span class="level0" style="--inheritance-level: 0;"><span class="xref">System.Object</span></span>
+    <span class="level1" style="--inheritance-level: 1;"><span class="xref">System.Attribute</span></span>
+    <span class="level2" style="--inheritance-level: 2;"><span class="xref">BepInIncompatibility</span></span>
+  </div>
+  
+  <div class="implements class-metadata">
+    <h5>Implements</h5>
+  
+    <span><span class="xref">System.Runtime.InteropServices._Attribute</span></span>
+    <span><a class="xref" href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a></span>
+  
+  </div>
+  
+  <div class="inheritedMembers class-metadata">
+    <h5>Inherited Members</h5>
+  
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.MemberInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.ParameterInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Module, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Module)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Module, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Module, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.Module, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.Module, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.Module, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.Module, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Assembly, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Assembly, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Assembly)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttributes(System.Reflection.Assembly, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.Assembly, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefined(System.Reflection.Assembly, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.Assembly, System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetCustomAttribute(System.Reflection.Assembly, System.Type, System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.Equals(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.GetHashCode()</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.Match(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.IsDefaultAttribute()</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfoCount(System.UInt32)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfo(System.UInt32, System.UInt32, System.IntPtr)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetIDsOfNames(System.Guid, System.IntPtr, System.UInt32, System.UInt32, System.IntPtr)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.Invoke(System.UInt32, System.Guid, System.UInt32, System.Int16, System.IntPtr, System.IntPtr, System.IntPtr, System.IntPtr)</span>
+    </span>
+    <span>
+      <span class="xref">System.Attribute.TypeId</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ToString()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetType()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </span>
+  
+  </div>
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.html">BepInEx</a></div>
+  <div><strong>Assembly</strong>: BepInEx.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_BepInIncompatibility_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+public class BepInIncompatibility : Attribute, _Attribute, ICacheable</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_BepInIncompatibility__ctor_System_String_" data-uid="BepInEx.BepInIncompatibility.#ctor(System.String)">BepInIncompatibility(String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_BepInIncompatibility__ctor_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.BepInIncompatibility.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Contract/Attributes.cs/#L170">View Source</a>
+    </div>
+  
+    <a id="BepInEx_BepInIncompatibility__ctor_" data-uid="BepInEx.BepInIncompatibility.#ctor*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Marks this <a class="xref" href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a> as incompatible with another plugin.
+If the other plugin exists, this plugin will not be loaded and a warning will be shown.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BepInIncompatibility(string IncompatibilityGUID)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>IncompatibilityGUID</code></span></td>
+        <td><p>The GUID of the referenced plugin.</p>
+</td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_BepInIncompatibility_IncompatibilityGUID" data-uid="BepInEx.BepInIncompatibility.IncompatibilityGUID">IncompatibilityGUID</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_BepInIncompatibility_IncompatibilityGUID.md&amp;value=---%0Auid%3A%20BepInEx.BepInIncompatibility.IncompatibilityGUID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Contract/Attributes.cs/#L163">View Source</a>
+    </div>
+  
+    <a id="BepInEx_BepInIncompatibility_IncompatibilityGUID_" data-uid="BepInEx.BepInIncompatibility.IncompatibilityGUID*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>The GUID of the referenced plugin.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string IncompatibilityGUID { get; protected set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Load_System_IO_BinaryReader_" data-uid="BepInEx.BepInIncompatibility.BepInEx#Bootstrap#ICacheable#Load(System.IO.BinaryReader)">ICacheable.Load(BinaryReader)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Load_System_IO_BinaryReader_.md&amp;value=---%0Auid%3A%20BepInEx.BepInIncompatibility.BepInEx%23Bootstrap%23ICacheable%23Load(System.IO.BinaryReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Contract/Attributes.cs/#L190">View Source</a>
+    </div>
+  
+    <a id="BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Load_" data-uid="BepInEx.BepInIncompatibility.BepInEx#Bootstrap#ICacheable#Load*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICacheable.Load(BinaryReader br)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.IO.BinaryReader</span></code></td>
+        <td><span class="parametername"><code>br</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Save_System_IO_BinaryWriter_" data-uid="BepInEx.BepInIncompatibility.BepInEx#Bootstrap#ICacheable#Save(System.IO.BinaryWriter)">ICacheable.Save(BinaryWriter)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Save_System_IO_BinaryWriter_.md&amp;value=---%0Auid%3A%20BepInEx.BepInIncompatibility.BepInEx%23Bootstrap%23ICacheable%23Save(System.IO.BinaryWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Contract/Attributes.cs/#L185">View Source</a>
+    </div>
+  
+    <a id="BepInEx_BepInIncompatibility_BepInEx_Bootstrap_ICacheable_Save_" data-uid="BepInEx.BepInIncompatibility.BepInEx#Bootstrap#ICacheable#Save*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICacheable.Save(BinaryWriter bw)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.IO.BinaryWriter</span></code></td>
+        <td><span class="parametername"><code>bw</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  <h3 id="implements">Implements</h3>
+  
+  <div>
+      <span class="xref">System.Runtime.InteropServices._Attribute</span>
+  </div>
+  <div>
+      <a class="xref" href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+  </div>
+  
+  
+  
+  
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_BepInIncompatibility.md&amp;value=---%0Auid%3A%20BepInEx.BepInIncompatibility%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

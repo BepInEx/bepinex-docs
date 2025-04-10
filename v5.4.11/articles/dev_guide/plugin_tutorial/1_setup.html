@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin walkthrough: Setting up the development environment | BepInEx Docs </title>
+    <meta name="title" content="Plugin walkthrough: Setting up the development environment | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Plugin walkthrough: Setting up the development environment | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+            <span>
+                <a href="../../dev_guide/plugin_tutorial/index.html">Walkthrough: writing a basic plugin</a>
+            </span>
+                <span>
+                    <a href="../../dev_guide/plugin_tutorial/1_setup.html">Part I: Setting up the development environment</a>
+                </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html" class="active">Walkthrough: writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html" class="active">Part I: Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">Part II: Writing a basic plug-in class</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_configuration.html">Part III: Configuration</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_logging.html">Part IV: Logging</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="setting-up-the-development-environment">Setting up the development environment</h1>
+
+<p>Writing BepInEx plugins starts with creation of the code projects.
+In this guide, we will be using <a href="https://visualstudio.microsoft.com/">Visual Studio</a> to create our plugins.</p>
+<h2 id="creating-a-solution">Creating a solution</h2>
+<p>First, we'll create a new solution in Visual Studio.<br>
+Open up Visual Studio and select <code>File &gt; New &gt; Project</code>:</p>
+<p><img src="images/vs-new-plugin.png" alt="New project dialog in Visual Studio"></p>
+<p>From there, select <code>C# &gt; Class Library</code> as the target project.
+You might now notice that there are multiple <code>Class Library</code> templates: one for .NET Standard, one for .NET Framework and some other ones.<br>
+The one you select <em>depends on the game and on the plugin you're trying to create</em>.</p>
+<p>In essence, select <em>Class Library (.NET Standard)</em> if the game you're targeting has <code>netstandard.dll</code> present in its <code>&lt;GameName&gt;_Data\Managed</code> folder.<br>
+Otherwise, select <em>Class Library (.NET Framework)</em>.</p>
+<p>Next, fill in the details of your plugin (name, project location).</p>
+<p>If you have selected <em>Class Library (.NET Framework)</em> as the project type, you will also notice the <code>Framework</code> option.
+This option specifies the version of the .NET Framework that the plugin will be compiled against.<br>
+Different Unity may require you to use different .NET Framework versions. As a rule of thumb, you can use .NET Framework 3.5 in all Unity games, but you will get the least API available. In order to determine the exact version of .NET Framework to use, check the file version of <code>mscorlib.dll</code> in <code>&lt;GameName&gt;_Data\Managed</code> folder: if it's <code>4.0.0.0</code> or newer, you can target .NET Framework 4.x (usually 4.6).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is possible to target both .NET Framework and .NET Standard games by using .NET Framework 3.5 as the build target.</p>
+</div>
+<p>In the case of this test plugin, we'll be writing a plugin for <a href="https://store.steampowered.com/app/632360/Risk_of_Rain_2/">Risk of Rain 2</a>.<br>
+Since Risk of Rain 2 is a .NET Standard game (i.e. there is <code>netstandard.dll</code> in <code>Risk of Rain 2_Data\Managed</code> folder), we will choose <em>Class Library (.NET Standard)</em> as the template.</p>
+<p>Press OK, which will create the solution folder and the main C# project.</p>
+<h2 id="gathering-dll-dependencies">Gathering DLL dependencies</h2>
+<p>Before diving into programming, we need to import any DLLs that we will be using.</p>
+<p>First, head over to the folder you created your solution in. It should look like this:</p>
+<p><img src="images/plugin-folder.png" alt="A basic structure of the plugin folder"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you forgot the location of the solution, you can right click on the solution file in Visual Studio and select <code>Open Folder in File Explorer</code>:
+<img src="images/vs-open-solution.png" alt="Open Folder in File Explorer in Visual Studio"></p>
+</div>
+<p>Next, create a <code>Libs</code> folder in the solution folder. That folder will contain all the required DLLs that this project will depend on.</p>
+<p>Find and copy the following DLLs into the folder:</p>
+<ul>
+<li><code>BepInEx.dll</code>: found in <code>BepInEx\core</code> folder (you can download BepInEx as per the <a class="xref" href="../../user_guide/installation/index.html">installation instructions</a>)</li>
+<li><code>UnityEngine.dll</code> (and <code>UnityEngine.CoreModule.dll</code> if needed): found in the game's <code>&lt;Game Name&gt;_Data\Managed</code> folder</li>
+<li>(Optional) Any additional DLLs and dependencies you think you need (you can always add more DLLs later)
+<ul>
+<li><code>Assembly-CSharp.dll</code> contains game-specific code</li>
+<li><code>0Harmony.dll</code> and <code>BepInEx.Harmony.dll</code> allow to patch methods while the game is running. Refer to <a href="https://github.com/pardeike/Harmony/wiki">Harmony wiki</a> for more details.</li>
+</ul>
+</li>
+</ul>
+<p>In the end, your <code>Libs</code> folder might look something like this (<strong>for example</strong>):</p>
+<p><img src="images/libs-folder.png" alt="An example of the Libs folder"></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you are planning on publishing the source code, do not include the DLLs in the <code>Libs</code> folder.<br>
+Not only is it unnecessary, but <code>Assembly-CSharp.dll</code> contains game code, which technically is illegal to share without an explicit permission from the game developers.</p>
+<p>If you absolutely must include the DLLs, it is suggested to remove the code and only distribute the API contents.</p>
+</div>
+<h2 id="importing-dll-dependencies-into-the-project">Importing DLL dependencies into the project</h2>
+<p>Finally, open your solution in Visual Studio. In there, right click on the <code>Dependencies</code> item in the Solution Explorer (or <code>References</code> if your project is based on .NET Framework) and select <code>Add Reference...</code>:</p>
+<p><img src="images/vs-add-references.png" alt="Add References option when you right click the Dependencies in Solution Explorer"></p>
+<p>In the opened Reference Manager, click the <code>Browse...</code> button, locate and select <em>all</em> assemblies in <code>Libs</code> folder and click <code>Add</code>.<br>
+Finally, click OK to close the Reference Manager and you will have all your dependencies imported:</p>
+<p><img src="images/vs-references.png" alt="A list of finally properly imported references"></p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.11/articles/dev_guide/plugin_tutorial/1_setup.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>
