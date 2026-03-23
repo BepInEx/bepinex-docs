@@ -12,7 +12,7 @@ _centerBody: true
 > [!NOTE]  
 > Please note that documentation for BepInEx 6 is WIP.  
 > If you would like to help with writing guides for BepInEx 6, consider 
-> [contributing by writing guides](https://github.com/BepInEx/bepinex_docs#contributing)!
+> [contributing by writing guides](https://github.com/BepInEx/bepinex-docs#contributing)!
 
 Welcome to BepInEx documentation!
 
