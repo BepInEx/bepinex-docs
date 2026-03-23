@@ -59,3 +59,10 @@ select `winhttp` and `Click` add:
 ![Add "winhttp" library override in winecfg Libraries tab](images/winecfg_add_lib.png)
 
 Finally click `Apply` and you're done. Running the game should now run BepInEx.
+
+
+## Missing text in plugin UIs
+![ConfigurationManager UI with no visible text](https://user-images.githubusercontent.com/7141051/175892103-a8010c89-db65-40b6-a005-1b56582e6fe8.png)
+
+The fix for this is `winetricks corefonts`. Running this will install the required fonts for the Unity textboxes and such.
+Remember to set the `WINEPREFIX` env var if you're running it in a different prefix.
