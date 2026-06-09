@@ -11,12 +11,12 @@ concurrency: docs-build
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Setup Dotnet for use with actions
-      uses: actions/setup-dotnet@v1.0.0
+      uses: actions/setup-dotnet@v4
     - name: Extract branch name
       shell: bash
       run: |
@@ -28,7 +28,7 @@ jobs:
     - name: Run CakeBuild script
       run: ./common/build.ps1 --target=PublishGHPages --build_version="${env:GH_BRANCH}"
     - name: Deploy to GH Pages
-      uses: crazy-max/ghaction-github-pages@v2
+      uses: crazy-max/ghaction-github-pages@v5
       with:
         target_branch: gh-pages
         build_dir: gh-pages
