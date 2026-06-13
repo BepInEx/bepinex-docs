@@ -13,7 +13,7 @@ Whenever you have a problem starting up BepInEx, most commonly, it's either beca
 
 ### Enable console
 
-In many cases, it's suggested to enable the console. That way, you'll see load progress and potential errors live.
+First of all, it's suggested to enable the console. That way, you'll see load progress and potential errors live.
 
 Open `BepInEx/config/BepInEx.cfg`, locate and change the following settings accordingly:
 
@@ -22,6 +22,40 @@ Open `BepInEx/config/BepInEx.cfg`, locate and change the following settings acco
 
 Enabled = true
 ```
+
+### Some characters are displayed incorrectly in console
+
+If the application or your code is outputting non-ascii characters to the console or unity log, you may encounter some display issues.
+
+#### Garbled text (mojibake)
+<img width="451" height="33" alt="image" src="https://github.com/user-attachments/assets/348726a1-80b9-4f9e-91ff-3c0ae585c413" />
+
+If you see something like the above in console it means that somewhere there are mismatched encodings.
+
+Usually this is caused by a bug, so make sure you are on the latest version of BepInEx first.
+You can attempt to fix this by changing your system locale settings or by forcing the game to run under a specific locale with some tool.
+
+#### Unknown characters
+<img width="445" height="41" alt="image" src="https://github.com/user-attachments/assets/75174ac4-fbfe-4342-8f0d-d33d8bd47684" />
+
+If you instead see the above, where all of the characters are replaced by a placeholder, it means that you your console font is missing those characters.
+
+To fix this you have to change the console font to one that contains the required characters.
+Right click on the console title bar and go to Properties, then pick a different font from the font list and apply.
+Once you find a font that has the required characters they should start displaying correctly. 
+
+These settings will only last until the console window is closed. If you want this font to be used by default, right click on title bar and then "Defaults" and set it there.
+
+### Preloader runs without errors but chainloader doesn't start / plugins are not loaded
+
+This can happen if the chosen entry point is never called by the game. Edit `BepInEx.cfg` and try setting a different entry point under `[Preloader.Entrypoint]`.
+You can pick any constructor or method in the game assemblies, e.g. `Camera..cctor`.
+
+Note that different entry points will have different side effects, and generally the earlier is is called the better.
+
+### Plugins are loaded without errors but do not work afterwards
+
+This can happen if the BepInEx Manager GameObject is destroyed by the game. Try setting `HideManagerGameObject = true` in `BepInEx.cfg`.
 
 ### Remove `Managed` folder and verify files
 
