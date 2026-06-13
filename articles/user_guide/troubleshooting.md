@@ -23,6 +23,32 @@ Open `BepInEx/config/BepInEx.cfg`, locate and change the following settings acco
 Enabled = true
 ```
 
+### There is no BepInEx/config/BepInEx.cfg or the console doesn't open
+
+This means either doorstop or the preloader has failed or did not run at all. Check the game root for preloader log files and continue reading this guide.
+
+#### Check version of BepInEx and the bitness of the game
+
+BepInEx has separate builds for x64 and x86 games, and separate builds for different operating systems. Make sure you have picked the correct build for your game.
+
+The target operating system of BepInEx must be the same as the game's! It doesn't matter what OS you are actually running on! If you are running a Windows game on Linux, check the Advanced/Wine guide.
+
+To see what bittness the game is, run the game and check it via Task Manager. If you see `(32 bit)` after the game process name like below, the game requires a **x86** build of BepInEx.
+![ThomasWasAlone.exe (32 bit)](images/x86process_example.png)  
+
+If you don't see such addition as below, the game requires **x64** build of BepInEx.
+![Koikatu.exe](images/x64process_example.png)  
+
+#### Extremely long paths with non-ASCII characters
+
+Some versions of Mono bundled with Unity games cannot handle non-ASCII characters in paths or too long path names.
+Because of that, it's suggested that:
+
+* Your game executable path is not too long. Under 1024 will work on most systems, under 256 on all.
+* Attempt to remove "exotic" characters from the game path. Make sure any of the game folders have only the following characters:
+  * A-Z, a-z or numbers 0-9
+  * Common punctuation (`.:;,!"#%&()[]{}=?*'_-`)
+
 ### Some characters are displayed incorrectly in console
 
 If the application or your code is outputting non-ascii characters to the console or unity log, you may encounter some display issues.
@@ -57,41 +83,16 @@ Note that different entry points will have different side effects, and generally
 
 This can happen if the BepInEx Manager GameObject is destroyed by the game. Try setting `HideManagerGameObject = true` in `BepInEx.cfg`.
 
-### Remove `Managed` folder and verify files
+### If the game was modded before BepInEx, restore original `Managed` folder
 
-Suppose you're upgrading from an older version of BepInEx or a different modding framework.
+Suppose you're upgrading from an old version of BepInEx v4 and below, or you used a different modding framework before.
 In that case, there might be some incompatible DLLs installed into the game's `Managed` folder.  
 
 If the game is on Steam, go to `<Game Folder>\<Game Name>_Data` folder and delete `Managed` folder.
 Finally, go to Steam and [verify game integrity](https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335).   
 This procedure will cause Steam to redownload a clean copy of `Managed` folder.
 
-If the game is not on Steam, you can try obtaining the clean `Managed` folder 
-or reinstall the game altogether.
-
-### (Windows) Check the bitness of the game
-
-Currently, Windows builds of BepInEx ship separately for x64 and x86 games.  
-Because of that, make sure the version of BepInEx is for the correct architecture. 
-
-To do that, run the game and check it via Task Manager.  
-If you see `(32 bit)` after the game process name:  
-![ThomasWasAlone.exe (32 bit)](images/x86process_example.png)  
-the game requires **x86** build of BepInEx.
-
-If you don't see such addition:  
-![Koikatu.exe](images/x64process_example.png)  
-the game requires **x64** build of BepInEx.
-
-### Extremely long paths with non-ASCII characters
-
-Some versions of Mono bundled with Unity games cannot handle non-ASCII characters in paths or too long path names.
-Because of that, it's suggested that
-
-* Your game executable path is not too long. Under 1024 will work on most systems, under 256 on all.
-* Attempt to remove "exotic" characters from the game path. Make sure any of the game folders have only the following characters:
-  * A-Z, a-z or numbers 0-9
-  * Common punctuation (`.:;,!"#%&()[]{}=?*'_-`)
+If the game is not on Steam, you can try obtaining the clean `Managed` folder or reinstall the game altogether.
 
 ## Unity 2017 and newer
 
