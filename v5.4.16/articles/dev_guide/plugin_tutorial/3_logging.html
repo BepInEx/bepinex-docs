@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic plugin: Using loggers to simplify debugging | BepInEx Docs </title>
+    <meta name="title" content="Basic plugin: Using loggers to simplify debugging | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Basic plugin: Using loggers to simplify debugging | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+            <span>
+                <a href="../../dev_guide/plugin_tutorial/index.html">Writing a basic plugin</a>
+            </span>
+                <span>
+                    <a href="../../dev_guide/plugin_tutorial/3_logging.html">3. Logging messages</a>
+                </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html" class="active">Writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">1. Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">2. Creating a new plugin project</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_logging.html" class="active">3. Logging messages</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_configuration.html">4. Using configuration files</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running native Unix games through Steam</a>
+                </li>
+                <li>
+                    <a href="../../advanced/proton_wine.html">Running under Proton/Wine (Linux/Mac/SteamOS/etc.)</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="using-loggers-to-simplify-debugging">Using loggers to simplify debugging</h1>
+
+<p>One of the most essential parts of any plugin is logging messages. Be it a
+piece of information, a warning or a more significant error, BepInEx provides functionality to log it all.<br>
+With BepInEx, you can use the following logging APIs:</p>
+<ul>
+<li><strong>(Recommended)</strong> <a class="xref" href="../../../api/BepInEx.Logging.Logger.html">Logger</a> APIs</li>
+<li><code>UnityEngine.Debug</code> APIs (for Unity Mono)</li>
+<li><code>System.Diagnostics.Trace</code> APIs</li>
+<li><code>System.Console</code> APIs</li>
+</ul>
+<p>Whichever API you will use, BepInEx will write the logs to the console,
+Unity's <code>output_log.txt</code> and to <code>BepInEx/LogOutput.log</code> file.</p>
+<h2 id="using--apis">Using <a class="xref" href="../../../api/BepInEx.Logging.Logger.html">Logger</a> APIs</h2>
+<p><strong>This is the recommended way for logging in plugins.</strong></p>
+<p>All plugin instances have a logger property:</p>
+<pre><code class="lang-cs">using BepInEx;
+
+namespace MyFirstPlugin
+{
+    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    public class Plugin : BaseUnityPlugin
+    {
+        private void Awake()
+        {
+            Logger.LogInfo(&quot;This is information&quot;);
+            Logger.LogWarning(&quot;This is a warning&quot;);
+            Logger.LogError(&quot;This is an error&quot;);
+        }
+    }
+}
+
+</code></pre>
+<p>This will print the following messages to BepInEx console:</p>
+<pre><code class="lang-txt">[Info   : Logger Test] This is information
+[Warning: Logger Test] This is a warning
+[Error  : Logger Test] This is an error
+</code></pre>
+<p>Notice that the log reports the message type and the message source.<br>
+When using BepInEx's own logging API, the log source (i.e. the plugin name is automatically logged).</p>
+<p>Check out <a class="xref" href="../../../api/BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> for all available logging methods.</p>
+<h2 id="advanced-log-sources-and-log-listeners">Advanced: Log sources and log listeners</h2>
+<p>BepInEx's logging system mimics that of <code>System.Diagnostics.Trace</code> API.<br>
+BepInEx allows creating <em>log sources</em> that can generate log events (i.e. the messages) and <em>log listeners</em> that receive and process those log events.<br>
+All sources are linked to listeners via <a class="xref" href="../../../api/BepInEx.Logging.Logger.html">Logger</a> class.</p>
+<p>In most cases, you don't have to care about how the API works. However, in some cases, you may want to register your own log sources to log messages.<br>
+In addition, sometimes, you might need to process the log events to write them somewhere. This is where you use the manual APIs.</p>
+<h3 id="registering-log-sources">Registering log sources</h3>
+<p>A log source is a class that inherits from <a class="xref" href="../../../api/BepInEx.Logging.ILogSource.html">ILogSource</a>.<br>
+The most basic implementation is <a class="xref" href="../../../api/BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> which exposes
+various convenience logging functions.</p>
+<p>To register a log source, add it to <a class="xref" href="../../../api/BepInEx.Logging.Logger.html#BepInEx_Logging_Logger_Sources">Sources</a> collection:</p>
+<pre><code class="lang-csharp">var myLogSource = new ManualLogSource(&quot;MyLogSource&quot;); // The source name is shown in BepInEx log
+
+// Register the source
+BepInEx.Logging.Logger.Sources.Add(myLogSource);
+
+myLogSource.LogInfo(&quot;Test&quot;); // Will print [Info: MyLogSource] Test
+
+// Remove the source to free resources
+BepInEx.Logging.Logger.Sources.Remove(myLogSource);
+</code></pre>
+<p>Because <a class="xref" href="../../../api/BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> is so useful, you can use <a class="xref" href="../../../api/BepInEx.Logging.Logger.html#BepInEx_Logging_Logger_CreateLogSource_System_String_">CreateLogSource(String)</a> to automatically create and register a <a class="xref" href="../../../api/BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>.</p>
+<p>That way, the above example becomes</p>
+<pre><code class="lang-csharp">var myLogSource = BepInEx.Logging.Logger.CreateLogSource(&quot;MyLogSource&quot;);
+myLogSource.LogInfo(&quot;Test&quot;);
+BepInEx.Logging.Logger.Sources.Remove(myLogSource);
+</code></pre>
+<h3 id="about-log-listeners">About log listeners</h3>
+<p>Log listeners are used to processing messages from log sources. To create a log source, create a class that inherits <a class="xref" href="../../../api/BepInEx.Logging.ILogListener.html">ILogListener</a>.<br>
+After that, register a log listener by adding it to <a class="xref" href="../../../api/BepInEx.Logging.Logger.html#BepInEx_Logging_Logger_Listeners">Listeners</a>.</p>
+<p>By default, BepInEx itself registers the following listeners:</p>
+<ul>
+<li><a class="xref" href="../../../api/BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a> - writes all log messages to BepInEx
+console</li>
+<li><a class="xref" href="../../../api/BepInEx.Logging.DiskLogListener.html">DiskLogListener</a> - writes all log messages to
+<code>BepInEx/LogOutput.log</code></li>
+<li><a class="xref" href="../../../api/BepInEx.Logging.UnityLogListener.html">UnityLogListener</a> - writes all log messages to Unity's
+<code>output_log.txt</code></li>
+</ul>
+<p>If you need to write a custom log listener, consider using the above ones as
+examples.</p>
+<h2 id="advanced-global-plugin-logger">Advanced: global plugin logger</h2>
+<p>If you have multiple classes in your plugin but only one plugin, you might want to use the same plugin logger in the other class as well.</p>
+<p>This can be done with with a <em>global plugin logger</em> pattern. To apply the pattern, do the following:</p>
+<ul>
+<li>Create an internal static <a class="xref" href="../../../api/BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> field inside the plugin class</li>
+<li>In plugin's startup code, assign plugin's logger to the field</li>
+<li>In your other classes, use the static logger field from your plugin class</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-cs">using BepInEx;
+using BepInEx.Logging;
+
+namespace MyFirstPlugin
+{
+    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    public class Plugin : BaseUnityPlugin
+    {
+        internal static new ManualLogSource Log;
+
+        private void Awake()
+        {
+            this.Log = base.Logger;
+        }
+    }
+}
+
+// Some other class in the plugin assembly
+class SomeOtherAssembly
+{
+    public void SomeMethod()
+    {
+        Plugin.Log.LogInfo(&quot;Plugin message!&quot;);
+    }
+}
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>BepInEx provides simple logging methods for plugins.
+Additionally, you are free to extend BepInEx logging facilities to suit your needs.</p>
+<p>Next: <a href="4_configuration.html">Reading and writing configuration files</a></p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.16/articles/dev_guide/plugin_tutorial/3_logging.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

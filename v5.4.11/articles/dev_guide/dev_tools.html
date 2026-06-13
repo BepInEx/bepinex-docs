@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of useful development plugins | BepInEx Docs </title>
+    <meta name="title" content="List of useful development plugins | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="List of useful development plugins | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../static/styles/template.css">
+    <link rel="stylesheet" href="../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+                <span>
+                <a href="../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+            </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../dev_guide/plugin_tutorial/index.html">Walkthrough: writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/1_setup.html">Part I: Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/2_plugin_start.html">Part II: Writing a basic plug-in class</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/3_configuration.html">Part III: Configuration</a>
+                        </li>
+                        <li>
+                            <a href="../dev_guide/plugin_tutorial/4_logging.html">Part IV: Logging</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../dev_guide/dev_tools.html" class="active">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="list-of-useful-development-plugins">List of useful development plugins</h1>
+
+<p>This page contains a list of useful plugins and tools you can use
+to make development of plugins with BepInEx easier.</p>
+<h2 id="bepinexdebug-tools">BepInEx.Debug tools</h2>
+<p><strong>Link</strong>: <a href="https://github.com/BepInEx/BepInEx.Debug">GitHub</a></p>
+<p><strong>Description</strong>: This is a pack of useful plugins to ease development.
+Below is a description of each debug plugin. You can find more specific
+usage guide in <a href="https://github.com/BepInEx/BepInEx.Debug/blob/master/README.md">repository README</a>.</p>
+<h3 id="scriptengine">ScriptEngine</h3>
+<p>Allows to reload plugins without restarting the game. Simply put your
+plugins into <code>BepInEx/scripts</code> folder and press <code>F6</code> in-game whenever you
+want to reload a plugin.</p>
+<p>Note that to support this your plugin needs to clean up its resources in
+your plugin by creating <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDestroy.html"><code>OnDestroy</code></a>
+method and unpatching any Harmony patches along with cleaning up other resources.</p>
+<h3 id="startup-profiler">Startup profiler</h3>
+<p>Logs load times for each of the plugins.</p>
+<h3 id="mono-profiler">Mono Profiler</h3>
+<p>A profiler for Unity games. Logs all called methods, call counts and call times.<br>
+Outputs all data as <code>.csv</code> files.</p>
+<h3 id="demystify-exceptions">Demystify Exceptions</h3>
+<p>Formats stack traces into a more human-friendly formats and attempts to properly
+resolve <code>IEnumerable</code>s, lambdas and <code>async</code> state machines.</p>
+<h2 id="runtime-unity-editor">Runtime Unity Editor</h2>
+<p><img src="https://user-images.githubusercontent.com/39247311/64476158-ce1a4c00-d18b-11e9-97d6-084452cdbf0a.PNG" alt="RuntimeUnityEditor GUI"></p>
+<p><strong>Link</strong>: <a href="https://github.com/ManlyMarco/RuntimeUnityEditor">GitHub</a></p>
+<p><strong>Description</strong>: Brings an extensive Unity Editor -like hierarchy explorer
+directly into a game. Allows you to inspect any game object and component.
+Additionally comes with a C# REPL and support for rotation/translation gizmos
+via Vectrocity.</p>
+<p>Refer to the <a href="https://github.com/ManlyMarco/RuntimeUnityEditor/blob/master/README.md">README</a> for installation
+and usage info.</p>
+<h2 id="configuration-manager">Configuration Manager</h2>
+<p><img src="https://github.com/BepInEx/BepInEx.ConfigurationManager/raw/master/Screenshot.PNG" alt="ConfigurationManager GUI"></p>
+<p><strong>Link</strong>: <a href="https://github.com/BepInEx/BepInEx.ConfigurationManager">GitHub</a></p>
+<p><strong>Description</strong>: Allows to edit all configuration files via an in-game GUI.
+Default hotkey is <code>F1</code>. Refer to <a href="https://github.com/BepInEx/BepInEx.ConfigurationManager/blob/master/README.md">README</a> for more info on how to use and
+how to integrate into your plugin.</p>
+<h2 id="c-script-loader">C# Script Loader</h2>
+<p><strong>Link</strong>: <a href="https://github.com/denikson/BepInEx.ScriptLoader">GitHub</a></p>
+<p><strong>Description</strong>: Allows to write C# scripts without compiling them. Useful for small (under 200 LOC)
+Harmony patches and tools. Supports live code reloading and comes with a custom
+version of MCS compiler that allows you to access private methods/fields
+without any reflection.</p>
+<p>Refer to the <a href="https://github.com/denikson/BepInEx.ScriptLoader/blob/master/README.md">README</a>
+for info on how to write scripts and current limitations.</p>
+<h2 id="thunderkit-make-plugins-in-unity-editor">ThunderKit (make plugins in Unity Editor)</h2>
+<p><strong>Link</strong>: <a href="https://github.com/PassivePicasso/ThunderKit">GitHub</a></p>
+<p><strong>Description</strong>: Allows you to create plugins directly in Unity Editor. With it
+you can easily create new assets and link them to existing or new components.
+Great for integrating new items, maps and whatnot into any Unity game.</p>
+<p>The tool is being actively developed and documentation is being created.
+Refer to <a href="https://github.com/PassivePicasso/ThunderKit/blob/master/README.md">README</a>
+for more information about the tool and how to install it.</p>
+<h2 id="runtime-monomodhookgen-and-mmhook-stripping">Runtime MonoMod.HookGen and MMHOOK stripping</h2>
+<p><strong>Link (HookGenPatcher)</strong>: <a href="https://github.com/harbingerofme/Bepinex.Monomod.HookGenPatcher">GitHub</a><br>
+<strong>Link (LighterPatcher)</strong>: <a href="https://github.com/harbingerofme/LighterPatcher">GitHub</a></p>
+<p><strong>Description</strong>: Normally using <a href="https://github.com/MonoMod/MonoMod/blob/master/README-RuntimeDetour.md#using-hookgen">MonoMod.HookGen</a> requires you to bundle <code>MMHOOK.dll</code> with your plugins and regenerate them
+between game updates.</p>
+<p>This preloader patcher allows you to dynamically generate the <code>MMHOOK.dll</code> file on the fly when the game starts, thus
+removing potential problems of incompatibility between game updates.<br>
+In addition, LighterPatcher strips the generated <code>MMHOOK.dll</code> down to only patches that are used by the plugins, thus
+speeding up loading of MMHOOK DLL (in cases where type resolving is triggered for all types in MMHOOK).</p>
+<p>Everything is done at runtime and requires no action from the end-user.</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.11/articles/dev_guide/dev_tools.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../static/scripts/main.js"></script>
+</body>
+</html>

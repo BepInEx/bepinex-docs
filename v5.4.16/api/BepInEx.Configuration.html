@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namespace BepInEx.Configuration
+ | BepInEx Docs </title>
+    <meta name="title" content="Namespace BepInEx.Configuration
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Namespace BepInEx.Configuration
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.16";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                <span>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+        </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Configuration.html" class="active">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  <h1 id="BepInEx_Configuration" data-uid="BepInEx.Configuration" class="text-break">Namespace BepInEx.Configuration
+  </h1>
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <div class="remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a></h4>
+      <section><p>Base type of all classes representing and enforcing acceptable values of config settings.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a></h4>
+      <section><p>Specify the list of acceptable values for a setting.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a></h4>
+      <section><p>Specify the range of acceptable values for a setting.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></h4>
+      <section><p>Section and key of a setting. Used as a unique key for identification within a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.
+The same definition can be used in multiple config files, it will point to different settings then.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a></h4>
+      <section><p>Metadata of a <a class="xref" href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a></h4>
+      <section><p>Provides access to a single setting inside of a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a></h4>
+      <section><p>Container for a single setting of a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.
+Each config entry is linked to one config file.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a></h4>
+      <section><p>A helper class to handle persistent data. All public methods are thread-safe.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a></h4>
+      <section><p>Provides access to a single setting inside of a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a></h4>
+      <section><p>Arguments for events concerning a change of a setting.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a></h4>
+      <section><p>Serializer/deserializer used by the config system.</p>
+</section>
+      <h4><a class="xref" href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a></h4>
+      <section><p>A serializer/deserializer combo for some type(s). Used by the config system.</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a></h4>
+      <section><p>A keyboard shortcut that can be used in Update method to check if user presses a key combo. The shortcut is only
+triggered when the user presses the exact combination. For example, <code>F + LeftCtrl</code> will trigger only if user
+presses and holds only LeftCtrl, and then presses F. If any other keys are pressed, the shortcut will not trigger.</p>
+<p>Can be used as a value of a setting in <a class="xref" href="BepInEx.Configuration.ConfigFile.html#BepInEx_Configuration_ConfigFile_Bind__1_BepInEx_Configuration_ConfigDefinition___0_BepInEx_Configuration_ConfigDescription_">Bind&lt;T&gt;(ConfigDefinition, T, ConfigDescription)</a>
+to allow user to change this shortcut and have the changes saved.</p>
+<p>How to use: Use <a class="xref" href="BepInEx.Configuration.KeyboardShortcut.html#BepInEx_Configuration_KeyboardShortcut_IsDown">IsDown()</a> in this class instead of <span class="xref">UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode)</span> in the Update loop.</p>
+</section>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.16)</div>
+        <div>Build info: 16206e7; 2022-07-10 15:26:06 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

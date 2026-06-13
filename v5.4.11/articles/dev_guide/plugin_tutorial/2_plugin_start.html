@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin walkthrough: Writing a basic plug-in | BepInEx Docs </title>
+    <meta name="title" content="Plugin walkthrough: Writing a basic plug-in | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Plugin walkthrough: Writing a basic plug-in | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                <span>
+        Plugin development
+        </span>
+            <span>
+                <a href="../../dev_guide/plugin_tutorial/index.html">Walkthrough: writing a basic plugin</a>
+            </span>
+                <span>
+                    <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">Part II: Writing a basic plug-in class</a>
+                </span>
+            </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html" class="active">Walkthrough: writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">Part I: Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html" class="active">Part II: Writing a basic plug-in class</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_configuration.html">Part III: Configuration</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_logging.html">Part IV: Logging</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="writing-a-basic-plug-in">Writing a basic plug-in</h1>
+
+<p>In this step we continue by writing code for a simple plug-in that displays a message in the console.</p>
+<h2 id="defining-the-plug-in-class">Defining the plug-in class</h2>
+<p>Continuing from the previous step, rename <code>Class1.cs</code> to the name of your plugin. In this instance, we'll rename ours to <code>ExamplePlugin.cs</code>.</p>
+<p>Open the source file. You'll see there is already some generic boilerplate code for a class.</p>
+<p>Edit the class to inherit from <a class="xref" href="../../../api/BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a> and add <a class="xref" href="../../../api/BepInEx.BepInPlugin.html">BepInPlugin</a> attribute to the class:</p>
+<pre><code class="lang-csharp">using System;
+using BepInEx;
+
+namespace ExamplePlugin
+{
+    [BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+    public class ExamplePlugin : BaseUnityPlugin
+    {
+    }
+}
+</code></pre>
+<p>And that is everything you have to do in order for a class to be a valid plug-in!
+Note that the name of the namespace and the plug-in class are likely different in your case, so if you copy-paste, you might want to edit them.</p>
+<p>Next, we'll dive a bit deeper into what all of this means.</p>
+<h2 id="specifying-metadata-with-attributes">Specifying metadata with attributes</h2>
+<p>By itself, a simple class that inherits <a class="xref" href="../../../api/BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a> doesn't tell BepInEx much.
+However, BepInEx has to know some information about the class in order to know how to load the plug-in.
+This is done by specifying C# attributes to the class as we defined above.</p>
+<p>Let's go over some of the most important attributes you might want to use.
+For more attributes and exact documentation, visit the <a href="../../../api/index.html">API docs</a>.</p>
+<h3 id="basic-information-about-the-plug-in">Basic information about the plug-in</h3>
+<p>The most crucial attribute is <a class="xref" href="../../../api/BepInEx.BepInPlugin.html">BepInPlugin</a>. <strong>Without it, BepInEx will simply ignore loading of the plug-in!</strong></p>
+<p>The attribute consists of three string parameters that are:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GUID</code></td>
+<td>A unique identifier of the plugin. <strong>It absolutely must be unique</strong> as BepInEx uses it to detect duplicate plugins and sort dependencies. It is recommended (but not mandatory) to use the <a href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html">reverse domain name notation</a> for GUIDs.</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>A human-readable name of the plug-in.</td>
+</tr>
+<tr>
+<td><code>Version</code></td>
+<td>Version of the plugin. The version format <strong>must</strong> be of the form <code>major.minor[.build[.revision]]</code> (i.e. a format that <a href="https://docs.microsoft.com/en-us/dotnet/api/system.version">System.Version</a> can parse).</td>
+</tr>
+</tbody>
+</table>
+<p>Here's a simple example of the attribute:</p>
+<pre><code class="lang-csharp">[BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+public class ExamplePlugin : BaseUnityPlugin
+</code></pre>
+<h3 id="specifying-dependencies-on-other-plug-ins">Specifying dependencies on other plug-ins</h3>
+<p>Sometimes you might want to load some plug-ins before other ones.
+Moreover, in some cases you want to ensure that a user has installed some other plug-in in order for yours to function.</p>
+<p>You can specify dependencies on other plug-ins with <a class="xref" href="../../../api/BepInEx.BepInDependency.html">BepInDependency</a> attribute.<br>
+You can specify the attribute multiple times for multiple dependencies.</p>
+<p>The attribute consists of only two parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DependencyGUID</code></td>
+<td>The GUID of the plug-in that yours depends on. Must be in the exact same format and case as defined in the dependency.</td>
+</tr>
+<tr>
+<td><code>Flags</code></td>
+<td><em>Optional.</em> Specifies a flag from <a class="xref" href="../../../api/BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a> that tells how to handle missing dependencies. A <em>soft dependency</em> means that the plug-in can be loaded even if the dependency is missing. A <em>hard dependency</em> means that a plug-in must be skipped if the dependency is missing.</td>
+</tr>
+</tbody>
+</table>
+<p>Here's a simple example of the attribute:</p>
+<pre><code class="lang-csharp">[BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+
+// A soft dependency. Loading won't be skipped if it's missing.
+[BepInDependency(&quot;com.bepinex.plugin.somedependency&quot;, BepInDependency.DependencyFlags.SoftDependency)]
+// A hard dependency. Loading will be skipped (and an error shown) if the dependency is missing.
+[BepInDependency(&quot;com.bepinex.plugin.importantdependency&quot;, BepInDependency.DependencyFlags.HardDependency)]
+// If flags are not specified, the dependency is **hard** by default
+[BepInDependency(&quot;com.bepinex.plugin.anotherimportantone&quot;)]
+public class ExamplePlugin : BaseUnityPlugin
+</code></pre>
+<h3 id="filtering-executables">Filtering executables</h3>
+<p>In some cases you may want to allow to load the plugin only in certain games.
+For instance, your plug-in only works in one game and you want to prevent users from installing a plug-in into a wrong game.
+Alternatively, there might be multiple games in the same game folder, and you want to load your plugin only in one of those games.</p>
+<p>You can specify what games to load the plug-in on with <a class="xref" href="../../../api/BepInEx.BepInProcess.html">BepInProcess</a> attribute.</p>
+<p>The attribute has only one parameter: <code>ProcessName</code> that is simply the name of the process that the plug-in is allowed to run on (including the <code>.exe</code> extension).<br>
+Naturally, you can specify the attribute multiple times.</p>
+<p>An example of the attribute usage:</p>
+<pre><code class="lang-csharp">[BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+[BepInProcess(&quot;Risk of Rain 2.exe&quot;)]
+[BepInProcess(&quot;AnotherGame.exe&quot;)]
+public class ExamplePlugin : BaseUnityPlugin
+</code></pre>
+<h2 id="adding-code-to-the-plug-in">Adding code to the plug-in</h2>
+<p>Under the hood, <a class="xref" href="../../../api/BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a> inherits from <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a>.
+This means you can access all game objects using Unity's own API.</p>
+<p>As an example, we'll log <code>Hello, world!</code> text when the plug-in is starting.
+For that we'll add the call into <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html">MonoBehaviour.Awake</a>:</p>
+<pre><code class="lang-csharp">[BepInPlugin(&quot;org.bepinex.plugins.exampleplugin&quot;, &quot;Example Plug-In&quot;, &quot;1.0.0.0&quot;)]
+public class ExamplePlugin : BaseUnityPlugin
+{
+    // Awake is called once when both the game and the plug-in are loaded
+    void Awake()
+    {
+        UnityEngine.Debug.Log(&quot;Hello, world!&quot;);
+    }
+}
+</code></pre>
+<h2 id="compiling-and-testing-the-plug-in">Compiling and testing the plug-in</h2>
+<p>Once the base code of the plug-in has been written, it's time to compile and test it.</p>
+<p>To compile the plug-in, you can either use <code>Build &gt; Build Solution</code> menu option or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> shortcut.</p>
+<p>Once the compilation is complete, you can find you plug-in DLL in <code>&lt;Project Directory&gt;\bin\Debug</code> (or <code>Release</code> if you built the release build).
+The name of the DLL is the same as the name of the project (not the source code file). Thus in the case of the project, the name of the plug-in DLL is <code>ExamplePlugin.dll</code></p>
+<p><img src="images/build-output.png" alt="An example location of the built DLL"></p>
+<p>To test the plug-in, move the plug-in DLL into <code>BepInEx\plugins\&lt;Plug-in name&gt;</code> folder in your target game.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is not mandatory to put plug-ins into separate folders inside <code>BepInEx\plugins</code>, but it is <strong>recommended</strong>.
+Doing so will simplify installation and the removal process of each plug-in.</p>
+</div>
+<p>Finally, open up the game and gaze upon the BepInEx console:</p>
+<p><img src="images/plugin-works.png" alt="An example of the working Hello, world plug-in."></p>
+<p>Note that you have to enable the console via <a class="xref" href="../../user_guide/configuration.html">the configuration file</a> to see the debug message.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>You can continue by adding more plug-ins or modifying the example plug-in!<br>
+Remember that a single DLL can contain multiple plug-in classes: that is, you can add more classes that inherit from <a class="xref" href="../../../api/BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a> and have the <a class="xref" href="../../../api/BepInEx.BepInPlugin.html">BepInPlugin</a> attribute and have multiple plugins in the same DLL.</p>
+<p>Next, we'll look at how to create and manage configuration files of the plug-in.</p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.11/articles/dev_guide/plugin_tutorial/2_plugin_start.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

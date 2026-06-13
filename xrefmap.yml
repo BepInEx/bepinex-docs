@@ -1,0 +1,42 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: api
+  name: BepInEx API documentation
+  href: api/index.html
+- uid: compatibility
+  name: External mod loader support
+  href: articles/advanced/compatibility.html
+- uid: configuration
+  name: Configuration
+  href: articles/user_guide/configuration.html
+- uid: debug_assemblies_dnSpy
+  name: Debugging all assemblies with dnSpy
+  href: articles/advanced/debug/assemblies_dnSpy.html
+- uid: debug_plugin_dnspy
+  name: Debugging with dnSpy
+  href: articles/advanced/debug/plugins_dnSpy.html
+- uid: dev_tools
+  name: List of useful development plugins
+  href: articles/dev_guide/dev_tools.html
+- uid: installation
+  name: Installing BepInEx
+  href: articles/user_guide/installation/index.html
+- uid: plugin_dev_index
+  name: Writing a basic plugin
+  href: articles/dev_guide/plugin_tutorial/index.html
+- uid: preloader_patches
+  name: Using preloader patchers
+  href: articles/dev_guide/preloader_patchers.html
+- uid: proton_wine
+  name: Running under Proton/Wine (Linux/Mac/SteamOS/etc.)
+  href: articles/advanced/proton_wine.html
+- uid: runtime_patching
+  name: Patching methods during runtime
+  href: articles/dev_guide/runtime_patching.html
+- uid: steam_interop
+  name: Running native Unix games through Steam
+  href: articles/advanced/steam_interop.html
+- uid: troubleshooting
+  name: Troubleshooting
+  href: articles/user_guide/troubleshooting.html

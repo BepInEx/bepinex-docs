@@ -1,0 +1,1048 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class ConfigDefinition
+ | BepInEx Docs </title>
+    <meta name="title" content="Class ConfigDefinition
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Class ConfigDefinition
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                <span>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+        </span>
+            <span>
+                <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+            </span>
+        </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Configuration.html" class="active">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html" class="active">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_Configuration_ConfigDefinition" data-uid="BepInEx.Configuration.ConfigDefinition">Class ConfigDefinition
+  </h1>
+  <div class="class-summary"><p>Section and key of a setting. Used as a unique key for identification within a <a class="xref" href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>.
+The same definition can be used in multiple config files, it will point to different settings then.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  <div class="inheritance class-metadata">
+    <h5>Inheritance</h5>
+    <span class="level0" style="--inheritance-level: 0;"><span class="xref">System.Object</span></span>
+    <span class="level1" style="--inheritance-level: 1;"><span class="xref">ConfigDefinition</span></span>
+  </div>
+  
+  <div class="implements class-metadata">
+    <h5>Implements</h5>
+  
+    <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>&gt;</span>
+  
+  </div>
+  
+  <div class="inheritedMembers class-metadata">
+    <h5>Inherited Members</h5>
+  
+    <span>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetType()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </span>
+  
+  </div>
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.Configuration.html">BepInEx.Configuration</a></div>
+  <div><strong>Assembly</strong>: BepInEx.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_Configuration_ConfigDefinition_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ConfigDefinition : IEquatable&lt;ConfigDefinition&gt;</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition__ctor_System_String_System_String_" data-uid="BepInEx.Configuration.ConfigDefinition.#ctor(System.String,System.String)">ConfigDefinition(String, String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L28">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition__ctor_" data-uid="BepInEx.Configuration.ConfigDefinition.#ctor*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Create a new definition. Definitions with same section and key are equal.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfigDefinition(string section, string key)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>section</code></span></td>
+        <td><p>Group of the setting, case sensitive.</p>
+</td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>key</code></span></td>
+        <td><p>Name of the setting, case sensitive.</p>
+</td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition__ctor_System_String_System_String_System_String_" data-uid="BepInEx.Configuration.ConfigDefinition.#ctor(System.String,System.String,System.String)">ConfigDefinition(String, String, String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition__ctor_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.%23ctor(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L45">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition__ctor_" data-uid="BepInEx.Configuration.ConfigDefinition.#ctor*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;description argument is no longer used, put it in a ConfigDescription instead&quot;)]
+public ConfigDefinition(string section, string key, string description)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>section</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>key</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>description</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_Key" data-uid="BepInEx.Configuration.ConfigDefinition.Key">Key</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_Key.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L21">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_Key_" data-uid="BepInEx.Configuration.ConfigDefinition.Key*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Name of the setting.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Key { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_Section" data-uid="BepInEx.Configuration.ConfigDefinition.Section">Section</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_Section.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.Section%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L16">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_Section_" data-uid="BepInEx.Configuration.ConfigDefinition.Section*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Group of the setting. All settings within a config file are grouped by this.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Section { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_Equals_BepInEx_Configuration_ConfigDefinition_" data-uid="BepInEx.Configuration.ConfigDefinition.Equals(BepInEx.Configuration.ConfigDefinition)">Equals(ConfigDefinition)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_Equals_BepInEx_Configuration_ConfigDefinition_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.Equals(BepInEx.Configuration.ConfigDefinition)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L56">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_Equals_" data-uid="BepInEx.Configuration.ConfigDefinition.Equals*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Check if the definitions are the same.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ConfigDefinition other)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td><span class="parametername"><code>other</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Boolean</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_Equals_System_Object_" data-uid="BepInEx.Configuration.ConfigDefinition.Equals(System.Object)">Equals(Object)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_Equals_System_Object_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L66">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_Equals_" data-uid="BepInEx.Configuration.ConfigDefinition.Equals*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Check if the definitions are the same.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.Object</span></code></td>
+        <td><span class="parametername"><code>obj</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Boolean</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_GetHashCode" data-uid="BepInEx.Configuration.ConfigDefinition.GetHashCode">GetHashCode()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_GetHashCode.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L77">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_GetHashCode_" data-uid="BepInEx.Configuration.ConfigDefinition.GetHashCode*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Int32</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_ToString" data-uid="BepInEx.Configuration.ConfigDefinition.ToString">ToString()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_ToString.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L100">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_ToString_" data-uid="BepInEx.Configuration.ConfigDefinition.ToString*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="operators">Operators
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_op_Equality_BepInEx_Configuration_ConfigDefinition_BepInEx_Configuration_ConfigDefinition_" data-uid="BepInEx.Configuration.ConfigDefinition.op_Equality(BepInEx.Configuration.ConfigDefinition,BepInEx.Configuration.ConfigDefinition)">Equality(ConfigDefinition, ConfigDefinition)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_op_Equality_BepInEx_Configuration_ConfigDefinition_BepInEx_Configuration_ConfigDefinition_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.op_Equality(BepInEx.Configuration.ConfigDefinition%2CBepInEx.Configuration.ConfigDefinition)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L90">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_op_Equality_" data-uid="BepInEx.Configuration.ConfigDefinition.op_Equality*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Check if the definitions are the same.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(ConfigDefinition left, ConfigDefinition right)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td><span class="parametername"><code>left</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td><span class="parametername"><code>right</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Boolean</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Configuration_ConfigDefinition_op_Inequality_BepInEx_Configuration_ConfigDefinition_BepInEx_Configuration_ConfigDefinition_" data-uid="BepInEx.Configuration.ConfigDefinition.op_Inequality(BepInEx.Configuration.ConfigDefinition,BepInEx.Configuration.ConfigDefinition)">Inequality(ConfigDefinition, ConfigDefinition)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition_op_Inequality_BepInEx_Configuration_ConfigDefinition_BepInEx_Configuration_ConfigDefinition_.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition.op_Inequality(BepInEx.Configuration.ConfigDefinition%2CBepInEx.Configuration.ConfigDefinition)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Configuration/ConfigDefinition.cs/#L96">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Configuration_ConfigDefinition_op_Inequality_" data-uid="BepInEx.Configuration.ConfigDefinition.op_Inequality*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Check if the definitions are the same.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(ConfigDefinition left, ConfigDefinition right)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td><span class="parametername"><code>left</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a></code></td>
+        <td><span class="parametername"><code>right</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Boolean</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  <h3 id="implements">Implements</h3>
+  
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  
+  
+  
+  
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Configuration_ConfigDefinition.md&amp;value=---%0Auid%3A%20BepInEx.Configuration.ConfigDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

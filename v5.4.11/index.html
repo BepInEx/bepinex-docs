@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BepinEx Docs! | BepInEx Docs </title>
+    <meta name="title" content="Welcome to BepinEx Docs! | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Welcome to BepinEx Docs! | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="static/styles/template.css">
+    <link rel="stylesheet" href="static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+        <main class="from-toc to-affix center">
+
+<div style="width: 256px; margin: auto;">
+    <img src="https://avatars2.githubusercontent.com/u/39589027?s=256">
+</div>
+<p>Welcome to BepInEx documentation!</p>
+<p>Here you can find guides on how to install, configure and develop plugins for BepInEx!</p>
+<h2 id="about-bepinex">About BepInEx</h2>
+<p><strong>Bep</strong>is <strong>In</strong>jector <strong>Ex</strong>tensible is a patcher/plug-in framework for Unity games that use Mono as their scripting backend.</p>
+<p>BepInEx provides various features, including</p>
+<ul>
+<li><strong>drop-in installation</strong>;</li>
+<li><strong>built-in configuration and logging systems</strong>;</li>
+<li><strong>runtime method patching with Harmony</strong> -- includes <a href="https://github.com/pardeike/Harmony">Harmony</a> and <a href="https://github.com/MonoMod/MonoMod">MonoMod</a> to enable runtime method injection;</li>
+<li><strong>in-memory assembly patching</strong> -- allows to patch game's assemblies with <a href="https://github.com/jbevain/cecil">Mono.Cecil</a> in memory with the help of <a href="https://github.com/NeighTools/UnityDoorstop">UnityDoorstop</a>;</li>
+<li><strong>support for other mod loaders</strong> -- load Sybaris, UnityInjector, IPA and many other mods directly via BepInEx! <a class="xref" href="articles/advanced/compatibility.html">See out list of supported mod loaders</a></li>
+</ul>
+<p>BepInEx is fully open source under the MIT license.</p>
+<h2 id="getting-started">Getting started</h2>
+<ul>
+<li><a class="xref" href="articles/user_guide/installation/index.html">Install BepInEx</a></li>
+<li><a class="xref" href="articles/dev_guide/dev_tools.html">List of some plugins useful for modding games</a></li>
+<li><a class="xref" href="articles/advanced/compatibility.html">List of supported mod frameworks</a></li>
+<li><a class="xref" href="articles/dev_guide/plugin_tutorial/index.html">Write plugins</a></li>
+<li><a class="xref" href="api/index.html">Browse API and its documentation</a></li>
+</ul>
+</main>
+    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="static/scripts/template.js"></script>
+<script type="text/javascript" src="static/scripts/main.js"></script>
+</body>
+</html>

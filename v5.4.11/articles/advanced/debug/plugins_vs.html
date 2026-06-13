@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging plugins with Visual Studio Tools for Unity | BepInEx Docs </title>
+    <meta name="title" content="Debugging plugins with Visual Studio Tools for Unity | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Debugging plugins with Visual Studio Tools for Unity | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../static/styles/template.css">
+    <link rel="stylesheet" href="../../../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../../../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../../../articles/index.html">Articles</a>
+        </span>
+                        <span>
+        Advanced topics
+        </span>
+            <span>
+                <a href="../../advanced/debug/index.html">Debugging plugins and game assemblies</a>
+            </span>
+                <span>
+                    <a href="../../advanced/debug/plugins_vs.html">Debugging plugins with Visual Studio</a>
+                </span>
+    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <span>Using BepInEx</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../user_guide/installation/index.html">Installation</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../user_guide/installation/hardpatching.html">Using hardpatcher</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../user_guide/configuration.html">Configuration</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/upgrading.html">Upgrading</a>
+                </li>
+                <li>
+                    <a href="../../user_guide/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <span>Plugin development</span>
+            </summary>
+            <ul>
+                <li>
+                    <details>
+                    <summary>
+                    <a href="../../dev_guide/plugin_tutorial/index.html">Walkthrough: writing a basic plugin</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/1_setup.html">Part I: Setting up the development environment</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/2_plugin_start.html">Part II: Writing a basic plug-in class</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/3_configuration.html">Part III: Configuration</a>
+                        </li>
+                        <li>
+                            <a href="../../dev_guide/plugin_tutorial/4_logging.html">Part IV: Logging</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../dev_guide/preloader_patchers.html">How to: writing preloader patchers</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/runtime_patching.html">Patching methods in runtime</a>
+                </li>
+                <li>
+                    <a href="../../dev_guide/dev_tools.html">Useful plugins and tools for modding</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <span class="active">Advanced topics</span>
+            </summary>
+            <ul>
+                <li>
+                    <a href="../../advanced/steam_interop.html">Running games on Steam</a>
+                </li>
+                <li>
+                    <details open="">
+                    <summary>
+                    <a href="../../advanced/debug/index.html" class="active">Debugging plugins and game assemblies</a>
+                    </summary>
+                    <ul>
+                        <li>
+                            <a href="../../advanced/debug/plugins_dnSpy.html">Debugging plugins with dnSpy</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/plugins_vs.html" class="active">Debugging plugins with Visual Studio</a>
+                        </li>
+                        <li>
+                            <a href="../../advanced/debug/assemblies_dnSpy.html">Debugging all game assemblies with dnSpy</a>
+                        </li>
+                    </ul>        </details>
+                </li>
+                <li>
+                    <a href="../../advanced/compatibility.html">Compatibility with other modding frameworks</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+<h1 id="debugging-plugins-with-visual-studio-tools-for-unity">Debugging plugins with Visual Studio Tools for Unity</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This method is suitable for debugging only BepInEx plugins!
+To debug preloader plugins, refer to <a class="xref" href="assemblies_dnSpy.html">dnSpy debug guide</a>.</p>
+</div>
+<p>While debugging with dnSpy is rather simple, you might want to debug directly in
+Visual Studio while developing. It is possible to debug your plugins with the help of
+Visual Studio Tools for Unity (VSTU).</p>
+<h2 id="installing-required-tools">Installing required tools</h2>
+<p>First, you have to convert the game to debug build. To do that, <a href="https://github.com/0xd4d/dnSpy/wiki/Debugging-Unity-Games#turning-a-release-build-into-a-debug-build">refer to dnSpy guide on converting the game to pure debug build</a>.</p>
+<p>Next, install VSTU. You can do so in Visual Studio 2019 via Visual Studio Installer.
+You can find the component behind <code>Individual components</code> tab:
+<img src="images/vstu_select.png" alt="Select &quot;Visual Studio Tools for Unity&quot; component in Visual Studio installer"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Rider provides a similar Unity extension which allows for the same debugging functionality.</p>
+</div>
+<h2 id="compiling-your-project">Compiling your project</h2>
+<p>Next, compile your BepInEx plugin with a <code>Debug</code> build. <strong>Make sure that you generate a <code>.pdb</code> file!</strong></p>
+<p>Place your BepInEx plugin into <code>BepInEx\plugins</code> like you normally would but with the <code>.pdb</code> file accompanying it:</p>
+<p><img src="images/vstu_plugin_install.png" alt="Install your plugin with the .pdb file normally into BepInEx/plugins folder."></p>
+<h2 id="converting-pdb-to-mdb">Converting <code>.pdb</code> to <code>.mdb</code></h2>
+<p>Since Unity uses Mono as its .NET runtime, it cannot directly read <code>.pdb</code> files which contains the required debug symbols.
+Instead, it uses <code>.mdb</code> files for the similar task. Because of this, <code>.pdb</code> file needs to be converted.</p>
+<p>Grab <code>pdb2mdb</code> converter (for example, from <a href="https://www.nuget.org/packages/Mono.pdb2mdb/">NuGet</a> or from <a href="https://gist.github.com/jbevain/ba23149da8369e4a966f#file-pdb2mdb-exe">GitHub</a>). Put the executable in some folder <strong>except not into BepInEx plugin folder</strong>.</p>
+<p>Finally, simply drag-and-drop your plugin DLL file, which will generate the required debug symbols:</p>
+<p><img src="images/vstu_pdb2mdb.gif" alt="Convert pdb to mdb by dragging and dropping the plugin DLL onto the pdb2mdb.exe"></p>
+<p>After this, you can optionally delete the <code>.pdb</code> file as it is not needed.</p>
+<h2 id="starting-debugging">Starting debugging</h2>
+<p>Finally, put breakpoints in Visual Studio however you want and start the game.
+When the game has started, you're ready to start debugging.</p>
+<p>In Visual Studio, select <code>Debug &gt; Attach Unity Debugger</code>:</p>
+<p><img src="images/vstu_debugger_select.png" alt="Select Debug &gt; Attach Unity Debugger in Visual Studio"></p>
+<p>In the opened dialog, select the game executable and press <code>OK</code>:</p>
+<p><img src="images/vstu_select_process.png" alt="Select the game process from the opened dialog"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there is no processes in the list, try pressing <code>Refresh</code> -- it might be that the game hasn't loaded in yet.<br>
+It is also may be because you didn't follow the <a href="https://github.com/0xd4d/dnSpy/wiki/Debugging-Unity-Games#turning-a-release-build-into-a-debug-build">dnSpy debug build conversion guide</a> properly.
+In that case, please repeat the steps in that setup guide making sure you use correct Unity version and bitness.</p>
+</div>
+<p>If you've done everything correctly, the debugging session starts and your breakpoints can be hit:</p>
+<p><img src="images/vstu_works.png" alt="An example of a breakpoint being hit"></p>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/blob/v5.4.11/articles/advanced/debug/plugins_vs.md/#L1">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../../../static/scripts/template.js"></script>
+<script type="text/javascript" src="../../../static/scripts/main.js"></script>
+</body>
+</html>

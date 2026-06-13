@@ -1,0 +1,872 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class UnityLogListener
+ | BepInEx Docs </title>
+    <meta name="title" content="Class UnityLogListener
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Class UnityLogListener
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                                                                                        <span>
+            <a href="BepInEx.Unity.Logging.html">BepInEx.Unity.Logging</a>
+        </span>
+            <span>
+                <a href="BepInEx.Unity.Logging.UnityLogListener.html">UnityLogListener</a>
+            </span>
+    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ConsoleManager.html">ConsoleManager</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ConsoleManager.ConsoleOutRedirectType.html">ConsoleManager.ConsoleOutRedirectType</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MonoExtensions.html">MonoExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.BaseChainloader-1.html">BaseChainloader&lt;TPlugin&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Core.Logging.Interpolation.html">BepInEx.Core.Logging.Interpolation</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExDebugLogInterpolatedStringHandler.html">BepInExDebugLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExErrorLogInterpolatedStringHandler.html">BepInExErrorLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExFatalLogInterpolatedStringHandler.html">BepInExFatalLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExInfoLogInterpolatedStringHandler.html">BepInExInfoLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExLogInterpolatedStringHandler.html">BepInExLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExMessageLogInterpolatedStringHandler.html">BepInExMessageLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExWarningLogInterpolatedStringHandler.html">BepInExWarningLogInterpolatedStringHandler</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.html">BepInEx.IL2CPP</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.BasePlugin.html">BasePlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.DetourGenerator.html">DetourGenerator</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.IL2CPPChainloader.html">IL2CPPChainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Preloader.html">Preloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Hook.html">BepInEx.IL2CPP.Hook</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.FastNativeDetour.html">FastNativeDetour</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.IL2CPPDetourMethodPatcher.html">IL2CPPDetourMethodPatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.UnhollowerDetourHandler.html">UnhollowerDetourHandler</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Logging.html">BepInEx.IL2CPP.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Logging.IL2CPPLogSource.html">IL2CPPLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Logging.IL2CPPUnityLogSource.html">IL2CPPUnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.UnityEngine.html">BepInEx.IL2CPP.UnityEngine</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.UnityEngine.Input.html">Input</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.UnityEngine.KeyCode.html">KeyCode</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Utils.html">BepInEx.IL2CPP.Utils</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.MonoBehaviourExtensions.html">MonoBehaviourExtensions</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Utils.Collections.html">BepInEx.IL2CPP.Utils.Collections</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.CollectionExtensions.html">CollectionExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerable.html">Il2CppManagedEnumerable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerator.html">Il2CppManagedEnumerator</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerable.html">ManagedIl2CppEnumerable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerator.html">ManagedIl2CppEnumerator</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.HarmonyLogSource.html">HarmonyLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.NetLauncher.html">BepInEx.NetLauncher</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.NetLauncher.NetPreloader.html">NetPreloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.NetLauncher.Common.html">BepInEx.NetLauncher.Common</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.NetLauncher.Common.BasePlugin.html">BasePlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.NetLauncher.Common.NetChainloader.html">NetChainloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.html">BepInEx.Preloader.Core</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.AssemblyBuildInfo.html">AssemblyBuildInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.AssemblyBuildInfo.FrameworkType.html">AssemblyBuildInfo.FrameworkType</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.EnvVars.html">EnvVars</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.PreloaderLogger.html">PreloaderLogger</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.Logging.html">BepInEx.Preloader.Core.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Logging.ChainloaderLogHelper.html">ChainloaderLogHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Logging.PreloaderConsoleListener.html">PreloaderConsoleListener</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.Patching.html">BepInEx.Preloader.Core.Patching</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.AssemblyPatcher.html">AssemblyPatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.BasePatcher.html">BasePatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatchDefinition.html">PatchDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatcherContext.html">PatcherContext</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatcherPluginInfoAttribute.html">PatcherPluginInfoAttribute</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.TargetAssemblyAttribute.html">TargetAssemblyAttribute</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.TargetTypeAttribute.html">TargetTypeAttribute</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.RuntimeFixes.html">BepInEx.Preloader.RuntimeFixes</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.RuntimeFixes.ConsoleSetOutFix.html">ConsoleSetOutFix</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.RuntimeFixes.HarmonyBackendFix.html">HarmonyBackendFix</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Shared.html">BepInEx.Shared</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Shared.BuildInfoAttribute.html">BuildInfoAttribute</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Unity.html">BepInEx.Unity</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.BepInExInstance.html">BepInExInstance</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Unity.Bootstrap.html">BepInEx.Unity.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.Bootstrap.UnityChainloader.html">UnityChainloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Unity.Logging.html" class="active">BepInEx.Unity.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.Logging.UnityLogListener.html" class="active">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Unity.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_Unity_Logging_UnityLogListener" data-uid="BepInEx.Unity.Logging.UnityLogListener">Class UnityLogListener
+  </h1>
+  <div class="class-summary"><p>Logs entries using Unity specific outputs.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  <div class="inheritance class-metadata">
+    <h5>Inheritance</h5>
+    <span class="level0" style="--inheritance-level: 0;"><span class="xref">System.Object</span></span>
+    <span class="level1" style="--inheritance-level: 1;"><span class="xref">UnityLogListener</span></span>
+  </div>
+  
+  <div class="implements class-metadata">
+    <h5>Implements</h5>
+  
+    <span><a class="xref" href="BepInEx.Logging.ILogListener.html">ILogListener</a></span>
+    <span><span class="xref">System.IDisposable</span></span>
+  
+  </div>
+  
+  <div class="inheritedMembers class-metadata">
+    <h5>Inherited Members</h5>
+  
+    <span>
+      <span class="xref">System.Object.ToString()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetType()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </span>
+  
+  </div>
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.Unity.Logging.html">BepInEx.Unity.Logging</a></div>
+  <div><strong>Assembly</strong>: BepInEx.Unity.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_Unity_Logging_UnityLogListener_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UnityLogListener : ILogListener, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Unity_Logging_UnityLogListener_ConfigUnityLogLevel" data-uid="BepInEx.Unity.Logging.UnityLogListener.ConfigUnityLogLevel">ConfigUnityLogLevel</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_Unity_Logging_UnityLogListener_ConfigUnityLogLevel.md&amp;value=---%0Auid%3A%20BepInEx.Unity.Logging.UnityLogListener.ConfigUnityLogLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ec79ad057b20c302c17b34e63906ee398352d852/BepInEx.Unity/Logging/UnityLogListener.cs/#L19">View Source</a>
+    </div>
+  
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static readonly ConfigEntry&lt;LogLevel&gt; ConfigUnityLogLevel</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry</a>&lt;<a class="xref" href="BepInEx.Logging.LogLevel.html">LogLevel</a>&gt;</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Unity_Logging_UnityLogListener_LogLevelFilter" data-uid="BepInEx.Unity.Logging.UnityLogListener.LogLevelFilter">LogLevelFilter</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_Unity_Logging_UnityLogListener_LogLevelFilter.md&amp;value=---%0Auid%3A%20BepInEx.Unity.Logging.UnityLogListener.LogLevelFilter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ec79ad057b20c302c17b34e63906ee398352d852/BepInEx.Unity/Logging/UnityLogListener.cs/#L53">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Unity_Logging_UnityLogListener_LogLevelFilter_" data-uid="BepInEx.Unity.Logging.UnityLogListener.LogLevelFilter*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>What log levels the listener preliminarily wants.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LogLevel LogLevelFilter { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Logging.LogLevel.html">LogLevel</a></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  <h5 id="BepInEx_Unity_Logging_UnityLogListener_LogLevelFilter_remarks">Remarks</h5>
+  <div class="remarks"><p>The filter is used to more efficiently discard log messages that aren't being listened to.
+As such, the filter should represent the log levels that the listener will always want to process.
+It is up to the the implementation of <a class="xref" href="BepInEx.Logging.ILogListener.html#BepInEx_Logging_ILogListener_LogEvent_System_Object_BepInEx_Logging_LogEventArgs_">LogEvent(Object, LogEventArgs)</a> whether the messages are going to be processed or
+discarded.</p>
+</div>
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Unity_Logging_UnityLogListener_Dispose" data-uid="BepInEx.Unity.Logging.UnityLogListener.Dispose">Dispose()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_Unity_Logging_UnityLogListener_Dispose.md&amp;value=---%0Auid%3A%20BepInEx.Unity.Logging.UnityLogListener.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ec79ad057b20c302c17b34e63906ee398352d852/BepInEx.Unity/Logging/UnityLogListener.cs/#L67">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Unity_Logging_UnityLogListener_Dispose_" data-uid="BepInEx.Unity.Logging.UnityLogListener.Dispose*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Unity_Logging_UnityLogListener_LogEvent_System_Object_BepInEx_Logging_LogEventArgs_" data-uid="BepInEx.Unity.Logging.UnityLogListener.LogEvent(System.Object,BepInEx.Logging.LogEventArgs)">LogEvent(Object, LogEventArgs)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_Unity_Logging_UnityLogListener_LogEvent_System_Object_BepInEx_Logging_LogEventArgs_.md&amp;value=---%0Auid%3A%20BepInEx.Unity.Logging.UnityLogListener.LogEvent(System.Object%2CBepInEx.Logging.LogEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/ec79ad057b20c302c17b34e63906ee398352d852/BepInEx.Unity/Logging/UnityLogListener.cs/#L56">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Unity_Logging_UnityLogListener_LogEvent_" data-uid="BepInEx.Unity.Logging.UnityLogListener.LogEvent*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Handle an incoming log event.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogEvent(object sender, LogEventArgs eventArgs)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.Object</span></code></td>
+        <td><span class="parametername"><code>sender</code></span></td>
+        <td><p>Log source that sent the event. Don't use; instead use <a class="xref" href="BepInEx.Logging.LogEventArgs.html#BepInEx_Logging_LogEventArgs_Source">Source</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a></code></td>
+        <td><span class="parametername"><code>eventArgs</code></span></td>
+        <td><p>Information about the log message.</p>
+</td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  <h3 id="implements">Implements</h3>
+  
+  <div>
+      <a class="xref" href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  
+  
+  
+  
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_Unity_Logging_UnityLogListener.md&amp;value=---%0Auid%3A%20BepInEx.Unity.Logging.UnityLogListener%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

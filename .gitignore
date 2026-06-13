@@ -1,0 +1,21 @@
+###############
+#    folder   #
+###############
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+_site
+
+# Ignore the src folder because it's included in the CI instead
+src/
+.vs/
+.vscode/
+
+# Ignore common repo files
+gh-pages/
+tools/
+./build.*
+templates/
+common/

@@ -1,0 +1,1888 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enum KeyCode
+ | BepInEx Docs </title>
+    <meta name="title" content="Enum KeyCode
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Enum KeyCode
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v6.0.0-pre.1";
+
+        var root = document.documentElement;
+        var rootComputedStyle = window.getComputedStyle(root);
+        function setScrollbarTheme(theme) {
+            root.style.setProperty('--scrollbar-track', rootComputedStyle.getPropertyValue('--scrollbar-track-'+theme));
+            root.style.setProperty('--scrollbar-track-thumb', rootComputedStyle.getPropertyValue('--scrollbar-track-thumb-'+theme));
+            root.style.setProperty('--scrollbar-thumb-hover', rootComputedStyle.getPropertyValue('--scrollbar-thumb-hover-'+theme));
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setScrollbarTheme('dark');
+            document.documentElement.classList.add('dark');
+        } else {
+            setScrollbarTheme('light');
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                                    <span>
+            <a href="BepInEx.IL2CPP.UnityEngine.html">BepInEx.IL2CPP.UnityEngine</a>
+        </span>
+            <span>
+                <a href="BepInEx.IL2CPP.UnityEngine.KeyCode.html">KeyCode</a>
+            </span>
+                                                        </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ConsoleManager.html">ConsoleManager</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ConsoleManager.ConsoleOutRedirectType.html">ConsoleManager.ConsoleOutRedirectType</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MonoExtensions.html">MonoExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.BaseChainloader-1.html">BaseChainloader&lt;TPlugin&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Core.Logging.Interpolation.html">BepInEx.Core.Logging.Interpolation</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExDebugLogInterpolatedStringHandler.html">BepInExDebugLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExErrorLogInterpolatedStringHandler.html">BepInExErrorLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExFatalLogInterpolatedStringHandler.html">BepInExFatalLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExInfoLogInterpolatedStringHandler.html">BepInExInfoLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExLogInterpolatedStringHandler.html">BepInExLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExMessageLogInterpolatedStringHandler.html">BepInExMessageLogInterpolatedStringHandler</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Core.Logging.Interpolation.BepInExWarningLogInterpolatedStringHandler.html">BepInExWarningLogInterpolatedStringHandler</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.html">BepInEx.IL2CPP</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.BasePlugin.html">BasePlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.DetourGenerator.html">DetourGenerator</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.IL2CPPChainloader.html">IL2CPPChainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Preloader.html">Preloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Hook.html">BepInEx.IL2CPP.Hook</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.FastNativeDetour.html">FastNativeDetour</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.IL2CPPDetourMethodPatcher.html">IL2CPPDetourMethodPatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Hook.UnhollowerDetourHandler.html">UnhollowerDetourHandler</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Logging.html">BepInEx.IL2CPP.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Logging.IL2CPPLogSource.html">IL2CPPLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Logging.IL2CPPUnityLogSource.html">IL2CPPUnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.IL2CPP.UnityEngine.html" class="active">BepInEx.IL2CPP.UnityEngine</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.UnityEngine.Input.html">Input</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.UnityEngine.KeyCode.html" class="active">KeyCode</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Utils.html">BepInEx.IL2CPP.Utils</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.MonoBehaviourExtensions.html">MonoBehaviourExtensions</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.IL2CPP.Utils.Collections.html">BepInEx.IL2CPP.Utils.Collections</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.CollectionExtensions.html">CollectionExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerable.html">Il2CppManagedEnumerable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.Il2CppManagedEnumerator.html">Il2CppManagedEnumerator</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerable.html">ManagedIl2CppEnumerable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.IL2CPP.Utils.Collections.ManagedIl2CppEnumerator.html">ManagedIl2CppEnumerator</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.HarmonyLogSource.html">HarmonyLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.NetLauncher.html">BepInEx.NetLauncher</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.NetLauncher.NetPreloader.html">NetPreloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.NetLauncher.Common.html">BepInEx.NetLauncher.Common</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.NetLauncher.Common.BasePlugin.html">BasePlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.NetLauncher.Common.NetChainloader.html">NetChainloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.html">BepInEx.Preloader.Core</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.AssemblyBuildInfo.html">AssemblyBuildInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.AssemblyBuildInfo.FrameworkType.html">AssemblyBuildInfo.FrameworkType</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.EnvVars.html">EnvVars</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.PreloaderLogger.html">PreloaderLogger</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.Logging.html">BepInEx.Preloader.Core.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Logging.ChainloaderLogHelper.html">ChainloaderLogHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Logging.PreloaderConsoleListener.html">PreloaderConsoleListener</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.Core.Patching.html">BepInEx.Preloader.Core.Patching</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.AssemblyPatcher.html">AssemblyPatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.BasePatcher.html">BasePatcher</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatchDefinition.html">PatchDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatcherContext.html">PatcherContext</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.PatcherPluginInfoAttribute.html">PatcherPluginInfoAttribute</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.TargetAssemblyAttribute.html">TargetAssemblyAttribute</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.Core.Patching.TargetTypeAttribute.html">TargetTypeAttribute</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Preloader.RuntimeFixes.html">BepInEx.Preloader.RuntimeFixes</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Preloader.RuntimeFixes.ConsoleSetOutFix.html">ConsoleSetOutFix</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Preloader.RuntimeFixes.HarmonyBackendFix.html">HarmonyBackendFix</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Shared.html">BepInEx.Shared</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Shared.BuildInfoAttribute.html">BuildInfoAttribute</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Unity.html">BepInEx.Unity</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.BepInExInstance.html">BepInExInstance</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Unity.Bootstrap.html">BepInEx.Unity.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.Bootstrap.UnityChainloader.html">UnityChainloader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Unity.Logging.html">BepInEx.Unity.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Unity.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Unity.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_IL2CPP_UnityEngine_KeyCode" data-uid="BepInEx.IL2CPP.UnityEngine.KeyCode">Enum KeyCode
+  </h1>
+  <div class="class-summary"></div>
+  <div class="conceptual"></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.IL2CPP.UnityEngine.html">BepInEx.IL2CPP.UnityEngine</a></div>
+  <div><strong>Assembly</strong>: BepInEx.IL2CPP.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_IL2CPP_UnityEngine_KeyCode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum KeyCode</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div><h3 id="fields">Fields
+  </h3>
+  
+  <div class="member-desc">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_A"><code>A</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha0"><code>Alpha0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha1"><code>Alpha1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha2"><code>Alpha2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha3"><code>Alpha3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha4"><code>Alpha4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha5"><code>Alpha5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha6"><code>Alpha6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha7"><code>Alpha7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha8"><code>Alpha8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Alpha9"><code>Alpha9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_AltGr"><code>AltGr</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Ampersand"><code>Ampersand</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Asterisk"><code>Asterisk</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_At"><code>At</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_B"><code>B</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_BackQuote"><code>BackQuote</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Backslash"><code>Backslash</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Backspace"><code>Backspace</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Break"><code>Break</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_C"><code>C</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_CapsLock"><code>CapsLock</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Caret"><code>Caret</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Clear"><code>Clear</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Colon"><code>Colon</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Comma"><code>Comma</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_D"><code>D</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Delete"><code>Delete</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Dollar"><code>Dollar</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_DoubleQuote"><code>DoubleQuote</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_DownArrow"><code>DownArrow</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_E"><code>E</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_End"><code>End</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Equals"><code>Equals</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Escape"><code>Escape</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Exclaim"><code>Exclaim</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F"><code>F</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F1"><code>F1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F10"><code>F10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F11"><code>F11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F12"><code>F12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F13"><code>F13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F14"><code>F14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F15"><code>F15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F2"><code>F2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F3"><code>F3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F4"><code>F4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F5"><code>F5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F6"><code>F6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F7"><code>F7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F8"><code>F8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_F9"><code>F9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_G"><code>G</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Greater"><code>Greater</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_H"><code>H</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Hash"><code>Hash</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Help"><code>Help</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Home"><code>Home</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_I"><code>I</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Insert"><code>Insert</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_J"><code>J</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button0"><code>Joystick1Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button1"><code>Joystick1Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button10"><code>Joystick1Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button11"><code>Joystick1Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button12"><code>Joystick1Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button13"><code>Joystick1Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button14"><code>Joystick1Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button15"><code>Joystick1Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button16"><code>Joystick1Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button17"><code>Joystick1Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button18"><code>Joystick1Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button19"><code>Joystick1Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button2"><code>Joystick1Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button3"><code>Joystick1Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button4"><code>Joystick1Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button5"><code>Joystick1Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button6"><code>Joystick1Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button7"><code>Joystick1Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button8"><code>Joystick1Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick1Button9"><code>Joystick1Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button0"><code>Joystick2Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button1"><code>Joystick2Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button10"><code>Joystick2Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button11"><code>Joystick2Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button12"><code>Joystick2Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button13"><code>Joystick2Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button14"><code>Joystick2Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button15"><code>Joystick2Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button16"><code>Joystick2Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button17"><code>Joystick2Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button18"><code>Joystick2Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button19"><code>Joystick2Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button2"><code>Joystick2Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button3"><code>Joystick2Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button4"><code>Joystick2Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button5"><code>Joystick2Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button6"><code>Joystick2Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button7"><code>Joystick2Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button8"><code>Joystick2Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick2Button9"><code>Joystick2Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button0"><code>Joystick3Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button1"><code>Joystick3Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button10"><code>Joystick3Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button11"><code>Joystick3Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button12"><code>Joystick3Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button13"><code>Joystick3Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button14"><code>Joystick3Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button15"><code>Joystick3Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button16"><code>Joystick3Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button17"><code>Joystick3Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button18"><code>Joystick3Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button19"><code>Joystick3Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button2"><code>Joystick3Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button3"><code>Joystick3Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button4"><code>Joystick3Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button5"><code>Joystick3Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button6"><code>Joystick3Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button7"><code>Joystick3Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button8"><code>Joystick3Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick3Button9"><code>Joystick3Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button0"><code>Joystick4Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button1"><code>Joystick4Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button10"><code>Joystick4Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button11"><code>Joystick4Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button12"><code>Joystick4Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button13"><code>Joystick4Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button14"><code>Joystick4Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button15"><code>Joystick4Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button16"><code>Joystick4Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button17"><code>Joystick4Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button18"><code>Joystick4Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button19"><code>Joystick4Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button2"><code>Joystick4Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button3"><code>Joystick4Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button4"><code>Joystick4Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button5"><code>Joystick4Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button6"><code>Joystick4Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button7"><code>Joystick4Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button8"><code>Joystick4Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick4Button9"><code>Joystick4Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button0"><code>Joystick5Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button1"><code>Joystick5Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button10"><code>Joystick5Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button11"><code>Joystick5Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button12"><code>Joystick5Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button13"><code>Joystick5Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button14"><code>Joystick5Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button15"><code>Joystick5Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button16"><code>Joystick5Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button17"><code>Joystick5Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button18"><code>Joystick5Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button19"><code>Joystick5Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button2"><code>Joystick5Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button3"><code>Joystick5Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button4"><code>Joystick5Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button5"><code>Joystick5Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button6"><code>Joystick5Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button7"><code>Joystick5Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button8"><code>Joystick5Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick5Button9"><code>Joystick5Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button0"><code>Joystick6Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button1"><code>Joystick6Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button10"><code>Joystick6Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button11"><code>Joystick6Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button12"><code>Joystick6Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button13"><code>Joystick6Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button14"><code>Joystick6Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button15"><code>Joystick6Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button16"><code>Joystick6Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button17"><code>Joystick6Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button18"><code>Joystick6Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button19"><code>Joystick6Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button2"><code>Joystick6Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button3"><code>Joystick6Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button4"><code>Joystick6Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button5"><code>Joystick6Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button6"><code>Joystick6Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button7"><code>Joystick6Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button8"><code>Joystick6Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick6Button9"><code>Joystick6Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button0"><code>Joystick7Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button1"><code>Joystick7Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button10"><code>Joystick7Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button11"><code>Joystick7Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button12"><code>Joystick7Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button13"><code>Joystick7Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button14"><code>Joystick7Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button15"><code>Joystick7Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button16"><code>Joystick7Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button17"><code>Joystick7Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button18"><code>Joystick7Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button19"><code>Joystick7Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button2"><code>Joystick7Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button3"><code>Joystick7Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button4"><code>Joystick7Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button5"><code>Joystick7Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button6"><code>Joystick7Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button7"><code>Joystick7Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button8"><code>Joystick7Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick7Button9"><code>Joystick7Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button0"><code>Joystick8Button0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button1"><code>Joystick8Button1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button10"><code>Joystick8Button10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button11"><code>Joystick8Button11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button12"><code>Joystick8Button12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button13"><code>Joystick8Button13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button14"><code>Joystick8Button14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button15"><code>Joystick8Button15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button16"><code>Joystick8Button16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button17"><code>Joystick8Button17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button18"><code>Joystick8Button18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button19"><code>Joystick8Button19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button2"><code>Joystick8Button2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button3"><code>Joystick8Button3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button4"><code>Joystick8Button4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button5"><code>Joystick8Button5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button6"><code>Joystick8Button6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button7"><code>Joystick8Button7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button8"><code>Joystick8Button8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Joystick8Button9"><code>Joystick8Button9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton0"><code>JoystickButton0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton1"><code>JoystickButton1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton10"><code>JoystickButton10</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton11"><code>JoystickButton11</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton12"><code>JoystickButton12</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton13"><code>JoystickButton13</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton14"><code>JoystickButton14</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton15"><code>JoystickButton15</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton16"><code>JoystickButton16</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton17"><code>JoystickButton17</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton18"><code>JoystickButton18</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton19"><code>JoystickButton19</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton2"><code>JoystickButton2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton3"><code>JoystickButton3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton4"><code>JoystickButton4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton5"><code>JoystickButton5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton6"><code>JoystickButton6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton7"><code>JoystickButton7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton8"><code>JoystickButton8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_JoystickButton9"><code>JoystickButton9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_K"><code>K</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad0"><code>Keypad0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad1"><code>Keypad1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad2"><code>Keypad2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad3"><code>Keypad3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad4"><code>Keypad4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad5"><code>Keypad5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad6"><code>Keypad6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad7"><code>Keypad7</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad8"><code>Keypad8</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Keypad9"><code>Keypad9</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadDivide"><code>KeypadDivide</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadEnter"><code>KeypadEnter</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadEquals"><code>KeypadEquals</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadMinus"><code>KeypadMinus</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadMultiply"><code>KeypadMultiply</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadPeriod"><code>KeypadPeriod</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_KeypadPlus"><code>KeypadPlus</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_L"><code>L</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftAlt"><code>LeftAlt</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftApple"><code>LeftApple</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftArrow"><code>LeftArrow</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftBracket"><code>LeftBracket</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftCommand"><code>LeftCommand</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftControl"><code>LeftControl</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftCurlyBracket"><code>LeftCurlyBracket</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftParen"><code>LeftParen</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftShift"><code>LeftShift</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_LeftWindows"><code>LeftWindows</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Less"><code>Less</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_M"><code>M</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Menu"><code>Menu</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Minus"><code>Minus</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse0"><code>Mouse0</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse1"><code>Mouse1</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse2"><code>Mouse2</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse3"><code>Mouse3</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse4"><code>Mouse4</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse5"><code>Mouse5</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Mouse6"><code>Mouse6</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_N"><code>N</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_None"><code>None</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Numlock"><code>Numlock</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_O"><code>O</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_P"><code>P</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_PageDown"><code>PageDown</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_PageUp"><code>PageUp</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Pause"><code>Pause</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Percent"><code>Percent</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Period"><code>Period</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Pipe"><code>Pipe</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Plus"><code>Plus</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Print"><code>Print</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Q"><code>Q</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Question"><code>Question</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Quote"><code>Quote</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_R"><code>R</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Return"><code>Return</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightAlt"><code>RightAlt</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightApple"><code>RightApple</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightArrow"><code>RightArrow</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightBracket"><code>RightBracket</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightCommand"><code>RightCommand</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightControl"><code>RightControl</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightCurlyBracket"><code>RightCurlyBracket</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightParen"><code>RightParen</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightShift"><code>RightShift</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_RightWindows"><code>RightWindows</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_S"><code>S</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_ScrollLock"><code>ScrollLock</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Semicolon"><code>Semicolon</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Slash"><code>Slash</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Space"><code>Space</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_SysReq"><code>SysReq</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_T"><code>T</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Tab"><code>Tab</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Tilde"><code>Tilde</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_U"><code>U</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Underscore"><code>Underscore</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_UpArrow"><code>UpArrow</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_V"><code>V</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_W"><code>W</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_X"><code>X</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Y"><code>Y</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="BepInEx_IL2CPP_UnityEngine_KeyCode_Z"><code>Z</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  </div>
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v6.0.0-pre.1/apiSpec/new?filename=BepInEx_IL2CPP_UnityEngine_KeyCode.md&amp;value=---%0Auid%3A%20BepInEx.IL2CPP.UnityEngine.KeyCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v6.0.0-pre.1)</div>
+        <div>Build info: 2cd85d6; 2022-08-14 18:08:38 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>

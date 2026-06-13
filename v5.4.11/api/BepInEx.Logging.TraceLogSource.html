@@ -1,0 +1,965 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class TraceLogSource
+ | BepInEx Docs </title>
+    <meta name="title" content="Class TraceLogSource
+ | BepInEx Docs ">
+        <meta name="description" content="BepInEx documentation and API listing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Class TraceLogSource
+ | BepInEx Docs ">
+        <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/39589027">
+        <meta name="twitter:description" content="BepInEx documentation and API listing">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/styles/template.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <script>
+        var docsVersion = "v5.4.11";
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+            </a>
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="../articles/index.html">Articles</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../api/index.html">API Documentation</a>
+                </div>
+            </div>
+            <div id="version-picker"></div>
+            <a id="menu-switch" class="icon-menu"></a>
+            <a id="theme-switch" class="icon-lightbulb"></a>
+        </nav>
+    </header>
+    <section id="global-messages"></section>
+    <section class="breadcrumb">
+        <span>
+            <a href="../api/index.html">API Documentation</a>
+        </span>
+                    <span>
+            <a href="BepInEx.Logging.html">BepInEx.Logging</a>
+        </span>
+            <span>
+                <a href="BepInEx.Logging.TraceLogSource.html">TraceLogSource</a>
+            </span>
+    </section>
+    <aside class="toc">
+    <span class="toc-menu-button">
+        <span>Table of Contents</span>
+        <i class="icon-menu"></i>
+    </span>
+    <div class="toc-items">
+    <ul>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.html">BepInEx</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.BaseUnityPlugin.html">BaseUnityPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.html">BepInDependency</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInDependency.DependencyFlags.html">BepInDependency.DependencyFlags</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInIncompatibility.html">BepInIncompatibility</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInPlugin.html">BepInPlugin</a>
+                </li>
+                <li>
+                    <a href="BepInEx.BepInProcess.html">BepInProcess</a>
+                </li>
+                <li>
+                    <a href="BepInEx.MetadataHelper.html">MetadataHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Paths.html">Paths</a>
+                </li>
+                <li>
+                    <a href="BepInEx.PluginInfo.html">PluginInfo</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingExtensions.html">ThreadingExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.ThreadingHelper.html">ThreadingHelper</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Utility.html">Utility</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Bootstrap.html">BepInEx.Bootstrap</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Bootstrap.CachedAssembly-1.html">CachedAssembly&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.Chainloader.html">Chainloader</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.ICacheable.html">ICacheable</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Bootstrap.TypeLoader.html">TypeLoader</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details>
+            <summary>
+            <a href="BepInEx.Configuration.html">BepInEx.Configuration</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueBase.html">AcceptableValueBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueList-1.html">AcceptableValueList&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.AcceptableValueRange-1.html">AcceptableValueRange&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDefinition.html">ConfigDefinition</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigDescription.html">ConfigDescription</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntry-1.html">ConfigEntry&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigEntryBase.html">ConfigEntryBase</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigFile.html">ConfigFile</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.ConfigWrapper-1.html">ConfigWrapper&lt;T&gt;</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.KeyboardShortcut.html">KeyboardShortcut</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.SettingChangedEventArgs.html">SettingChangedEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TomlTypeConverter.html">TomlTypeConverter</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Configuration.TypeConverter.html">TypeConverter</a>
+                </li>
+            </ul>        </details>
+        </li>
+        <li>
+            <details open="">
+            <summary>
+            <a href="BepInEx.Logging.html" class="active">BepInEx.Logging</a>
+            </summary>
+            <ul>
+                <li>
+                    <a href="BepInEx.Logging.ConsoleLogListener.html">ConsoleLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.DiskLogListener.html">DiskLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogListener.html">ILogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ILogSource.html">ILogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogEventArgs.html">LogEventArgs</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.Logger.html">Logger</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevel.html">LogLevel</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.LogLevelExtensions.html">LogLevelExtensions</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.TraceLogSource.html" class="active">TraceLogSource</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogListener.html">UnityLogListener</a>
+                </li>
+                <li>
+                    <a href="BepInEx.Logging.UnityLogSource.html">UnityLogSource</a>
+                </li>
+            </ul>        </details>
+        </li>
+    </ul></div>
+    </aside>
+    <main class="  ">
+  
+  
+  <h1 id="BepInEx_Logging_TraceLogSource" data-uid="BepInEx.Logging.TraceLogSource">Class TraceLogSource
+  </h1>
+  <div class="class-summary"><p>A source that routes all logs from <span class="xref">System.Diagnostics.Trace</span> API to BepInEx logger.</p>
+</div>
+  <div class="conceptual"></div>
+  
+  <div class="inheritance class-metadata">
+    <h5>Inheritance</h5>
+    <span class="level0" style="--inheritance-level: 0;"><span class="xref">System.Object</span></span>
+    <span class="level1" style="--inheritance-level: 1;"><span class="xref">System.MarshalByRefObject</span></span>
+    <span class="level2" style="--inheritance-level: 2;"><span class="xref">System.Diagnostics.TraceListener</span></span>
+    <span class="level3" style="--inheritance-level: 3;"><span class="xref">TraceLogSource</span></span>
+  </div>
+  
+  <div class="implements class-metadata">
+    <h5>Implements</h5>
+  
+    <span><span class="xref">System.IDisposable</span></span>
+  
+  </div>
+  
+  <div class="inheritedMembers class-metadata">
+    <h5>Inherited Members</h5>
+  
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Dispose()</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Dispose(System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Close()</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Flush()</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Fail(System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Fail(System.String, System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.GetSupportedAttributes()</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.String, System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.Object, System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.WriteIndent()</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.String, System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.Object, System.String)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.Object[])</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.TraceTransfer(System.Diagnostics.TraceEventCache, System.String, System.Int32, System.String, System.Guid)</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Attributes</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Name</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.IsThreadSafe</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.IndentLevel</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.IndentSize</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.Filter</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.NeedIndent</span>
+    </span>
+    <span>
+      <span class="xref">System.Diagnostics.TraceListener.TraceOutputOptions</span>
+    </span>
+    <span>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </span>
+    <span>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </span>
+    <span>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </span>
+    <span>
+      <span class="xref">System.MarshalByRefObject.CreateObjRef(System.Type)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ToString()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.GetType()</span>
+    </span>
+    <span>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </span>
+  
+  </div>
+  
+  <div><strong>Namespace</strong>: <a class="xref" href="BepInEx.Logging.html">BepInEx.Logging</a></div>
+  <div><strong>Assembly</strong>: BepInEx.dll</div>
+  
+  <div class="member-desc">
+  <h5 id="BepInEx_Logging_TraceLogSource_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TraceLogSource : TraceListener, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource__ctor" data-uid="BepInEx.Logging.TraceLogSource.#ctor">TraceLogSource()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource__ctor.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L42">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource__ctor_" data-uid="BepInEx.Logging.TraceLogSource.#ctor*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Creates a new trace log source.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TraceLogSource()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_IsListening" data-uid="BepInEx.Logging.TraceLogSource.IsListening">IsListening</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_IsListening.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.IsListening%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L14">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_IsListening_" data-uid="BepInEx.Logging.TraceLogSource.IsListening*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Whether Trace logs are rerouted.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsListening { get; protected set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><span class="xref">System.Boolean</span></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_LogSource" data-uid="BepInEx.Logging.TraceLogSource.LogSource">LogSource</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_LogSource.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.LogSource%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L37">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_LogSource_" data-uid="BepInEx.Logging.TraceLogSource.LogSource*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Internal log source.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ManualLogSource LogSource { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a></code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_CreateSource" data-uid="BepInEx.Logging.TraceLogSource.CreateSource">CreateSource()</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_CreateSource.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.CreateSource%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L22">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_CreateSource_" data-uid="BepInEx.Logging.TraceLogSource.CreateSource*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Creates a new trace log source.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ILogSource CreateSource()</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code><a class="xref" href="BepInEx.Logging.ILogSource.html">ILogSource</a></code></td>
+        <td><p>New log source (or already existing one).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_" data-uid="BepInEx.Logging.TraceLogSource.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">TraceEvent(TraceEventCache, String, TraceEventType, Int32, String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.TraceEvent(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L70">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_TraceEvent_" data-uid="BepInEx.Logging.TraceLogSource.TraceEvent*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string message)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.Diagnostics.TraceEventCache</span></code></td>
+        <td><span class="parametername"><code>eventCache</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>source</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.Diagnostics.TraceEventType</span></code></td>
+        <td><span class="parametername"><code>eventType</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.Int32</span></code></td>
+        <td><span class="parametername"><code>id</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>message</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.String)</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_System_Object___" data-uid="BepInEx.Logging.TraceLogSource.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">TraceEvent(TraceEventCache, String, TraceEventType, Int32, String, Object[])</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_System_Object___.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.TraceEvent(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L66">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_TraceEvent_" data-uid="BepInEx.Logging.TraceLogSource.TraceEvent*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"></div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.Diagnostics.TraceEventCache</span></code></td>
+        <td><span class="parametername"><code>eventCache</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>source</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.Diagnostics.TraceEventType</span></code></td>
+        <td><span class="parametername"><code>eventType</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.Int32</span></code></td>
+        <td><span class="parametername"><code>id</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>format</code></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code><span class="xref">System.Object</span>[]</code></td>
+        <td><span class="parametername"><code>args</code></span></td>
+        <td></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.String, System.Object[])</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_Write_System_String_" data-uid="BepInEx.Logging.TraceLogSource.Write(System.String)">Write(String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_Write_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.Write(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L51">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_Write_" data-uid="BepInEx.Logging.TraceLogSource.Write*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Writes a message to the underlying <a class="xref" href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> instance.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Write(string message)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>message</code></span></td>
+        <td><p>The message to write.</p>
+</td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.Write(System.String)</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <div class="member-header">
+    <h4 id="BepInEx_Logging_TraceLogSource_WriteLine_System_String_" data-uid="BepInEx.Logging.TraceLogSource.WriteLine(System.String)">WriteLine(String)</h4>
+  
+    <div class="contribution-info">
+      <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource_WriteLine_System_String_.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource.WriteLine(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  
+      <a href="https://github.com/BepInEx/BepInEx/blob/63778dafae379ea73b8a3ac27e5a8ae140d93250/BepInEx/Logging/TraceLogSource.cs/#L60">View Source</a>
+    </div>
+  
+    <a id="BepInEx_Logging_TraceLogSource_WriteLine_" data-uid="BepInEx.Logging.TraceLogSource.WriteLine*"></a>
+  </div>
+  
+  <div class="member-desc">
+  
+  <div class="summary"><p>Writes a message and a newline to the underlying <a class="xref" href="BepInEx.Logging.ManualLogSource.html">ManualLogSource</a> instance.</p>
+</div>
+  <div class="conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteLine(string message)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td><code><span class="xref">System.String</span></code></td>
+        <td><span class="parametername"><code>message</code></span></td>
+        <td><p>The message to write.</p>
+</td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.WriteLine(System.String)</span></div>
+  
+  
+  
+  <div class="example">
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  <h3 id="implements">Implements</h3>
+  
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  
+  
+  
+  
+</main>
+    <aside class="affix">
+    <div>
+        <div class="source-links">
+            <a href="https://github.com/BepInEx/bepinex-docs/new/v5.4.11/apiSpec/new?filename=BepInEx_Logging_TraceLogSource.md&amp;value=---%0Auid%3A%20BepInEx.Logging.TraceLogSource%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+        </div>
+        <div class="affix-toc"></div>
+    </div>
+    </aside>    <footer>
+        <div>BepInEx Docs (v5.4.11)</div>
+        <div>Build info: 7525972; 2021-08-07 20:17:41 +0300</div>
+    </footer>
+<script type="text/javascript" src="../static/scripts/template.js"></script>
+<script type="text/javascript" src="../static/scripts/main.js"></script>
+</body>
+</html>
